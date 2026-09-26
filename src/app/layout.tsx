@@ -32,27 +32,27 @@ const signature = Alex_Brush({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Arfazrll | AI & Software Engineer',
+        default: 'Paphangkorn | AI & Software Engineer',
         template: '%s | Portfolio',
     },
-    description: 'A passionate developer building digital experiences that inspire. Explore my projects, skills, and professional journey.',
-    keywords: ['developer', 'portfolio', 'web development', 'full stack', 'react', 'nextjs'],
-    authors: [{ name: 'Your Name' }],
-    creator: 'Your Name',
-    metadataBase: new URL('https://your-domain.com'),
+    description: 'Game Developer & Software Engineer passionate about scalable systems and Roblox Studio.',
+    keywords: ['developer', 'portfolio', 'game developer', 'software engineer', 'roblox'],
+    authors: [{ name: 'Paphangkorn' }],
+    creator: 'Paphangkorn',
+    metadataBase: new URL('https://github.com/Paphangkorn'),
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://your-domain.com',
-        title: 'Arfazrll | AI & Software Engineer',
-        description: 'A passionate developer building digital experiences that inspire.',
+        url: 'https://github.com/Paphangkorn',
+        title: 'Paphangkorn | Game Developer & Software Engineer',
+        description: 'Game Developer & Software Engineer passionate about scalable systems and Roblox Studio.',
         siteName: 'Portfolio',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Arfazrll | AI & Software Engineer',
-        description: 'A passionate developer building digital experiences that inspire.',
-        creator: '@yourusername',
+        title: 'Paphangkorn | Game Developer & Software Engineer',
+        description: 'Game Developer & Software Engineer passionate about scalable systems and Roblox Studio.',
+        creator: '@Paphangkorn',
     },
     robots: {
         index: true,
@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     },
     icons: {
         icon: [
-            { url: '/Arfazrll_light.svg', media: '(prefers-color-scheme: light)' },
-            { url: '/Arfazrll_dark.svg', media: '(prefers-color-scheme: dark)' },
+            { url: '/Paphangkorn_light.svg', media: '(prefers-color-scheme: light)' },
+            { url: '/Paphangkorn_dark.svg', media: '(prefers-color-scheme: dark)' },
         ],
     },
 };

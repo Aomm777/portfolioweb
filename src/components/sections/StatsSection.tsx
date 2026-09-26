@@ -60,6 +60,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
 
     // Helper to get visible blogs in an infinite way
     const getVisibleBlogs = () => {
+        if (blogs.length === 0) return [];
         const result = [];
         for (let i = 0; i < visibleCount; i++) {
             result.push(blogs[(currentIndex + i) % blogs.length]);

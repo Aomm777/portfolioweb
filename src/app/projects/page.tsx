@@ -988,9 +988,15 @@ export default function ProjectsPage() {
         const baseProducts = portfolioData.projects.map((p, i) => ({
             title: p.title,
             link: p.repoUrl || p.demoUrl || '#',
-            thumbnail: techImages[i % techImages.length]
+            thumbnail: p.image || techImages[i % techImages.length]
         }));
-        return [...baseProducts, ...baseProducts, ...baseProducts].slice(0, 10);
+        // Pad to 10 items with index suffix to avoid duplicate keys
+        const padded: typeof baseProducts = [];
+        for (let i = 0; padded.length < 10; i++) {
+            const base = baseProducts[i % baseProducts.length];
+            padded.push({ ...base, title: i < baseProducts.length ? base.title : `${base.title} ${Math.floor(i / baseProducts.length) + 1}` });
+        }
+        return padded;
     }, []);
 
     // Generate Timeline Items - delay is calculated in component based on index

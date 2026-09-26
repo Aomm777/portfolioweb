@@ -168,7 +168,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
             )}
           </AnimatePresence>
 
-          {/* Line 1: AI & DATA */}
+          {/* Line 1: GAME */}
           <div className="md:flex gap-8 items-center relative">
             <motion.p
               initial={{ opacity: 0, x: -20 }}
@@ -176,7 +176,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[10px] md:text-xs text-muted-foreground text-start md:text-right leading-relaxed max-w-[200px] md:max-w-[220px] font-medium uppercase tracking-[0.2em]"
             >
-              Hi, I'm {personal.name}. I build scalable systems powered by intelligence.
+              Hi, I'm {personal.name}. I craft games and build software with logic and creativity.
             </motion.p>
             <div className="relative">
               <div ref={githubRef} className="absolute -top-4 right-0 md:right-2 text-primary/60 hover:text-primary z-20 opacity-0">
@@ -194,12 +194,12 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 transition={{ duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[clamp(3rem,11vw,13rem)] font-black leading-[0.85] tracking-tighter text-shiny will-change-transform px-4"
               >
-                AI & DATA
+                GAME
               </motion.h1>
             </div>
           </div>
 
-          {/* Line 2: SOFT [ICON] WARE */}
+          {/* Line 2: DEVE [ICON] LOPER */}
           <div className="md:flex gap-8 items-center relative">
             <div className="relative">
               <div ref={linkedinRef} className="absolute -top-8 left-4 text-primary/60 hover:text-primary z-20 opacity-0">
@@ -226,12 +226,12 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 transition={{ duration: 1.2, delay: 0.1, ease: [0.16, 1, 0.3, 1] }}
                 className="text-[clamp(3rem,11vw,13rem)] md:flex items-center font-black leading-[0.85] tracking-tighter text-shiny will-change-transform px-4"
               >
-                <span className="">SOFT</span>
+                <span className="">DEVE</span>
                 <div
                   ref={zapRef}
                   className="hidden lg:block mx-[0.05em] relative cursor-pointer group"
-                  onClick={() => window.open('https://arfazrllworkspace.vercel.app/', '_blank')}
-                  onMouseEnter={(e) => setTooltip({ show: true, text: "Go to Workspace", icon: 'zap', x: e.clientX, y: e.clientY })}
+                  onClick={() => window.open('https://Paphangkornworkspace.vercel.app/', '_blank')}
+                  onMouseEnter={(e) => setTooltip({ show: true, text: "Go to GitHub", icon: 'zap', x: e.clientX, y: e.clientY })}
                   onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                   onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
                 >
@@ -240,27 +240,27 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 <div
                   ref={zapSmallRef}
                   className="block lg:hidden mx-[0.02em] relative cursor-pointer group"
-                  onClick={() => window.open('https://arfazrllworkspace.vercel.app/', '_blank')}
-                  onMouseEnter={(e) => setTooltip({ show: true, text: "Go to Workspace", icon: 'zap', x: e.clientX, y: e.clientY })}
+                  onClick={() => window.open('https://Paphangkornworkspace.vercel.app/', '_blank')}
+                  onMouseEnter={(e) => setTooltip({ show: true, text: "Go to GitHub", icon: 'zap', x: e.clientX, y: e.clientY })}
                   onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                   onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
                 >
                   <Zap className="w-[0.8em] h-[0.8em] text-sky-400 group-hover:text-sky-300 transition-colors" strokeWidth={2} />
                 </div>
-                <span className="">WARE</span>
+                <span className="">LOPER</span>
               </motion.h1>
             </div>
           </div>
 
-          {/* Line 3: EN [ICON] GINEER */}
+          {/* Line 3: & SOFT [ICON] WARE */}
           <div className="md:flex gap-8 items-center relative">
             <motion.h1
               initial={{ opacity: 0, y: 30 }}
               animate={isExiting ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-              className="text-[clamp(3rem,11vw,13rem)] md:flex items-center font-black leading-[0.85] tracking-tighter text-shiny will-change-transform px-4"
+              className="text-[clamp(2rem,8vw,10rem)] md:flex items-center font-black leading-[0.85] tracking-tighter text-shiny will-change-transform px-4"
             >
-              <span className="">EN</span>
+              <span className="">& SOFT</span>
               <div
                 ref={botRef}
                 className="mx-[0.05em] relative cursor-pointer group"
@@ -276,7 +276,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
               >
                 <Bot className="w-[0.85em] h-[0.85em] text-yellow-500 fill-yellow-500/10 group-hover:text-yellow-400 group-hover:fill-yellow-400/20 transition-colors" />
               </div>
-              <span className="">GINEER</span>
+              <span className="">WARE ENG.</span>
             </motion.h1>
 
             <motion.p
