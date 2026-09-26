@@ -41,7 +41,7 @@ const highlightContent = {
     education: {
         title: "Building the Future",
         highlight: "Through Knowledge",
-        description: "I study Computer Engineering and apply that foundation to game logic, system design, and building with Roblox Studio."
+        description: "My academic background helped build the foundations I apply to game logic, system design, and creating games with Roblox Studio."
     },
     journey: {
         title: "Crafting Experiences",
@@ -100,7 +100,7 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const tabs: TabItem[] = [
-        { id: 'education', label: 'Education', description: 'My Computer Engineering studies and the foundations behind my approach to game development.' },
+        { id: 'education', label: 'Education', description: 'My academic background and the foundations behind my approach to game development.' },
         { id: 'journey', label: 'Journey', description: 'A timeline of roles, responsibilities, and professional growth across various organizations.' },
         { id: 'experience', label: 'Experience', description: 'Detailed breakdown of work experiences with project highlights and achievements.' },
     ];
