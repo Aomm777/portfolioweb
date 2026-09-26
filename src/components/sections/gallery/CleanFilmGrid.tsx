@@ -32,12 +32,14 @@ export default function CleanFilmGrid({ isLowPowerMode }: { isLowPowerMode?: boo
                 const formattedItems = images.map((img) => ({
                     id: img.id,
                     title: img.title,
-                    type: 'image' as const,
+                    type: img.type,
                     category: img.category,
                     date: '2024',
-                    thumbnail: img.src,
+                    thumbnail: img.poster ?? img.src,
                     url: img.src,
-                    description: `Detail image for ${img.category}`
+                    description: img.type === 'video'
+                        ? `Gameplay video for ${img.category}`
+                        : `Detail image for ${img.category}`
                 }));
                 setGalleryItems(formattedItems);
             } catch (error) {
@@ -458,7 +460,7 @@ export default function CleanFilmGrid({ isLowPowerMode }: { isLowPowerMode?: boo
                     {/* Infinite View Mode */}
                     {viewMode === 'infinite' && (
                         <div className="w-full relative h-[800px] mt-2">
-                            <InfiniteImageField images={galleryItems.map(item => item.url)} />
+                            <InfiniteImageField images={galleryItems.map(item => item.thumbnail || item.url)} />
                         </div>
                     )}
 
@@ -540,11 +542,13 @@ export default function CleanFilmGrid({ isLowPowerMode }: { isLowPowerMode?: boo
                                 isLightboxMaximized ? "rounded-none" : "rounded-sm"
                             )}>
                                 {flattenedFilteredItems[currentIndex].type === 'video' ? (
-                                    <iframe
-                                        src={`${flattenedFilteredItems[currentIndex].url}${flattenedFilteredItems[currentIndex].url.includes('?') ? '&' : '?'}autoplay=1&rel=0`}
-                                        className="w-full h-full"
-                                        allow="autoplay; fullscreen; picture-in-picture"
-                                        allowFullScreen
+                                    <video
+                                        src={flattenedFilteredItems[currentIndex].url}
+                                        poster={flattenedFilteredItems[currentIndex].thumbnail}
+                                        controls
+                                        preload="metadata"
+                                        playsInline
+                                        className="w-full h-full object-contain"
                                     />
                                 ) : (
                                     <div className="relative w-full h-full">

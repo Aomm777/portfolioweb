@@ -1,6 +1,6 @@
 "use client";
 import React from "react";
-import { GraduationCap, BookOpen, Sparkles, Clock } from "lucide-react";
+import { BookOpen, Sparkles, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 import { usePortfolioData } from "@/hooks/usePortfolioData";
@@ -16,62 +16,11 @@ const CornerAccents = ({ hoverClass }: { hoverClass: string }) => (
 
 export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isLowPowerMode?: boolean }) {
     const portfolioData = usePortfolioData();
-    const [higherEducation, highSchool] = portfolioData.education;
+    const highSchool = portfolioData.education[0];
 
     return (
         <div className="w-full max-w-6xl mx-auto p-4 md:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                
-                {/* Current university card */}
-                <motion.div 
-                    initial={isLowPowerMode ? {} : { opacity: 0, y: 20 }}
-                    whileInView={isLowPowerMode ? {} : { opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 0.5 }}
-                    className="col-span-1 border border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-[#0a0a0a] overflow-hidden relative group flex flex-col min-h-[450px] transition-all duration-500 hover:-translate-y-2 hover:shadow-[0_20px_40px_-15px_rgba(59,130,246,0.3)] hover:border-blue-500/50"
-                >
-                    <CornerAccents hoverClass="group-hover:border-blue-500 dark:group-hover:border-blue-400" />
-                    {/* Text Section (Top) */}
-                    <div className="p-8 relative z-10 transition-transform duration-500 group-hover:translate-x-1">
-                        <div className="flex items-center gap-2 mb-4">
-                            <span className="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Higher Education • Current</span>
-                        </div>
-                        <h3 className="text-3xl font-black text-neutral-900 dark:text-white mb-4">{higherEducation.institution}</h3>
-                        <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                            {higherEducation.degree} in {higherEducation.major}. {higherEducation.isOngoing ? "Currently studying." : ""}
-                        </p>
-                    </div>
-
-                    {/* Visual Section (Bottom) */}
-                    <div className="flex-1 flex items-center justify-center relative p-8 mt-auto border-t border-black/10 dark:border-white/10 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5 overflow-hidden">
-                        <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-black/40 to-black/10 dark:from-blue-950/90 dark:via-black/50 dark:to-transparent transition-opacity duration-500 group-hover:opacity-80" />
-
-                        {/* Animated Background Element */}
-                        <div className="absolute inset-0 opacity-10 pointer-events-none">
-                            <div className="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-                        </div>
-
-                        <div className="relative z-10 flex flex-col items-center transition-transform duration-500 group-hover:scale-105">
-                            <div className="relative mb-6">
-                                <GraduationCap className={cn("w-20 h-20 text-white drop-shadow-xl", !isLowPowerMode && "animate-pulse")} />
-                            </div>
-
-                            <div className="flex flex-wrap gap-2 justify-center mb-4">
-                                {[higherEducation.major, ...(higherEducation.gpa ? [`GPA ${higherEducation.gpa}`] : [])].map(s => (
-                                    <span key={s} className="px-3 py-1 rounded-full text-[10px] bg-black/40 dark:bg-white/10 text-white border border-white/20 font-mono font-bold backdrop-blur-md shadow-lg group-hover:bg-blue-600/50 transition-colors">
-                                        {s}
-                                    </span>
-                                ))}
-                            </div>
-                            <p className="text-[10px] font-mono text-white/90 uppercase tracking-widest bg-black/50 px-2 py-1 rounded backdrop-blur-sm border border-white/10 group-hover:border-blue-500/50 transition-colors">{higherEducation.degree}</p>
-                        </div>
-
-                        {/* Holographic Scan Effect */}
-                        {!isLowPowerMode && (
-                            <div className="absolute top-0 left-0 w-full h-[2px] bg-gradient-to-r from-transparent via-blue-400/80 to-transparent animate-scan z-20" />
-                        )}
-                    </div>
-                </motion.div>
 
                 {/* High school card */}
                 <motion.div 
@@ -79,13 +28,13 @@ export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isL
                     whileInView={isLowPowerMode ? {} : { opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ duration: 0.5, delay: 0.2 }}
-                    className="col-span-1 border border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-[#0a0a0a] overflow-hidden relative group flex flex-col min-h-[450px] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_rgba(249,115,22,0.3)] hover:border-orange-500/50 hover:z-10"
+                    className="col-span-1 md:col-span-2 border border-black/10 dark:border-white/10 bg-neutral-100 dark:bg-[#0a0a0a] overflow-hidden relative group flex flex-col min-h-[450px] transition-all duration-500 hover:scale-[1.02] hover:shadow-[0_0_40px_-10px_rgba(249,115,22,0.3)] hover:border-orange-500/50 hover:z-10"
                 >
                     <CornerAccents hoverClass="group-hover:border-orange-500 dark:group-hover:border-orange-400" />
                     {/* Text Section (Top) */}
                     <div className="p-8 relative z-10 transition-transform duration-500">
                         <div className="flex items-center gap-2 mb-4">
-                            <span className="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">Foundation • High School</span>
+                            <span className="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">Education • High School</span>
                         </div>
                         <h3 className="text-3xl font-black text-neutral-900 dark:text-white mb-4">{highSchool.institution}</h3>
                         <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">

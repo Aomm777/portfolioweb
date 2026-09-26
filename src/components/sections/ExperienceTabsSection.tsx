@@ -62,7 +62,7 @@ function EducationContent() {
                         <div className="w-1 h-8 bg-primary rounded-full" />
                         <div>
                             <p className="text-xs font-mono text-muted-foreground tracking-widest uppercase">
-                                — Higher Education • {education.isOngoing ? 'Current' : 'Completed'}
+                                — High School • {education.isOngoing ? 'Current' : 'Completed'}
                             </p>
                         </div>
                     </div>

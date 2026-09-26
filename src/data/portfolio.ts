@@ -225,17 +225,6 @@ export const portfolioData: PortfolioData = {
 
     education: [
         {
-            id: 'edu-1',
-            institution: 'มหาวิทยาลัยมหิดล',
-            degree: 'วิศวกรรมศาสตรบัณฑิต',
-            major: 'วิศวกรรมคอมพิวเตอร์',
-            startDate: '2025-06-01',
-            isOngoing: true,
-            gpa: undefined,
-            activities: ['NSC 2026'],
-            achievements: ['National Software Contest 2026 — เข้ารอบระดับภูมิภาค'],
-        },
-        {
             id: 'edu-2',
             institution: 'โรงเรียนพนัสพิทยาคาร',
             degree: 'มัธยมศึกษาตอนปลาย',
@@ -430,12 +419,6 @@ const englishExperienceCopy: Record<string, Partial<PortfolioData['experiences']
 };
 
 const englishEducationCopy: Record<string, Partial<PortfolioData['education'][number]>> = {
-    'edu-1': {
-        institution: 'Mahidol University',
-        degree: 'Bachelor of Engineering',
-        major: 'Computer Engineering',
-        achievements: ['National Software Contest 2026 — Regional Finalist']
-    },
     'edu-2': {
         institution: 'Phanatpittayakarn School',
         degree: 'High School Diploma',
