@@ -1,7 +1,8 @@
 import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-import { Github, Twitter, Youtube, Linkedin, Instagram, X } from "lucide-react";
+import { Twitter, Youtube, Linkedin, Instagram, X } from "lucide-react";
+import { SiRoblox } from "react-icons/si";
 import { cn } from "@/lib/utils";
 
 export interface ProfileCardProps {
@@ -9,7 +10,7 @@ export interface ProfileCardProps {
   title?: string;
   description?: string;
   imageUrl?: string;
-  githubUrl?: string;
+  robloxUrl?: string;
   twitterUrl?: string;
   youtubeUrl?: string;
   linkedinUrl?: string;
@@ -24,7 +25,7 @@ export function ProfileCard(props: ProfileCardProps) {
     title = "Senior Software Engineer, Cloud Infrastructure",
     description = "Michael Chen is a seasoned software engineer at TechFlow Solutions with over 8 years of experience building scalable cloud infrastructure and microservices. He specializes in DevOps automation and leads the platform engineering team that serves millions of users daily.",
     imageUrl = "https://plus.unsplash.com/premium_photo-1689977807477-a579eda91fa2?q=80&w=600&auto=format&fit=crop&fm=webp&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    githubUrl = "#",
+    robloxUrl = "#",
     twitterUrl = "#",
     youtubeUrl = "#",
     linkedinUrl = "#",
@@ -34,7 +35,7 @@ export function ProfileCard(props: ProfileCardProps) {
   } = props;
 
   const socialIcons = [
-    { icon: Github, url: githubUrl, label: "GitHub" },
+    { icon: SiRoblox, url: robloxUrl, label: "Roblox" },
     { icon: Instagram, url: instagramUrl, label: "Instagram" },
     { icon: Linkedin, url: linkedinUrl, label: "LinkedIn" },
   ].filter(social => social.url !== "#");

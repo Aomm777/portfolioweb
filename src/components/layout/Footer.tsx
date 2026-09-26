@@ -10,10 +10,10 @@ import { useTheme } from 'next-themes';
 import { Spotlight } from '@/components/ui/spotlight-new';
 import {
     ChevronUp,
-    Github,
     Linkedin,
     Twitter,
     Instagram,
+    Facebook,
     Mail,
     Heart,
     Copy,
@@ -28,10 +28,11 @@ import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/useIsMobile';
 import { portfolioData } from '@/data/portfolio';
 
-type SocialIconComponent = typeof Github;
+type SocialIconComponent = typeof Gamepad2;
 
 const socialIcons: { [key: string]: SocialIconComponent } = {
-    github: Github,
+    roblox: Gamepad2,
+    facebook: Facebook,
     linkedin: Linkedin,
     twitter: Bot, // Replaced Twitter logo with AI Bot logo
     instagram: Instagram,
@@ -67,7 +68,7 @@ function Marquee() {
 import { SocialLink } from '@/types/index';
 
 function SocialCard({ social }: { social: SocialLink }) {
-    const Icon = socialIcons[social.icon] || Github;
+    const Icon = socialIcons[social.icon] || Gamepad2;
 
     return (
         <motion.a
@@ -339,7 +340,6 @@ export function Footer() {
                                     <div className="w-full grid grid-cols-4 gap-x-[5vw] gap-y-[4vh]">
                                         <FooterColumn title={t('links')}>
                                             <FooterLink href="/">{tNav('home')}</FooterLink>
-                                            <FooterLink href="/resume">{tNav('resume')}</FooterLink>
                                             <FooterLink href="/contact">{tNav('contact')}</FooterLink>
                                             <AboutHoverMenu tNav={tNav} onExpandChange={setIsAboutExpanded} />
                                         </FooterColumn>
@@ -378,7 +378,7 @@ export function Footer() {
                                             </div>
                                             <FooterLink href={portfolioData.personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url || '#'} target="_blank">LinkedIn</FooterLink>
                                             <FooterLink href={portfolioData.personal.socialLinks.find(s => s.platform === 'Instagram')?.url || '#'} target="_blank">Instagram</FooterLink>
-                                            <FooterLink href={portfolioData.personal.socialLinks.find(s => s.platform === 'GitHub')?.url || '#'} target="_blank">GitHub</FooterLink>
+                                            <FooterLink href={portfolioData.personal.socialLinks.find(s => s.platform === 'Roblox')?.url || '#'} target="_blank">Roblox</FooterLink>
                                         </FooterColumn>
 
                                         <FooterColumn title={t('localTime')}>
@@ -463,7 +463,6 @@ function AboutHoverMenu({ tNav, onExpandChange }: { tNav: (key: string) => strin
         { href: '/skills', label: tNav('skills') },
         { href: '/experience', label: tNav('experience') },
         { href: '/projects', label: tNav('projects') },
-        { href: '/blog', label: tNav('blog') },
         { href: '/gallery', label: tNav('gallery') },
     ];
 
@@ -550,7 +549,3 @@ function AboutHoverMenu({ tNav, onExpandChange }: { tNav: (key: string) => strin
         </div>
     );
 }
-
-
-
-

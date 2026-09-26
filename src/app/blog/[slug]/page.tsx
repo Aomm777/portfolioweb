@@ -6,7 +6,8 @@ import { useTranslations } from 'next-intl';
 import Image from 'next/image';
 import Link from 'next/link';
 import { portfolioData } from '@/data/portfolio';
-import { Clock, Copy, Linkedin, Github, BookOpen, Link as LinkIcon, ArrowLeft, Check } from 'lucide-react';
+import { Clock, Copy, Linkedin, BookOpen, Link as LinkIcon, ArrowLeft, Check } from 'lucide-react';
+import { SiRoblox } from 'react-icons/si';
 import { notFound, useRouter } from 'next/navigation';
 import { cn } from '@/lib/utils';
 
@@ -137,8 +138,8 @@ export default function BlogPostPage({ params }: { params: Promise<{ slug: strin
                             )}
                         </button>
                         <div className="w-px h-6 bg-border/40 hidden sm:block" />
-                        <Link href="https://github.com/Paphangkorn" target="_blank" className="p-2 text-muted-foreground hover:text-primary transition-colors bg-secondary/10 rounded-lg hover:bg-primary/10">
-                            <Github className="w-4 h-4" />
+                        <Link href={portfolioData.personal.socialLinks.find(s => s.platform === 'Roblox')?.url ?? '#'} target="_blank" className="p-2 text-muted-foreground hover:text-primary transition-colors bg-secondary/10 rounded-lg hover:bg-primary/10">
+                            <SiRoblox className="w-4 h-4" />
                         </Link>
                     </div>
                 </div>

@@ -5,7 +5,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { GraduationCap, Briefcase, Rocket, ChevronDown, ChevronRight, Calendar, MapPin } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn, formatDate } from '@/lib/utils';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolioData } from '@/hooks/usePortfolioData';
 import { Education, Experience } from '@/types/index';
 
 type TabType = 'education' | 'journey' | 'experience';
@@ -44,6 +44,7 @@ function TabButton({ label, isActive, onClick, icon }: TabButtonProps) {
 }
 
 function EducationContent() {
+    const portfolioData = usePortfolioData();
     const [showTimeline, setShowTimeline] = useState(false);
     const education = portfolioData.education[0];
 
@@ -168,6 +169,7 @@ function EducationContent() {
 }
 
 function JourneyContent() {
+    const portfolioData = usePortfolioData();
     const experiences = portfolioData.experiences;
 
     const groupedExperiences = useMemo(() => {

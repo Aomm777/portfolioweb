@@ -11,7 +11,7 @@ export interface Project {
     tools: string[];
     status: 'ongoing' | 'completed' | 'planned';
     demoUrl?: string;
-    repoUrl?: string;
+    videoUrl?: string;
     startDate: string;
     endDate?: string;
     highlights?: string[];
@@ -40,6 +40,7 @@ export interface Experience {
     type: 'full-time' | 'part-time' | 'contract' | 'internship' | 'freelance' | 'volunteer' | 'apprenticeship' | 'self-employed';
     logo?: string;
     logoBg?: string;
+    timelineImage?: string;
     link?: string;
     galleryImages?: string[];
     externalLink?: string | string[];
@@ -64,7 +65,7 @@ export interface Achievement {
     id: string;
     title: string;
     issuer: string;
-    date: string;
+    date?: string;
     description?: string;
     image?: string;
     credentialUrl?: string;

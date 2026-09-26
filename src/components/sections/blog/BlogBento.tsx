@@ -2,9 +2,9 @@
 
 import React from "react";
 import { motion } from "framer-motion";
-import { FiArrowRight, FiMail, FiMapPin, FiGithub, FiLinkedin } from "react-icons/fi";
-import { SiSpotify, SiInstagram } from "react-icons/si";
-import { portfolioData } from "@/data/portfolio";
+import { FiArrowRight, FiMail, FiMapPin, FiLinkedin } from "react-icons/fi";
+import { SiRoblox, SiSpotify, SiInstagram } from "react-icons/si";
+import { portfolioData, ROBLOX_PROFILE_URL } from "@/data/portfolio";
 
 export const BlogBento = () => {
     return (
@@ -57,15 +57,16 @@ export const BlogBento = () => {
 
                         <Block
                             whileHover={{ rotate: "-2.5deg", scale: 1.05 }}
-                            className="aspect-square bg-gradient-to-br from-gray-700 to-gray-900"
+                            className="aspect-square bg-gradient-to-br from-[#561125] to-[#84203a]"
                         >
                             <a
-                                href={portfolioData.personal.socialLinks.find(s => s.platform === 'GitHub')?.url || "https://github.com"}
+                                href={ROBLOX_PROFILE_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
                                 className="grid h-full place-content-center text-2xl text-white"
+                                aria-label="Roblox profile"
                             >
-                                <FiGithub />
+                                <SiRoblox />
                             </a>
                         </Block>
 

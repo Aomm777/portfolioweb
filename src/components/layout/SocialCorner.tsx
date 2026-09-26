@@ -1,6 +1,7 @@
 "use client";
 import { motion } from 'framer-motion';
-import { FaLinkedinIn, FaGithub, FaInstagram } from "react-icons/fa";
+import { FaLinkedinIn, FaInstagram } from "react-icons/fa";
+import { SiRoblox } from "react-icons/si";
 import { portfolioData } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 import { ChatBot } from "@/components/layout/ChatBot";
@@ -15,7 +16,7 @@ export const SocialCorner = ({ className, delay = 0.5 }: SocialCornerProps) => {
     return null; // Component disabled per user request
     const linkedinLink = portfolioData.personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url;
     const instagramLink = portfolioData.personal.socialLinks.find(s => s.platform === 'Instagram')?.url;
-    const githubLink = portfolioData.personal.socialLinks.find(s => s.platform === 'GitHub')?.url;
+    const robloxLink = portfolioData.personal.socialLinks.find(s => s.platform === 'Roblox')?.url;
 
     return (
         <motion.div
@@ -31,8 +32,8 @@ export const SocialCorner = ({ className, delay = 0.5 }: SocialCornerProps) => {
                 <a href={instagramLink} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-foreground/5 hover:bg-foreground/10 border border-foreground/10 transition-all hover:scale-110 group">
                     <FaInstagram className="w-5 h-5 text-foreground/60 group-hover:text-foreground" />
                 </a>
-                <a href={githubLink} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-foreground/5 hover:bg-foreground/10 border border-foreground/10 transition-all hover:scale-110 group">
-                    <FaGithub className="w-5 h-5 text-foreground/60 group-hover:text-foreground" />
+                <a href={robloxLink} target="_blank" rel="noopener noreferrer" className="p-3 rounded-full bg-foreground/5 hover:bg-foreground/10 border border-foreground/10 transition-all hover:scale-110 group">
+                    <SiRoblox className="w-5 h-5 text-foreground/60 group-hover:text-foreground" />
                 </a>
 
                 <motion.button

@@ -1,37 +1,19 @@
 'use client';
 
 import { motion, AnimatePresence } from 'framer-motion';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolioData } from '@/hooks/usePortfolioData';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
 import { useState } from 'react';
+import { SoftSkill } from '@/types';
 
 const skillVisuals: Record<string, string> = {
-    'Leadership': 'https://illustrations.popsy.co/white/team-idea.svg',
-    'Communication': 'https://illustrations.popsy.co/white/communication.svg',
-    'Problem Solving': 'https://illustrations.popsy.co/white/genius.svg',
-    'Adaptability': 'https://illustrations.popsy.co/white/creative-work.svg',
-    'Critical Thinking': 'https://illustrations.popsy.co/white/idea-launch.svg',
-    'Public Speaking': 'https://illustrations.popsy.co/white/presentation.svg',
-    'Teamwork': 'https://illustrations.popsy.co/white/shaking-hands.svg',
+    'Team Leadership': '/experience/bronopoly-team-leadership.png',
+    'Teamwork': '/images/heatthieves.png',
+    'Time Management': '/images/heat-thieves-gameplay.jpg',
+    'Mentorship': '/experience/gamepee-camp-detail-1.png',
+    'Problem Solving': '/experience/gamepee-camp-detail-2.png',
     'More': 'https://illustrations.popsy.co/white/abstract-art-6.svg',
-};
-
-// Fallback high-end SVG icons
-const fallbackIcons: Record<string, React.ReactNode> = {
-    'Critical Thinking': (
-        <svg viewBox="0 0 24 24" fill="none" className="w-full h-full stroke-foreground/20 stroke-[0.5]" xmlns="http://www.w3.org/2000/svg">
-            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" />
-            <path d="M12 16V12M12 8H12.01" strokeWidth="2" strokeLinecap="round" />
-        </svg>
-    ),
-    'Teamwork': (
-        <svg viewBox="0 0 24 24" fill="none" className="w-full h-full stroke-foreground/20 stroke-[0.5]" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="9" cy="7" r="4" />
-            <path d="M17 21V19C17 17.9391 16.5786 17.0217 15.8284 16.2716M23 21V19C23 17.9391 22.5786 17.0217 21.8284 16.2716" />
-            <path d="M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" />
-        </svg>
-    )
 };
 
 const EXTRA_SKILLS = [
@@ -46,7 +28,8 @@ const EXTRA_SKILLS = [
 ];
 
 export const SoftSkills = () => {
-    const skills = portfolioData.softSkills.slice(0, 7); // Use top 7 skills for a tight bento
+    const portfolioData = usePortfolioData();
+    const skills = portfolioData.softSkills;
 
     return (
         <section id="soft-skills" className="py-32 px-6 relative overflow-hidden bg-background">
@@ -75,29 +58,17 @@ export const SoftSkills = () => {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <BentoSkillCard skill={skills[0]} index={1} illustration={skillVisuals['Leadership']} />
-                    <BentoSkillCard skill={skills[1]} index={2} illustration={skillVisuals['Critical Thinking']} />
-                    <BentoSkillCard skill={skills[2]} index={3} illustration={skillVisuals['Public Speaking']} />
-
-                    <BentoSkillCard
-                        skill={skills[6]}
-                        index={4}
-                        className="lg:col-span-2"
-                        illustration={skillVisuals['Adaptability']}
-                        isWide
-                    />
-
-                    {/* Item 05: Problem Solving (Normal) */}
-                    <BentoSkillCard skill={skills[5]} index={5} illustration={skillVisuals['Problem Solving']} />
-
-                    {/* Item 06: Communication (Normal) */}
-                    <BentoSkillCard skill={skills[4]} index={6} illustration={skillVisuals['Communication']} />
-
-                    {/* Item 07: Teamwork (Normal) */}
-                    <BentoSkillCard skill={skills[3]} index={7} illustration={skillVisuals['Teamwork']} />
+                    {skills.map((skill, index) => (
+                        <BentoSkillCard
+                            key={skill.name}
+                            skill={skill}
+                            index={index + 1}
+                            illustration={skillVisuals[skill.name]}
+                        />
+                    ))}
 
                     {/* Item 08: More (Interactive) */}
-                    <BentoMoreCard index={8} />
+                    <BentoMoreCard index={skills.length + 1} />
                 </div>
             </div>
 
@@ -114,7 +85,7 @@ const BentoSkillCard = ({
     illustration,
     isWide
 }: {
-    skill: any,
+    skill: SoftSkill,
     index: number,
     className?: string,
     illustration?: string,
@@ -151,16 +122,15 @@ const BentoSkillCard = ({
                         <Image
                             src={illustration}
                             alt={skill.name}
-                            width={320}
-                            height={320}
-                            className="object-contain relative z-10 group-hover:scale-105 group-hover:-rotate-1 transition-transform duration-700 dark:invert-0 invert opacity-90 group-hover:opacity-100"
+                            fill
+                            sizes="(max-width: 768px) 100vw, 33vw"
+                            className={cn(
+                                "relative z-10 group-hover:scale-105 transition-transform duration-700 opacity-90 group-hover:opacity-100",
+                                illustration.startsWith('/') ? "object-cover rounded-2xl" : "object-contain invert dark:invert-0"
+                            )}
                         />
                     </div>
-                ) : (
-                    <div className="w-32 h-32 opacity-10 group-hover:opacity-30 group-hover:scale-110 transition-all duration-700">
-                        {fallbackIcons[skill.name] || fallbackIcons['Critical Thinking']}
-                    </div>
-                )}
+                ) : null}
             </div>
 
             {/* Bottom: Description & Terminology */}

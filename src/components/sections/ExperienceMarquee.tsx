@@ -9,8 +9,6 @@ import {
     useAnimationFrame,
 } from "framer-motion";
 import Image from "next/image";
-import { portfolioData } from "@/data/portfolio";
-import { Experience } from "@/types";
 import { usePerformance } from "@/hooks/usePerformance";
 import { cn } from "@/lib/utils";
 
@@ -141,77 +139,46 @@ function ParallaxText({ children, baseVelocity = 100, isLowPowerMode = false }: 
     );
 }
 
-const GalleryItem = ({ logoSrc }: { logoSrc: string }) => {
-    // Only invert logos that are purely black text on transparent backgrounds in dark mode.
-    const needsInvertInDarkMode = logoSrc.includes("McKinsey") ||
-        logoSrc.includes("TelkomUniversity") ||
-        logoSrc.includes("softagelogo") ||
-        logoSrc.includes("dinas-pangan");
-
-    const needsWhiteBgRemovalInDarkMode = logoSrc.includes("logobei") || logoSrc.includes("birulangit");
-
-    // FlyRank is a white text logo, so it's invisible on light backgrounds. We invert it in Light Mode.
-    const needsInvertInLightMode = logoSrc.includes("flyrank") || logoSrc.includes("FlyRank");
-
-    let specificClasses = "";
-    if (needsInvertInDarkMode) specificClasses = "dark:invert";
-    if (needsWhiteBgRemovalInDarkMode) specificClasses = "dark:invert dark:hue-rotate-180";
-    if (needsInvertInLightMode) specificClasses = "invert dark:invert-0";
-
+const GalleryItem = ({ image }: { image: { src: string; alt: string; title: string } }) => {
     return (
-        <div className="relative shrink-0 w-[clamp(140px,30vw,200px)] h-[clamp(80px,15vw,120px)] md:w-[280px] md:h-[160px] flex items-center justify-center group cursor-pointer transition-all duration-300 hover:scale-105">
+        <div className="relative shrink-0 w-[clamp(180px,38vw,280px)] h-[clamp(110px,22vw,160px)] md:w-[280px] md:h-[160px] overflow-hidden rounded-xl border border-neutral-200/70 dark:border-neutral-700/70 bg-neutral-100 dark:bg-neutral-900 group transition-all duration-300 hover:scale-[1.03] hover:shadow-xl">
             <Image
-                src={logoSrc}
-                alt="Partner Logo"
+                src={image.src}
+                alt={image.alt}
                 fill
                 sizes="(max-width: 768px) 160px, 280px"
-                priority
                 unoptimized
-                className={`object-contain grayscale hover:grayscale-0 opacity-70 group-hover:opacity-100 transition-all duration-300 scale-90 md:scale-100 ${specificClasses}`}
+                className="object-cover transition-transform duration-500 group-hover:scale-105"
             />
+            <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 to-transparent px-3 pb-2 pt-7 text-xs font-semibold text-white opacity-90">
+                {image.title}
+            </div>
         </div>
     );
 };
 
 export default function ExperienceMarquee() {
     const { isLowPowerMode } = usePerformance();
-    const allLogos = [
-        "/assets/DBSLogo.webp",
-        "/assets/HMITlogo.webp",
-        "/assets/HumicLogo.webp",
-        "/assets/McKinseylogo.webp",
-        "/assets/TelkomUniversityLogo.webp",
-        "/assets/aieseclogo.webp",
-        "/assets/aselablogo.webp",
-        "/assets/birulangitlogo.webp",
-        "/assets/cisometriclogo.webp",
-        "/assets/dicodinglogo.webp",
-        "/assets/dinas-pangan-dan-pertanian-kota-bandung.webp",
-        "/assets/flyrankailogo.webp",
-        "/assets/iflablogo.webp",
-        "/assets/indosat-ooredoo-hutchison-digital-camp.webp",
-        "/assets/logobei.webp",
-        "/assets/logocps.webp",
-        "/assets/logodigistar.webp",
-        "/assets/logogdsc.webp",
-        "/assets/microsotlogo.webp",
-        "/assets/sman88logo.webp",
-        "/assets/softagelogo.webp",
-        "/assets/yotlogo.webp",
-        "/assets/youth-ranger-indonesia.webp"
+    const featuredWorks = [
+        { src: "/images/bronopoly.png", alt: "Bronopoly Roblox game cover", title: "Bronopoly" },
+        { src: "/images/heatthieves.png", alt: "HEAT THIEVES Roblox game cover", title: "HEAT THIEVES" },
+        { src: "/images/anime-royale.png", alt: "Anime Royale Roblox game cover", title: "Anime Royale" },
+        { src: "/images/escape-lab.png", alt: "Escape Lab Roblox game cover", title: "Escape Lab" },
+        { src: "/experience/ai-camp-timeline.png", alt: "HamsterHub AI Camp poster", title: "HamsterHub AI Camp" },
+        { src: "/experience/gamepee-camp-timeline.png", alt: "GamePee Camp poster", title: "GamePee Camp" },
     ];
-
-    // Balance rows: 12 in row 1, 11 in row 2
-    const row1 = allLogos.slice(0, 12);
-    const row2 = allLogos.slice(12);
-
-    const ensureLength = (items: string[]) => {
-        let repeated = [...items];
-        while (repeated.length < 12) {
-            repeated = [...repeated, ...items];
-        }
-        return repeated;
-    };
+    const workDetails = [
+        { src: "/project/bronopoly1.png", alt: "Bronopoly gameplay screenshot", title: "Bronopoly Gameplay" },
+        { src: "/project/bronopoly2.png", alt: "Bronopoly game development screenshot", title: "Bronopoly Development" },
+        { src: "/project/bronopoly3.png", alt: "Bronopoly game feature screenshot", title: "Bronopoly Features" },
+        { src: "/project/animeroyale1.png", alt: "Anime Royale gameplay screenshot", title: "Anime Royale Gameplay" },
+        { src: "/project/escapelab1.png", alt: "Escape Lab gameplay screenshot", title: "Escape Lab Gameplay" },
+        { src: "/experience/ai-camp-project-setup.png", alt: "AI Camp participant project setup", title: "AI Camp Projects" },
+        { src: "/experience/ai-camp-gameplay.png", alt: "AI Camp game project gameplay", title: "AI Camp Gameplay" },
+        { src: "/experience/gamepee-camp-detail-1.png", alt: "GamePee Camp Roblox Studio project", title: "GamePee Camp Project" },
+        { src: "/experience/gamepee-camp-detail-2.png", alt: "GamePee Camp game development view", title: "GamePee Camp Development" },
+    ];
+    const repeatToFillRow = (items: typeof featuredWorks) => [...items, ...items];
 
     return (
         <section className="py-2 md:py-8 bg-background relative z-10 overflow-hidden">
@@ -222,15 +189,15 @@ export default function ExperienceMarquee() {
             <div className="flex flex-col gap-2">
                 {/* Row 1: LEFT → RIGHT */}
                 <ParallaxText baseVelocity={40} isLowPowerMode={isLowPowerMode}>
-                    {ensureLength(row1).map((logo, idx) => (
-                        <GalleryItem key={`r1-${idx}`} logoSrc={logo} />
+                    {repeatToFillRow(featuredWorks).map((image, idx) => (
+                        <GalleryItem key={`r1-${idx}`} image={image} />
                     ))}
                 </ParallaxText>
 
                 {/* Row 2: RIGHT → LEFT */}
                 <ParallaxText baseVelocity={-40} isLowPowerMode={isLowPowerMode}>
-                    {ensureLength(row2).map((logo, idx) => (
-                        <GalleryItem key={`r2-${idx}`} logoSrc={logo} />
+                    {repeatToFillRow(workDetails).map((image, idx) => (
+                        <GalleryItem key={`r2-${idx}`} image={image} />
                     ))}
                 </ParallaxText>
             </div>

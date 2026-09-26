@@ -8,7 +8,7 @@ import { useLenis } from 'lenis/react';
 import { useTranslations } from 'next-intl';
 import { Search, X, Layers, ArrowRight, ArrowUpRight, Sparkles, Code2, Zap, Cpu, Wifi, Blocks, Globe, LayoutGrid, List } from 'lucide-react';
 import { cn } from '@/lib/utils';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolioData } from '@/hooks/usePortfolioData';
 import { Project } from '@/types';
 import { HeroParallax } from '@/components/ui/hero-parallax';
 import { LogoTimeline, LogoItem } from '@/components/ui/logo-timeline';
@@ -18,10 +18,8 @@ import { ProjectContact } from '@/components/sections/ProjectContact';
 import { ProjectStats } from '@/components/sections/ProjectStats';
 
 import { usePerformance } from '@/hooks/usePerformance';
-import { ProjectPlaceholder, getPlaceholderImageUrl } from '@/components/projects/ProjectPlaceholder';
+import { ProjectPlaceholder } from '@/components/projects/ProjectPlaceholder';
 import { DeferredMount } from '@/components/ui/DeferredMount';
-
-import { getProjectImages } from '@/app/actions/getProjectImages';
 
 type FilterType = 'all' | 'ongoing' | 'completed';
 
@@ -956,6 +954,7 @@ const getIconKey = (name: string): keyof typeof Icons => {
 };
 
 export default function ProjectsPage() {
+    const portfolioData = usePortfolioData();
     const t = useTranslations('projects');
     const [searchQuery, setSearchQuery] = useState('');
     const [filter, setFilter] = useState<FilterType>('all');
@@ -987,7 +986,7 @@ export default function ProjectsPage() {
 
         const baseProducts = portfolioData.projects.map((p, i) => ({
             title: p.title,
-            link: p.repoUrl || p.demoUrl || '#',
+            link: p.demoUrl && p.demoUrl !== '#' ? p.demoUrl : `/projects/${p.slug}`,
             thumbnail: p.image || techImages[i % techImages.length]
         }));
         // Pad to 10 items with index suffix to avoid duplicate keys
@@ -997,7 +996,7 @@ export default function ProjectsPage() {
             padded.push({ ...base, title: i < baseProducts.length ? base.title : `${base.title} ${Math.floor(i / baseProducts.length) + 1}` });
         }
         return padded;
-    }, []);
+    }, [portfolioData.projects]);
 
     // Generate Timeline Items - delay is calculated in component based on index
     const timelineItems: LogoItem[] = useMemo(() => {
@@ -1020,7 +1019,7 @@ export default function ProjectsPage() {
                 row: row
             };
         });
-    }, []);
+    }, [portfolioData.techStack, portfolioData.tools]);
 
     const [selectedCategory, setSelectedCategory] = useState('All');
 
@@ -1029,33 +1028,7 @@ export default function ProjectsPage() {
         { id: 'Game Development', label: 'Game Development', icon: Code2 },
     ];
 
-    const [projects, setProjects] = useState(portfolioData.projects);
-
-    useEffect(() => {
-        const loadImages = async () => {
-            const updatedProjects = await Promise.all(
-                portfolioData.projects.map(async (project) => {
-                    // Try to find dynamic images
-                    try {
-                        const images = await getProjectImages(project.slug, project.title);
-                        if (images.length > 0) {
-                            return { ...project, image: images[0] }; // Use first image as cover
-                        }
-                    } catch (e) {
-                        console.error("Failed to load images for", project.title, e);
-                    }
-
-                    // Preload the placeholder image if no dynamic image is found
-                    const img = new Image();
-                    img.src = getPlaceholderImageUrl(project.title);
-
-                    return project;
-                })
-            );
-            setProjects(updatedProjects);
-        };
-        loadImages();
-    }, []);
+    const projects = portfolioData.projects;
 
     const filteredProjects = useMemo(() => {
         let currentProjects = [...projects];

@@ -1,10 +1,12 @@
 import * as React from "react";
 import { motion, useScroll, useTransform, useSpring } from "framer-motion";
-import { ArrowRight, ChevronDown, Github, ArrowUpRight } from "lucide-react";
+import { ArrowRight, ChevronDown, ArrowUpRight } from "lucide-react";
+import { SiRoblox } from "react-icons/si";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import MagneticEffect from "@/components/ui/MagneticEffect";
-import { portfolioData } from "@/data/portfolio";
+import { ROBLOX_PROFILE_URL } from "@/data/portfolio";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 
 interface ProjectData {
   title: string;
@@ -15,16 +17,16 @@ interface ProjectData {
   slug: string;
 }
 
-const PROJECT_DATA: ProjectData[] = portfolioData.projects.map((project) => ({
-  title: project.title,
-  image: project.image ?? '/images/profile.png',
-  category: project.category ?? 'Game Development',
-  year: project.startDate.slice(0, 4),
-  description: project.description,
-  slug: project.slug,
-}));
-
 export function ArgentLoopInfiniteSlider() {
+  const portfolioData = usePortfolioData();
+  const projectData: ProjectData[] = portfolioData.projects.map((project) => ({
+    title: project.title,
+    image: project.image ?? '/images/profile.png',
+    category: project.category ?? 'Game Development',
+    year: project.startDate.slice(0, 4),
+    description: project.description,
+    slug: project.slug,
+  }));
   const containerRef = React.useRef<HTMLDivElement>(null);
   
   const { scrollYProgress } = useScroll({
@@ -35,14 +37,14 @@ export function ArgentLoopInfiniteSlider() {
   const smoothProgress = useSpring(scrollYProgress, { stiffness: 60, damping: 30, mass: 1 });
 
   const projectArea = 0.85;
-  const projectStep = projectArea / PROJECT_DATA.length; 
+  const projectStep = projectArea / projectData.length;
   const transWindow = 0.05; 
 
   const scrollMap = [0];
   const yMap = ["0vh"];
   const internalYMap = ["0px"];
 
-  PROJECT_DATA.forEach((_, i) => {
+  projectData.forEach((_, i) => {
     if (i === 0) return;
     const boundary = i * projectStep;
     scrollMap.push(boundary - transWindow / 2, boundary + transWindow / 2);
@@ -51,8 +53,8 @@ export function ArgentLoopInfiniteSlider() {
   });
 
   scrollMap.push(projectArea, 1);
-  yMap.push(`-${(PROJECT_DATA.length-1)*100}vh`, `-${(PROJECT_DATA.length-1)*100}vh`);
-  internalYMap.push(`-${(PROJECT_DATA.length-1)*250}px`, `-${(PROJECT_DATA.length-1)*250}px`);
+  yMap.push(`-${(projectData.length-1)*100}vh`, `-${(projectData.length-1)*100}vh`);
+  internalYMap.push(`-${(projectData.length-1)*250}px`, `-${(projectData.length-1)*250}px`);
 
   const currentY = useTransform(smoothProgress, scrollMap, yMap);
   const contentInternalY = useTransform(smoothProgress, scrollMap, internalYMap);
@@ -192,7 +194,7 @@ export function ArgentLoopInfiniteSlider() {
             transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
         }
         .custom-btn-arrow,
-        .custom-btn-github {
+        .custom-btn-roblox {
             background: black;
             color: white;
             width: 58px;
@@ -207,13 +209,12 @@ export function ArgentLoopInfiniteSlider() {
         /* DARK MODE Base State */
         .dark .custom-btn,
         .dark .custom-btn-arrow,
-        .dark .custom-btn-github {
+        .dark .custom-btn-roblox {
             background: white;
             color: black;
         }
 
-        /* Independent GitHub hover */
-        .custom-btn-github:hover {
+        .custom-btn-roblox:hover {
             background: #c1e44a !important;
             color: black !important;
         }
@@ -252,7 +253,7 @@ export function ArgentLoopInfiniteSlider() {
         <motion.div style={{ opacity: bgOpacity }}>
           <div className="mist-overlay" />
           <motion.div className="project-list" style={{ y: currentY }}>
-            {PROJECT_DATA.map((data, i) => (
+            {projectData.map((data, i) => (
               <div key={i} className="project" style={{ top: `${i * 100}vh` }}>
                 <motion.img src={data.image} alt={data.title} style={{ y: imageY }} />
               </div>
@@ -269,7 +270,7 @@ export function ArgentLoopInfiniteSlider() {
               <div className="minimap-content-viewport">
                 <div className="minimap-img-preview">
                   <motion.div style={{ y: contentInternalY }} className="w-full h-full relative">
-                    {PROJECT_DATA.map((data, i) => (
+                    {projectData.map((data, i) => (
                       <div key={i} className="minimap-img-item" style={{ top: `${i * 250}px` }}>
                         <img src={data.image} alt={data.title} className="block w-full h-full object-cover" />
                       </div>
@@ -278,7 +279,7 @@ export function ArgentLoopInfiniteSlider() {
                 </div>
                 <div className="minimap-info-list">
                   <motion.div style={{ y: contentInternalY }} className="w-full h-full relative">
-                    {PROJECT_DATA.map((data, i) => {
+                    {projectData.map((data, i) => {
                       const num = (i + 1).toString().padStart(2, "0");
                       return (
                         <div key={i} className="minimap-item-info" style={{ top: `${i * 250}px` }}>
@@ -321,13 +322,13 @@ export function ArgentLoopInfiniteSlider() {
                 <div className="flex items-center gap-4 pointer-events-auto">
                   <MagneticEffect>
                     <a 
-                      href="https://github.com/Paphangkorn" 
+                      href={ROBLOX_PROFILE_URL}
                       target="_blank" 
                       rel="noopener noreferrer"
-                      className="custom-btn-github hover:scale-110 active:scale-95 transition-transform shadow-xl block"
-                      title="GitHub Profile"
+                      className="custom-btn-roblox hover:scale-110 active:scale-95 transition-transform shadow-xl block"
+                      title="Roblox Profile"
                     >
-                      <Github className="w-6 h-6" />
+                      <SiRoblox className="w-6 h-6" />
                     </a>
                   </MagneticEffect>
                   
@@ -360,8 +361,8 @@ export function ArgentLoopInfiniteSlider() {
            </div>
            <motion.span className="text-foreground font-mono text-[11px] tabular-nums font-bold">
               {useTransform(smoothProgress, (v) => {
-               const idx = Math.min(Math.floor(v / projectStep), PROJECT_DATA.length - 1);
-               return `${idx + 1} / ${PROJECT_DATA.length}`;
+               const idx = Math.min(Math.floor(v / projectStep), projectData.length - 1);
+               return `${idx + 1} / ${projectData.length}`;
              })}
            </motion.span>
         </motion.div>

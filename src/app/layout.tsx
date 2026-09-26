@@ -39,11 +39,11 @@ export const metadata: Metadata = {
     keywords: ['portfolio', 'game developer', 'Roblox', 'Lua', 'game design', 'game systems'],
     authors: [{ name: 'Paphangkorn' }],
     creator: 'Paphangkorn',
-    metadataBase: new URL('https://github.com/Paphangkorn'),
+    metadataBase: new URL('https://portfolio-sable-pi.vercel.app'),
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://github.com/Paphangkorn',
+        url: 'https://portfolio-sable-pi.vercel.app',
         title: 'Paphangkorn | Roblox Game Developer',
         description: 'Roblox game developer focused on Lua scripting, game logic, and system design.',
         siteName: 'Portfolio',

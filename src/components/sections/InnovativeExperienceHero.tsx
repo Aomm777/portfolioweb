@@ -2,11 +2,10 @@
 
 import { useState, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
-import { Plus, ArrowRight } from 'lucide-react';
+import { Plus } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import Image from 'next/image';
-import Link from 'next/link';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolioData } from '@/hooks/usePortfolioData';
 
 interface NodeData {
     label: string;
@@ -33,28 +32,28 @@ function makeOrbitNodes(entries: { label: string; description: string; imageUrl?
     }));
 }
 
-const NODES_DATA: Record<string, NodeData[]> = {
-    education: makeOrbitNodes(portfolioData.education.map((education) => ({
-        label: education.institution,
-        description: `${education.degree} in ${education.major}${education.gpa ? ` (GPA ${education.gpa})` : ''}.`,
-    }))),
-    journey: makeOrbitNodes(portfolioData.projects.map((project) => ({
-        label: project.title,
-        description: project.description,
-        ...(project.image ? { imageUrl: project.image } : {}),
-    }))),
-    experience: makeOrbitNodes(portfolioData.experiences.map((experience) => ({
-        label: `${experience.position} — ${experience.company}`,
-        description: experience.description,
-        ...(experience.galleryImages?.[0] ? { imageUrl: experience.galleryImages[0] } : {}),
-    }))),
-};
-
 const OUTER_PATH = "M 100,300 a 400,180 -15 1,0 800,0 a 400,180 -15 1,0 -800,0";
 const INNER_PATH = "M 250,300 a 250,110 -15 1,0 500,0 a 250,110 -15 1,0 -500,0";
 
 export function InnovativeExperienceHero({ type, title, highlight, description }: InnovativeExperienceHeroProps) {
-    const rawNodes = NODES_DATA[type] || NODES_DATA.experience;
+    const portfolioData = usePortfolioData();
+    const nodeData: Record<string, NodeData[]> = {
+        education: makeOrbitNodes(portfolioData.education.map((education) => ({
+            label: education.institution,
+            description: `${education.degree} in ${education.major}${education.gpa ? ` (GPA ${education.gpa})` : ''}.`,
+        }))),
+        journey: makeOrbitNodes(portfolioData.projects.map((project) => ({
+            label: project.title,
+            description: project.description,
+            ...(project.image ? { imageUrl: project.image } : {}),
+        }))),
+        experience: makeOrbitNodes(portfolioData.experiences.map((experience) => ({
+            label: `${experience.position} — ${experience.company}`,
+            description: experience.description,
+            ...(experience.galleryImages?.[0] ? { imageUrl: experience.galleryImages[0] } : {}),
+        }))),
+    };
+    const rawNodes = nodeData[type] || nodeData.experience;
     const [hoveredNode, setHoveredNode] = useState<string | null>(null);
 
     return (
@@ -79,14 +78,6 @@ export function InnovativeExperienceHero({ type, title, highlight, description }
                             {description}
                         </p>
 
-                        <div className="pt-4">
-                            <Link
-                                href="/resume"
-                                className="group flex items-center gap-2 w-fit px-6 py-3 rounded-xl bg-neutral-100 dark:bg-neutral-800 text-black dark:text-white font-bold text-sm transition-all hover:bg-neutral-200 dark:hover:bg-neutral-700"
-                            >
-                                View resume <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                            </Link>
-                        </div>
                     </motion.div>
                 </div>
 

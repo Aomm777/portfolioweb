@@ -10,10 +10,12 @@ import { useTheme } from "next-themes";
 import ImageTrail from "@/components/ImageTrail";
 import Image from "next/image";
 import InfiniteMenu from "@/components/InfiniteMenu";
-import { portfolioData } from "@/data/portfolio";
+import { ROBLOX_PROFILE_URL } from "@/data/portfolio";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 import { BeamDivider } from "@/components/ui/BeamDivider";
 import ScrollReveal from "@/components/ScrollReveal";
-import { Github, Linkedin, Instagram, MessageSquare, ArrowRight, ArrowUpRight } from "lucide-react";
+import { Linkedin, Instagram, MessageSquare, ArrowRight, ArrowUpRight } from "lucide-react";
+import { SiRoblox } from "react-icons/si";
 import { useIsMobile } from "@/hooks/useIsMobile";
 import { useCountUp } from "@/hooks/useCountUp";
 import { SocialCorner } from "@/components/layout/SocialCorner";
@@ -26,29 +28,9 @@ import Bucket from "@/components/ui/bucket";
 import { ArgentLoopInfiniteSlider } from "@/components/ui/argent-loop-infinite-slider";
 import { HorizontalTimeline } from "@/components/ui/horizontal-timeline";
 import { CertificateShowcase } from "@/components/ui/certificate-marquee";
-import { GitHubShowcase } from "@/components/ui/github-showcase";
 import KaggleShowcase from "@/components/ui/kaggle-showcase";
 import { WakaTimeShowcase } from "@/components/ui/wakatime-showcase";
 import { ShowcaseStack } from "@/components/ui/showcase-stack";
-
-const showcaseMembers = [
-    ...portfolioData.experiences.map((experience) => ({
-        id: experience.id,
-        name: experience.company,
-        role: experience.position,
-        description: experience.description,
-        period: `${experience.startDate} — ${experience.isOngoing ? 'Present' : experience.endDate ?? ''}`,
-        image: experience.galleryImages?.[0] ?? '/images/profile.png',
-        social: { website: '/experience' },
-    })),
-    {
-        id: 'view-more',
-        name: 'View more',
-        role: 'Explore all experiences',
-        image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop',
-        social: { website: '/experience' }
-    }
-];
 
 const GALLERY_IMAGES = [
     "/gallery/Foto Utama.webp",
@@ -520,7 +502,25 @@ const ScrollHijackSection = () => {
 };
 
 export default function AboutSection() {
-    console.log('SHOWCASE MEMBERS:', showcaseMembers.map(m => m.id));
+    const portfolioData = usePortfolioData();
+    const showcaseMembers = [
+        ...portfolioData.experiences.map((experience) => ({
+            id: experience.id,
+            name: experience.company,
+            role: experience.position,
+            description: experience.description,
+            period: `${experience.startDate} — ${experience.isOngoing ? 'Present' : experience.endDate ?? ''}`,
+            image: experience.galleryImages?.[0] ?? '/images/profile.png',
+            social: { website: '/experience' },
+        })),
+        {
+            id: 'view-more',
+            name: 'View more',
+            role: 'Explore all experiences',
+            image: 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?q=80&w=1964&auto=format&fit=crop',
+            social: { website: '/experience' }
+        }
+    ];
     const containerRef = useRef<HTMLElement>(null);
     const { scrollYProgress } = useScroll({
         target: containerRef,
@@ -633,7 +633,22 @@ export default function AboutSection() {
                         {/* Stacking Card Showcases */}
                         <ShowcaseStack>
                             <div className="w-full">
-                                <GitHubShowcase />
+                                <a
+                                    href={ROBLOX_PROFILE_URL}
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="group flex min-h-[320px] w-full flex-col items-center justify-center gap-6 rounded-[3rem] border border-border/50 bg-card p-10 text-center transition-colors hover:border-primary/40 hover:bg-primary/[0.03]"
+                                >
+                                    <SiRoblox className="h-16 w-16 text-primary transition-transform group-hover:scale-110" />
+                                    <div className="space-y-2">
+                                        <h3 className="text-3xl font-black tracking-tight text-foreground">Find me on Roblox</h3>
+                                        <p className="max-w-md text-muted-foreground">Visit my Roblox profile to see my games and creations.</p>
+                                    </div>
+                                    <span className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground">
+                                        Open Roblox Profile
+                                        <ArrowUpRight className="h-4 w-4" />
+                                    </span>
+                                </a>
                             </div>
                             <div className="w-full">
                                 <KaggleShowcase />

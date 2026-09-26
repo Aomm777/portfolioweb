@@ -1,13 +1,13 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { portfolioData } from '@/data/portfolio';
+import { getPortfolioData } from '@/data/portfolio';
 
 // ─── Build system prompt from portfolio data ─────────────────────────────────
 function buildSystemPrompt(locale: string = 'en'): string {
-    const { personal, projects, experiences, education, hardSkills, achievements, softSkills, tools } = portfolioData;
+    const { personal, projects, experiences, education, hardSkills, achievements, softSkills, tools } = getPortfolioData(locale);
 
     const projectList = projects
         .map((p) =>
-            `- ${p.title} (${p.category}): ${p.description}. Tech: ${(p.techStack ?? []).join(', ')}. Role: ${p.role ?? 'Developer'}. ${p.demoUrl && p.demoUrl !== '#' ? `Demo: ${p.demoUrl}` : ''} ${p.repoUrl ? `Repo: ${p.repoUrl}` : ''}`
+            `- ${p.title} (${p.category}): ${p.description}. Tech: ${(p.techStack ?? []).join(', ')}. Role: ${p.role ?? 'Developer'}. ${p.demoUrl && p.demoUrl !== '#' ? `Demo: ${p.demoUrl}` : ''}`
         )
         .join('\n');
 
@@ -49,7 +49,7 @@ function buildSystemPrompt(locale: string = 'en'): string {
 - Location: ${personal.location}
 - Email: ${personal.email}
 - Languages: ${(personal.languages ?? []).map((l: any) => `${l.name} (${l.level})`).join(', ')}
-- GitHub: ${(personal.socialLinks ?? []).find((s: any) => s.platform === 'GitHub')?.url ?? ''}
+- Roblox: ${(personal.socialLinks ?? []).find((s: any) => s.platform === 'Roblox')?.url ?? ''}
 - LinkedIn: ${(personal.socialLinks ?? []).find((s: any) => s.platform === 'LinkedIn')?.url ?? ''}
 
 ## Projects (${(projects ?? []).length} total)
@@ -74,7 +74,7 @@ ${toolList || 'No tools are listed.'}
 ${achievementList || 'See portfolio for details.'}
 
 ## Instructions
-- Answer in ${locale === 'id' ? 'Indonesian' : 'English'} (the current interface language). However, if the user asks in a different language, feel free to respond in that language too, while maintaining a professionally friendly tone.
+- Answer in ${locale === 'th' ? 'Thai' : 'English'} (the current interface language). However, if the user asks in a different language, feel free to respond in that language too, while maintaining a professionally friendly tone.
 - Be concise but informative. Use bullet points for lists.
 - If asked about something not in the portfolio, politely say you only have information about ${personal.name}'s portfolio.
 - When recommending projects, include demo links if available.

@@ -3,14 +3,14 @@
 import { useState, useEffect, useMemo, useRef } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { X, Calendar, Code, Box, Award, Share2, ExternalLink, Github, Terminal, ChevronRight, ChevronLeft, CheckCircle2, Copy, Check, Maximize2, ArrowUpRight, Zap, Sparkles, ArrowLeft, Clock, Users, Layers, LayoutGrid, ArrowRight } from 'lucide-react';
+import { X, Calendar, Code, Box, Award, Share2, ExternalLink, Terminal, ChevronRight, ChevronLeft, CheckCircle2, Copy, Check, Maximize2, ArrowUpRight, Zap, Sparkles, ArrowLeft, Clock, Users, Layers, LayoutGrid, ArrowRight, Film } from 'lucide-react';
 import { cn, formatDate } from '@/lib/utils';
 import { Project } from '@/types';
 import { TechStack } from './TechStack';
 import { ProjectPlaceholder } from './ProjectPlaceholder';
 import Link from 'next/link';
 import { useRouter } from 'next/navigation';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolioData } from '@/hooks/usePortfolioData';
 
 // --- Animated Terminal Component ---
 const TerminalBlock = ({ title, code }: { title: string; code: string }) => {
@@ -82,7 +82,7 @@ const ProjectGallery = ({
     viewLessText: string
 }) => {
     const [showAll, setShowAll] = useState(false);
-    const visibleImages = showAll ? images : images.slice(0, 2);
+    const visibleImages = showAll ? images : images.slice(0, 3);
 
     return (
         <div className="flex flex-col gap-8 pb-12">
@@ -116,7 +116,7 @@ const ProjectGallery = ({
                 ))}
             </div>
 
-            {images.length > 2 && (
+            {images.length > 3 && (
                 <div className="flex justify-center pt-4">
                     <button
                         onClick={() => setShowAll(!showAll)}
@@ -173,6 +173,7 @@ const Typewriter = ({ examples }: { examples: string[] }) => {
 export function ProjectPageContent({ project, isLowPowerMode }: { project: Project; isLowPowerMode?: boolean }) {
     const t = useTranslations('projects');
     const tCommon = useTranslations('common');
+    const portfolioData = usePortfolioData();
     const router = useRouter();
     const isOngoing = project.status === 'ongoing';
     const [selectedImage, setSelectedImage] = useState<string | null>(null);
@@ -191,7 +192,7 @@ export function ProjectPageContent({ project, isLowPowerMode }: { project: Proje
         const others = portfolioData.projects.filter(p => p.id !== project.id);
         // We take the first 5 projects. We avoid Math.random() here to prevent SSR hydration mismatch!
         return others.slice(0, 5);
-    }, [project.id]);
+    }, [portfolioData.projects, project.id]);
 
     return (
         <div className="min-h-screen bg-background text-foreground pb-24 pt-24 sm:pt-32">
@@ -397,6 +398,26 @@ export function ProjectPageContent({ project, isLowPowerMode }: { project: Proje
                             </section>
                         )}
 
+                        {project.videoUrl && (
+                            <section id="video">
+                                <div className="flex items-center gap-3 mb-8">
+                                    <span className="bg-primary/10 text-primary p-2 rounded-lg">
+                                        <Film className="w-5 h-5" />
+                                    </span>
+                                    <h2 className="text-2xl font-bold text-foreground">{t('sections.gameplayVideo')}</h2>
+                                </div>
+                                <video
+                                    controls
+                                    playsInline
+                                    preload="metadata"
+                                    poster={project.image}
+                                    className="w-full rounded-2xl border border-border/40 bg-black shadow-2xl"
+                                >
+                                    <source src={project.videoUrl} type="video/mp4" />
+                                </video>
+                            </section>
+                        )}
+
                         {/* INSTALLATION */}
                         {project.installation && (
                             <section id="installation">
@@ -459,12 +480,6 @@ export function ProjectPageContent({ project, isLowPowerMode }: { project: Proje
                                             <ExternalLink className="w-4 h-4" />
                                         </motion.a>
                                     )}
-                                    {project.repoUrl && (
-                                        <a href={project.repoUrl} target="_blank" rel="noopener noreferrer" className="flex items-center justify-center gap-2 py-3 px-4 rounded-xl font-medium text-sm bg-black/10 dark:bg-secondary/10 hover:bg-black/20 dark:hover:bg-secondary/20 text-foreground transition-all border border-black/5 dark:border-transparent hover:border-black/10 dark:hover:border-white/5">
-                                            <Github className="w-4 h-4" />
-                                            <span>{t('sections.sourceCode')}</span>
-                                        </a>
-                                    )}
                                 </div>
                             </div>
 
@@ -488,6 +503,7 @@ export function ProjectPageContent({ project, isLowPowerMode }: { project: Proje
                                     {project.features && <li onClick={() => document.getElementById('features')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-foreground cursor-pointer transition-colors hover:translate-x-1 duration-200 block">• {t('sections.keyFeatures')}</li>}
                                     {project.challengesAndSolutions && <li onClick={() => document.getElementById('chronicles')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-foreground cursor-pointer transition-colors hover:translate-x-1 duration-200 block">• {t('sections.engineeringChronicles')}</li>}
                                     {project.galleryImages && <li onClick={() => document.getElementById('gallery')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-foreground cursor-pointer transition-colors hover:translate-x-1 duration-200 block">• {t('sections.visualGallery')}</li>}
+                                    {project.videoUrl && <li onClick={() => document.getElementById('video')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-foreground cursor-pointer transition-colors hover:translate-x-1 duration-200 block">• {t('sections.gameplayVideo')}</li>}
                                     {project.installation && <li onClick={() => document.getElementById('installation')?.scrollIntoView({ behavior: 'smooth' })} className="hover:text-foreground cursor-pointer transition-colors hover:translate-x-1 duration-200 block">• {t('sections.installation')}</li>}
                                 </ul>
                             </div>

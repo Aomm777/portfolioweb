@@ -4,7 +4,7 @@ import { useState, useCallback, useEffect } from 'react';
 import { motion, AnimatePresence, useScroll, useMotionValueEvent } from 'framer-motion';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { Menu, X, Moon, Sun, Globe, ChevronDown, Focus } from 'lucide-react';
 import { useTheme } from 'next-themes';
 import { cn } from '@/lib/utils';
@@ -44,16 +44,16 @@ function Clock() {
 // Sub-links for the "About" dropdown
 // Sub-links for the "About" dropdown
 const useNavItems = () => {
-    const t = useTranslations('navigation.menu');
+    const t = useTranslations('navigation');
+    const menuT = useTranslations('navigation.menu');
     return [
         {
-            label: "About",
+            label: t('about'),
             links: [
-                { label: t('achievements'), href: "/achievements", description: t('achievementsDesc') },
-                { label: t('skills'), href: "/skills", description: t('skillsDesc') },
-                { label: t('experience'), href: "/experience", description: t('experienceDesc') },
-                { label: t('projects'), href: "/projects", description: t('projectsDesc') },
-                { label: t('blog'), href: "/blog", description: t('blogDesc') },
+                { label: menuT('achievements'), href: "/achievements", description: menuT('achievementsDesc') },
+                { label: menuT('skills'), href: "/skills", description: menuT('skillsDesc') },
+                { label: menuT('experience'), href: "/experience", description: menuT('experienceDesc') },
+                { label: menuT('projects'), href: "/projects", description: menuT('projectsDesc') },
             ]
         }
     ];
@@ -61,6 +61,7 @@ const useNavItems = () => {
 
 export function Navbar() {
     const t = useTranslations('navigation');
+    const locale = useLocale();
     const navItems = useNavItems();
     const { theme, setTheme, resolvedTheme } = useTheme();
     const pathname = usePathname();
@@ -71,7 +72,6 @@ export function Navbar() {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
     const [lastScrollY, setLastScrollY] = useState(0);
     const [mounted, setMounted] = useState(false);
-    const [currentLocale, setCurrentLocale] = useState('en');
     
     // Consume preload state directly from context
     const { isPreloading: isPreloadActive } = usePreloadState();
@@ -80,8 +80,6 @@ export function Navbar() {
 
     useEffect(() => {
         setMounted(true);
-        const locale = document.cookie.split('; ').find(row => row.startsWith('locale='))?.split('=')[1] || 'en';
-        setCurrentLocale(locale);
     }, []);
 
     // Lock body scroll when menu is open
@@ -121,11 +119,10 @@ export function Navbar() {
     }, []);
 
     const toggleLocale = useCallback(() => {
-        const newLocale = currentLocale === 'en' ? 'id' : 'en';
+        const newLocale = locale === 'en' ? 'th' : 'en';
         document.cookie = `locale=${newLocale};path=/;max-age=31536000`;
-        setCurrentLocale(newLocale);
         window.location.reload();
-    }, [currentLocale]);
+    }, [locale]);
 
     const closeMenu = useCallback(() => {
         setIsMenuOpen(false);
@@ -327,7 +324,7 @@ export function Navbar() {
                                         onClick={toggleLocale}
                                         className="px-6 py-3 rounded-full glass-card text-sm font-medium hover:bg-muted/50 transition-colors"
                                     >
-                                        {currentLocale === 'en' ? 'English' : 'Indonesia'}
+                                        {locale === 'en' ? 'English' : 'ไทย'}
                                     </button>
                                     {mounted && (
                                         <AnimatedThemeToggler

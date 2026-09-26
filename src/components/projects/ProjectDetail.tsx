@@ -4,10 +4,11 @@ import { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence, useSpring, useMotionValue, useTransform, useScroll } from 'framer-motion';
 import { useLenis } from 'lenis/react';
 import { useTranslations } from 'next-intl';
-import { X, Calendar, Code, Box, Award, Share2, ExternalLink, Github, Terminal, ChevronRight, ChevronLeft, CheckCircle2, Copy, Check, Maximize2, ArrowUpRight, Zap, Sparkles, Cpu, Info } from 'lucide-react';
+import { X, Calendar, Code, Box, Award, Share2, ExternalLink, Terminal, ChevronRight, ChevronLeft, CheckCircle2, Copy, Check, Maximize2, ArrowUpRight, Zap, Sparkles, Cpu, Info } from 'lucide-react';
+import { SiRoblox } from 'react-icons/si';
 import { cn, formatDate } from '@/lib/utils';
 import { Project } from '@/types';
-import { portfolioData } from '@/data/portfolio';
+import { portfolioData, ROBLOX_PROFILE_URL } from '@/data/portfolio';
 import { TechStack } from './TechStack';
 
 // --- Animated Terminal Component ---
@@ -70,11 +71,9 @@ const renderRichText = (text: string) => {
 // --- vertical Gallery Component ---
 const ProjectGallery = ({
     images,
-    repoUrl,
     onImageClick,
 }: {
     images: string[],
-    repoUrl?: string,
     onImageClick: (img: string) => void,
     scrollContainerRef?: React.RefObject<HTMLDivElement | null> // Optional/Unused now
 }) => {
@@ -107,20 +106,6 @@ const ProjectGallery = ({
                 </motion.div>
             ))}
 
-            {/* GitHub Link */}
-            {repoUrl && (
-                <div className="flex justify-center pt-8">
-                    <a
-                        href={repoUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="group flex items-center gap-3 px-6 py-3 rounded-full bg-zinc-100 dark:bg-zinc-900 border border-zinc-200 dark:border-white/10 hover:border-emerald-500/50 transition-all text-zinc-600 dark:text-zinc-400 hover:text-emerald-500"
-                    >
-                        <Github className="w-5 h-5" />
-                        <span className="text-sm font-medium">View Source</span>
-                    </a>
-                </div>
-            )}
         </div>
     );
 };
@@ -351,14 +336,15 @@ export function ProjectDetail({ project, onClose, isLowPowerMode }: { project: P
                                 </motion.a>
                             )}
                             <motion.a
-                                href={project.repoUrl}
+                                href={ROBLOX_PROFILE_URL}
                                 target="_blank"
                                 rel="noopener noreferrer"
+                                aria-label="Visit Roblox profile"
                                 className="flex items-center justify-center gap-2 py-2.5 px-4 rounded-xl font-medium text-sm bg-white/10 border border-white/20 hover:bg-white/20 hover:border-white/30 text-white transition-all"
                                 whileHover={{ scale: 1.02 }}
                                 whileTap={{ scale: 0.98 }}
                             >
-                                <Github className="w-4 h-4" />
+                                <SiRoblox className="w-4 h-4" />
                             </motion.a>
                         </div>
                     </div>
@@ -478,11 +464,11 @@ export function ProjectDetail({ project, onClose, isLowPowerMode }: { project: P
                                     <motion.div variants={itemVariants} className="pt-12 border-t border-black/10 dark:border-white/5">
                                         <div className="flex flex-col items-center text-center space-y-8">
                                             <div className="max-w-xl space-y-4">
-                                                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-black tracking-tight tracking-[-0.04em]">Interested in the code?</h3>
+                                                <h3 className="text-2xl md:text-3xl font-bold text-foreground font-black tracking-tight tracking-[-0.04em]">Find me on Roblox</h3>
                                                 <div className="h-6 flex items-center justify-center">
                                                     <Typewriter examples={[
-                                                        "Check out the repo on GitHub...",
-                                                        "Open an issue for features...",
+                                                        "Visit my Roblox profile...",
+                                                        "Explore my games and creations...",
                                                         "Contact me for collaboration..."
                                                     ]} />
                                                 </div>
@@ -490,13 +476,13 @@ export function ProjectDetail({ project, onClose, isLowPowerMode }: { project: P
 
                                             <div className="flex gap-4">
                                                 <a
-                                                    href={project.repoUrl ? `${project.repoUrl}` : '#'}
+                                                    href={ROBLOX_PROFILE_URL}
                                                     target="_blank"
                                                     rel="noopener noreferrer"
                                                     className="px-8 py-3 rounded-full bg-black dark:bg-white text-white dark:text-black font-bold hover:opacity-90 transition-all flex items-center gap-2 shadow-lg"
                                                 >
-                                                    <Github className="w-4 h-4" />
-                                                    GitHub Repo
+                                                    <SiRoblox className="w-4 h-4" />
+                                                    Roblox Profile
                                                 </a>
                                                 <a
                                                     href="/contact"
@@ -603,7 +589,6 @@ export function ProjectDetail({ project, onClose, isLowPowerMode }: { project: P
                                 >
                                     <ProjectGallery
                                         images={project.galleryImages || []}
-                                        repoUrl={project.repoUrl}
                                         onImageClick={(img) => setSelectedImage(img)}
                                     />
                                 </motion.div>
@@ -637,10 +622,13 @@ export function ProjectDetail({ project, onClose, isLowPowerMode }: { project: P
                                             </div>
                                         ))
                                     ) : (
-                                        <TerminalBlock
-                                            title="Quick Start"
-                                            code={`git clone ${project.repoUrl}\ncd project\nnpm install\nnpm run dev`}
-                                        />
+                                        <div className="rounded-xl border border-border bg-secondary/10 p-6 text-center space-y-4">
+                                            <p className="text-sm text-muted-foreground">Source code is not published for these Roblox projects.</p>
+                                            <a href={ROBLOX_PROFILE_URL} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-2 text-sm font-semibold text-primary hover:underline">
+                                                <SiRoblox className="w-4 h-4" />
+                                                Visit Roblox profile
+                                            </a>
+                                        </div>
                                     )}
                                 </motion.div>
                             )}

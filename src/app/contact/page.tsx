@@ -3,7 +3,8 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Send, CheckCircle, AlertCircle, Loader2, Disc, Music, ArrowUpRight, Sparkles, HelpCircle, MessageSquare, ExternalLink, Github, Linkedin, Twitter, Instagram, ChevronDown } from 'lucide-react';
+import { Send, CheckCircle, AlertCircle, Loader2, Disc, Music, ArrowUpRight, Sparkles, HelpCircle, MessageSquare, ExternalLink, Linkedin, Twitter, Instagram, ChevronDown } from 'lucide-react';
+import { SiRoblox } from 'react-icons/si';
 import { cn } from '@/lib/utils';
 import { portfolioData } from '@/data/portfolio';
 import dynamic from 'next/dynamic';
@@ -51,7 +52,7 @@ function SocialTicker({ items, direction = 'left', speed = 30, isLowPowerMode = 
 }
 
 const socialIconsMap: Record<string, React.ElementType> = {
-    github: Github,
+    roblox: SiRoblox,
     linkedin: Linkedin,
     twitter: Twitter,
     instagram: Instagram,
@@ -288,7 +289,7 @@ function FAQSection() {
 }
 
 const socialDescriptions: Record<string, string> = {
-    GitHub: "Open Source",
+    Roblox: "Game Profile",
     LinkedIn: "Professional",
     Twitter: "Thoughts",
     Instagram: "Lifestyle",
@@ -313,7 +314,7 @@ export default function ContactPage() {
         };
     };
 
-    const row1Real = ['linkedin', 'github', 'instagram'].map(getSocialItem);
+    const row1Real = ['linkedin', 'roblox', 'instagram'].map(getSocialItem);
     const row2Real = ['twitter', 'discord', 'spotify'].map(getSocialItem);
 
     const containerRef = useRef<HTMLDivElement>(null);

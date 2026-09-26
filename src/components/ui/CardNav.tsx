@@ -3,7 +3,7 @@
 import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import Link from 'next/link';
-import { ChevronDown, Trophy, Navigation, Briefcase, Rocket, BookOpen, ImageIcon, FileText, MessageCircle } from 'lucide-react';
+import { ChevronDown, Trophy, Navigation, Briefcase, Rocket, ImageIcon, MessageCircle } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 interface NavLink {
@@ -294,10 +294,9 @@ export default function CardNav({
                                     <MegaBoxBig href="/experience" icon={Briefcase} title="Experience" desc="My professional journey" theme={theme} pathname={pathname} />
                                 </div>
                                 {/* Bottom 3 small boxes */}
-                                <div className="grid grid-cols-3 gap-4">
+                                <div className="grid grid-cols-2 gap-4">
                                     <MegaBoxSmall href="/skills" icon={Navigation} title="Skill" desc="Technical expertise" theme={theme} pathname={pathname} />
                                     <MegaBoxSmall href="/achievements" icon={Trophy} title="Achievement" desc="Milestones reached" theme={theme} pathname={pathname} />
-                                    <MegaBoxSmall href="/blog" icon={BookOpen} title="Blog" desc="Insights and docs" theme={theme} pathname={pathname} />
                                 </div>
                             </div>
 
@@ -307,7 +306,6 @@ export default function CardNav({
                                 theme === 'dark' ? "border-white/5" : "border-black/5"
                             )}>
                                 <SidebarLink href="/gallery" icon={ImageIcon} title="Gallery" desc="Visual portfolio & moments" theme={theme} pathname={pathname} />
-                                <SidebarLink href="/resume" icon={FileText} title="Resume" desc="View or download my CV" theme={theme} pathname={pathname} />
                                 <SidebarLink href="#" icon={MessageCircle} title="Chat" desc="Coming soon to connect" theme={theme} pathname={pathname} />
                             </div>
                         </div>

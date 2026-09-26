@@ -3,9 +3,8 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
 import { useTranslations } from 'next-intl';
-import { Mail, Layers } from "lucide-react";
+import { Mail } from "lucide-react";
 import { InfiniteRibbon } from "@/components/ui/infinite-ribbon";
 import { MagneticButton } from "@/components/ui/magnetic-button";
 
@@ -100,10 +99,6 @@ export default function CTASection() {
                     <MagneticButton href="/contact" variant="primary" className="text-lg px-10 py-5">
                         <Mail className="w-5 h-5" />
                         <span>{t('start')}</span>
-                    </MagneticButton>
-                    <MagneticButton href="/resume" variant="outline" className="text-lg px-10 py-5">
-                        <Layers className="w-5 h-5" />
-                        <span>{t('work')}</span>
                     </MagneticButton>
                 </div>
             </div>
