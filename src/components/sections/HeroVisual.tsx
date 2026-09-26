@@ -1,10 +1,10 @@
 import React, { useEffect, useRef, useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Separator } from "@/components/ui/separator";
-import { Github, Linkedin, Instagram, ArrowDown, ArrowDownRight, Bot, Zap, ExternalLink, MessageSquare } from 'lucide-react';
-import { portfolioData } from "@/data/portfolio";
+import { Linkedin, Instagram, ArrowDown, Bot, Zap, ExternalLink, MessageSquare } from 'lucide-react';
+import { SiRoblox } from 'react-icons/si';
+import { portfolioData, ROBLOX_PROFILE_URL } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
-import Link from 'next/link';
 import gsap from "gsap";
 import { ProfileCard } from "@/components/ui/profile-card";
 import { Spotlight } from "@/components/ui/spotlight-new";
@@ -20,7 +20,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
     icon: null
   });
 
-  const githubRef = useRef(null);
+  const robloxRef = useRef(null);
   const linkedinRef = useRef(null);
   const instagramRef = useRef(null);
   const zapRef = useRef(null);
@@ -31,8 +31,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
     if (!isExiting) return;
 
     const ctx = gsap.context(() => {
-      // Reveal + Loop for GitHub
-      gsap.fromTo(githubRef.current,
+      // Reveal + Loop for Roblox
+      gsap.fromTo(robloxRef.current,
         { opacity: 0, y: 40 },
         {
           opacity: 1,
@@ -40,7 +40,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
           duration: 1,
           ease: "power3.out",
           onComplete: () => {
-            gsap.to(githubRef.current, {
+            gsap.to(robloxRef.current, {
               y: -10,
               duration: 2,
               repeat: -1,
@@ -179,13 +179,15 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
               Hi, I'm {personal.name}. I build Roblox games with Lua, thoughtful game systems, and a love of learning by making.
             </motion.p>
             <div className="relative">
-              <div ref={githubRef} className="absolute -top-4 right-0 md:right-2 text-primary/60 hover:text-primary z-20 opacity-0">
+              <div ref={robloxRef} className="absolute -top-4 right-0 md:right-2 text-primary/60 hover:text-primary z-20 opacity-0">
                 <a
-                  href={personal.socialLinks.find(s => s.platform === 'GitHub')?.url}
+                  href={ROBLOX_PROFILE_URL}
                   target="_blank"
+                  rel="noopener noreferrer"
                   className="block"
+                  aria-label="Roblox profile"
                 >
-                  <Github size={32} />
+                  <SiRoblox size={32} />
                 </a>
               </div>
               <motion.h1
@@ -230,8 +232,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 <div
                   ref={zapRef}
                   className="hidden lg:block mx-[0.05em] relative cursor-pointer group"
-                  onClick={() => window.open('https://Paphangkornworkspace.vercel.app/', '_blank')}
-                  onMouseEnter={(e) => setTooltip({ show: true, text: "Go to GitHub", icon: 'zap', x: e.clientX, y: e.clientY })}
+                  onClick={() => window.open(ROBLOX_PROFILE_URL, '_blank', 'noopener,noreferrer')}
+                  onMouseEnter={(e) => setTooltip({ show: true, text: "Visit my Roblox profile", icon: 'zap', x: e.clientX, y: e.clientY })}
                   onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                   onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
                 >
@@ -240,8 +242,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 <div
                   ref={zapSmallRef}
                   className="block lg:hidden mx-[0.02em] relative cursor-pointer group"
-                  onClick={() => window.open('https://Paphangkornworkspace.vercel.app/', '_blank')}
-                  onMouseEnter={(e) => setTooltip({ show: true, text: "Go to GitHub", icon: 'zap', x: e.clientX, y: e.clientY })}
+                  onClick={() => window.open(ROBLOX_PROFILE_URL, '_blank', 'noopener,noreferrer')}
+                  onMouseEnter={(e) => setTooltip({ show: true, text: "Visit my Roblox profile", icon: 'zap', x: e.clientX, y: e.clientY })}
                   onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                   onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
                 >
@@ -297,21 +299,6 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
             <div className="text-[10px] md:text-xs whitespace-nowrap font-bold tracking-[0.3em] text-muted-foreground uppercase">
               THAILAND — 2026
             </div>
-            <Link
-              href="/resume"
-              className="group flex items-center"
-            >
-              <motion.div
-                className="relative flex items-center bg-zinc-100 dark:bg-white h-12 w-12 group-hover:w-44 rounded-full transition-all duration-500 ease-[0.23,1,0.32,1] overflow-hidden shadow-xl"
-              >
-                <span className="whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-200 group-hover:delay-150 text-[10px] font-black uppercase tracking-widest text-zinc-900 dark:text-black pl-6 pr-12">
-                  View Resume
-                </span>
-                <div className="absolute right-0 flex items-center justify-center size-12 text-zinc-900 dark:text-black group-hover:rotate-45 transition-transform duration-500">
-                  <ArrowDownRight className="w-5 h-5" />
-                </div>
-              </motion.div>
-            </Link>
           </div>
         </div>
       </main>
@@ -350,7 +337,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 title={personal.title}
                 description={personal.bio}
                 imageUrl={personal.avatar}
-                githubUrl={personal.socialLinks.find(s => s.platform === 'GitHub')?.url}
+                robloxUrl={ROBLOX_PROFILE_URL}
                 linkedinUrl={personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url}
                 instagramUrl={personal.socialLinks.find(s => s.platform === 'Instagram')?.url}
                 className="!max-w-4xl scale-[0.8] origin-left"

@@ -3,7 +3,7 @@ import React from "react";
 import { GraduationCap, BookOpen, Sparkles, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 
 const CornerAccents = ({ hoverClass }: { hoverClass: string }) => (
     <>
@@ -15,6 +15,7 @@ const CornerAccents = ({ hoverClass }: { hoverClass: string }) => (
 );
 
 export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isLowPowerMode?: boolean }) {
+    const portfolioData = usePortfolioData();
     const [higherEducation, highSchool] = portfolioData.education;
 
     return (

@@ -1,7 +1,8 @@
 
 import { notFound } from 'next/navigation';
-import { portfolioData } from '@/data/portfolio';
+import { getPortfolioData, portfolioData } from '@/data/portfolio';
 import { ProjectPageContent } from '@/components/projects/ProjectPageContent';
+import { getLocale } from 'next-intl/server';
 
 export async function generateStaticParams() {
     return portfolioData.projects.map((project) => ({
@@ -13,7 +14,9 @@ import { getProjectImages } from '@/app/actions/getProjectImages'; // Import ser
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
-    const project = portfolioData.projects.find((p) => p.slug === slug);
+    const locale = await getLocale();
+    const localizedPortfolioData = getPortfolioData(locale);
+    const project = localizedPortfolioData.projects.find((p) => p.slug === slug);
 
     if (!project) {
         notFound();
@@ -22,11 +25,10 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     // Fetch dynamic images from public/project folder
     const galleryImages = await getProjectImages(slug, project.title);
 
-    // If dynamic images found, override the project data
+    // Keep the project cover separate from supporting gallery screenshots.
     const updatedProject = {
         ...project,
-        image: galleryImages.length > 0 ? galleryImages[0] : project.image, // First image as Hero
-        galleryImages: galleryImages.length > 0 ? galleryImages : project.galleryImages // All images for gallery
+        galleryImages: galleryImages.length > 0 ? galleryImages : project.galleryImages
     };
 
     return <ProjectPageContent project={updatedProject} />;

@@ -8,6 +8,7 @@ import {
   Brain, Code, TerminalWindow, ShieldCheck, Robot, Atom, Database, Cpu, FileText, Lightning, Globe, Stack
 } from '@phosphor-icons/react';
 import { portfolioData } from '@/data/portfolio';
+import { usePortfolioData } from '@/hooks/usePortfolioData';
 import Link from 'next/link';
 import Image from 'next/image';
 import { AnimatedFolder } from '@/components/ui/3d-folder';
@@ -451,6 +452,7 @@ function RecentPublicationsVisual({ blogs }: { blogs: any[] }) {
 
 /* ── Card 5: Projects Showcase (Animated Stack) ── */
 function ProjectsVisual() {
+  const portfolioData = usePortfolioData();
   const topProjects = portfolioData.projects.slice(0, 3);
   const [currentIndex, setCurrentIndex] = useState(0);
 

@@ -1,0 +1,508 @@
+{
+    "navigation": {
+        "home": "หน้าแรก",
+        "about": "เกี่ยวกับฉัน",
+        "projects": "โปรเจกต์",
+        "experience": "ประสบการณ์",
+        "skills": "ทักษะ",
+        "achievements": "ผลงานและรางวัล",
+        "blog": "บทความ",
+        "gallery": "แกลเลอรี",
+        "contact": "ติดต่อ",
+        "resume": "เรซูเม่",
+        "tools": "เครื่องมือ",
+        "menu": {
+            "achievements": "ผลงานและรางวัล",
+            "achievementsDesc": "ประกาศนียบัตร รางวัล และความสำเร็จ",
+            "skills": "ทักษะ",
+            "skillsDesc": "เทคโนโลยีและเครื่องมือที่ใช้",
+            "experience": "ประสบการณ์",
+            "experienceDesc": "เส้นทางการเรียนรู้และการทำงาน",
+            "projects": "โปรเจกต์",
+            "projectsDesc": "ผลงานด้านการพัฒนาเกม",
+            "blog": "บทความ",
+            "blogDesc": "เรื่องราวการเรียนรู้และการพัฒนาเกม",
+            "gallery": "แกลเลอรี",
+            "galleryDesc": "ภาพกิจกรรมและผลงาน"
+        },
+        "shortcuts": {
+            "volume1": "เล่มที่ 1: ตัวตน",
+            "volume2": "เล่มที่ 2: เส้นทางการทำงาน",
+            "volume3": "เล่มที่ 3: ทักษะ",
+            "volume4": "เล่มที่ 4: ผลงานสร้างสรรค์",
+            "preview": "โหมดตัวอย่าง",
+            "idRef": "รหัสอ้างอิง"
+        }
+    },
+    "hero": {
+        "greeting": "ยินดีต้อนรับสู่พื้นที่ของผม",
+        "subtitle": "Game Developer • Roblox Studio • Lua",
+        "cta": {
+            "primary": "ดูโปรเจกต์",
+            "secondary": "ติดต่อผม",
+            "exploreMore": "ดูเพิ่มเติม"
+        },
+        "badge": "เปิดรับโอกาสใหม่ ๆ",
+        "scroll": "เลื่อนลง",
+        "role": "นักพัฒนาเกม",
+        "description": "เปลี่ยนไอเดียให้เป็นเกมที่เล่นได้ด้วย <span class='text-primary font-semibold'>Roblox Studio</span>, <span class='text-secondary font-semibold'>Lua</span> และการออกแบบ <span class='text-accent font-semibold'>ระบบเกม</span> อย่างตั้งใจ"
+    },
+    "about": {
+        "title": "เกี่ยวกับผม",
+        "subtitle": "นักพัฒนาเกม Roblox และเขียนสคริปต์ Lua",
+        "description": "ผมเปลี่ยนไอเดียเกมให้เป็นประสบการณ์ที่เล่นได้บน Roblox ตั้งแต่เขียน gameplay logic และออกแบบระบบ ไปจนถึงทำงานร่วมกับทีมและช่วยแนะนำผู้เรียนคนอื่น",
+        "stats": {
+            "experience": "ปีที่เรียนรู้",
+            "projects": "โปรเจกต์ที่ทำ",
+            "certifications": "ประกาศนียบัตร",
+            "competitions": "การแข่งขัน"
+        },
+        "identity": "รู้จักตัวตนของผม",
+        "architecting": "ออกแบบ",
+        "digitalReality": "โลกดิจิทัล",
+        "leadIn": {
+            "label": "สิ่งที่ผมทำ",
+            "tagline": "จุดที่ผมถนัด",
+            "headlineAI": "Game Logic",
+            "headlineData": "ระบบเกม Roblox",
+            "headlineSoftware": "สร้างเกมที่เล่นได้จริง",
+            "thesis": "ผมทำให้ไอเดียเกมเกิดขึ้นได้จริงด้วย <span class='text-primary italic font-serif-elegant font-normal'>การเขียนสคริปต์ Lua</span> และการออกแบบระบบอย่างมีเป้าหมาย",
+            "scope": "ผมมุ่งพัฒนาเกมบน Roblox ทั้ง gameplay logic, ประสบการณ์ multiplayer และรายละเอียดเล็ก ๆ ที่ทำให้เกมสนุกขึ้น",
+            "bridging": "จากไอเดียแรกสู่เกมที่เล่นได้",
+            "integration": "ผมสนุกกับทั้งโปรเจกต์เดี่ยวและการทำงานเป็นทีม พร้อมแบ่งปันสิ่งที่เรียนรู้ให้ผู้เข้าร่วมค่ายพัฒนาเกม",
+            "signature": "Paphangkorn",
+            "role": "นักพัฒนาเกม Roblox",
+            "aboutMe": "เกี่ยวกับผม",
+            "scroll": "เลื่อนเพื่อดูต่อ",
+            "shortStory": "เรื่องราวของผม"
+        },
+        "coreEngineering": {
+            "label": "การพัฒนาเกม",
+            "title": "ระบบที่ <span class='text-primary italic font-serif font-light lowercase'>คิดมาอย่างดี</span> <br /> ไอเดียที่ <span class='italic font-serif font-light text-foreground'>เล่นได้จริง</span>",
+            "p1": "ผมใช้ Roblox Studio และ Lua เปลี่ยนแนวคิดเกมให้เป็นประสบการณ์แบบโต้ตอบ โดยเน้น gameplay logic ที่เข้าใจง่าย",
+            "p2": "โปรเจกต์ของผมมีทั้งงานทดลองเดี่ยวและเกม multiplayer ที่ทำกับทีม รวมถึง Bronopoly ซึ่งผ่านเข้ารอบระดับภูมิภาค NSC 2026",
+            "p3": "ผมยังทดลองสร้าง game feel ด้วย animation และ VFX พร้อมใช้ Blender และเครื่องมือ AI เป็นส่วนหนึ่งของ workflow",
+            "gpa": "เกรดเฉลี่ย",
+            "projects": "โปรเจกต์ที่พัฒนา",
+            "years": "ปีที่มีประสบการณ์"
+        },
+        "emergingResearch": {
+            "label": "ฝึกฝนการออกแบบเกม",
+            "title": "เรียนรู้ <span class='italic font-serif font-light text-primary lowercase'>&</span> ลงมือสร้าง",
+            "agentic": {
+                "title": "ระบบการเล่น",
+                "desc": "ฝึกออกแบบกติกา การกระทำของผู้เล่น และพฤติกรรมที่เขียนด้วยโค้ดให้ทำงานร่วมกันเป็น gameplay ที่เข้าใจง่ายและสนุก"
+            },
+            "web3": {
+                "title": "ความรู้สึกในการเล่น",
+                "desc": "ทดลองใช้ animation, VFX และเสียง เพื่อให้การโต้ตอบในเกมมีชีวิตชีวามากขึ้น"
+            }
+        },
+        "profile": {
+            "title": "ออกแบบระบบเกม <br /> เปลี่ยนไอเดียให้เล่นได้จริง",
+            "narrativeLabel": "เรื่องราวของผม",
+            "narrative": "ผมเป็นนักศึกษาวิศวกรรมคอมพิวเตอร์และนักพัฒนาเกมที่มุ่งเน้น Roblox Studio, การเขียนสคริปต์ Lua และการออกแบบระบบเกม",
+            "narrative2": "ผมพัฒนาโปรเจกต์ทั้งแบบเดี่ยวและกับทีม พา Bronopoly ผ่านเข้ารอบระดับภูมิภาค NSC 2026 และช่วยแนะนำผู้เรียนในค่ายพัฒนาเกม",
+            "pillars": {
+                "reliable": {
+                    "title": "ออกแบบอย่างมีเป้าหมาย",
+                    "desc": "วางกติกาและการโต้ตอบให้เหมาะกับประสบการณ์ที่ต้องการให้ผู้เล่นได้รับ"
+                },
+                "optimized": {
+                    "title": "จากไอเดียสู่เกม",
+                    "desc": "พัฒนาแนวคิดให้เป็นโปรเจกต์ Roblox ที่เล่นได้ ผ่านการทดลองและปรับปรุง"
+                },
+                "maintainable": {
+                    "title": "สร้างสรรค์ร่วมกับทีม",
+                    "desc": "ทำโปรเจกต์เกมร่วมกันและเรียนรู้จากกระบวนการพัฒนา"
+                },
+                "evolvable": {
+                    "title": "เรียนรู้อย่างต่อเนื่อง",
+                    "desc": "พัฒนาตัวเองผ่านโปรเจกต์ส่วนตัว game jam และค่ายสอนทำเกม"
+                }
+            }
+        },
+        "closing": {
+            "experience": {
+                "label": "ประสบการณ์",
+                "title1": "ประสบการณ์",
+                "title2": "สำคัญ",
+                "viewMore": "ดูประสบการณ์ทั้งหมด"
+            },
+            "projects": {
+                "label": "ผลงาน",
+                "title1": "โปรเจกต์",
+                "title2": "เด่น",
+                "viewMore": "ดูโปรเจกต์ทั้งหมด"
+            },
+            "experiencesList": [
+                {
+                    "company": "HamsterHub",
+                    "role": "ผู้ช่วยสอน AI Camp",
+                    "desc": "ช่วยผู้เข้าร่วมสร้างโปรเจกต์ Roblox, Unity และเว็บภายในค่าย 3 วัน พร้อมแนะนำ Cursor AI, MCP Server และการแก้โค้ดที่ AI สร้าง"
+                },
+                {
+                    "company": "GamePee Camp",
+                    "role": "ผู้ช่วยสอนพัฒนาเกม",
+                    "desc": "แนะนำการออกแบบพฤติกรรม AI ของศัตรูและการเขียนสคริปต์ Roblox ในค่ายพัฒนาเกม 3 วัน"
+                },
+                {
+                    "company": "HamsterHub",
+                    "role": "ผู้เข้าร่วม Roblox Bootcamp",
+                    "desc": "เรียนรู้ Roblox Studio และ Lua พร้อมพัฒนาเกมช่วงเริ่มต้น เช่น Escape Lab และ Anime Royale"
+                },
+                {
+                    "company": "HamsterHub GameJamX",
+                    "role": "Programmer",
+                    "desc": "ร่วมกับทีมพัฒนาเกม Roblox HEAT THIEVES ภายใน 3 วัน"
+                }
+            ],
+            "projectsList": [
+                {
+                    "title": "Bronopoly",
+                    "desc": "เกม multiplayer บน Roblox เกี่ยวกับเศรษฐศาสตร์ พัฒนากับทีม 3 คนและผ่านเข้ารอบระดับภูมิภาค NSC 2026"
+                },
+                {
+                    "title": "HEAT THIEVES",
+                    "desc": "เกม battleground บน Roblox ที่พัฒนากับทีมภายใน 3 วันสำหรับ HamsterHub GameJamX"
+                },
+                {
+                    "title": "Anime Royale",
+                    "desc": "เกม Roblox ที่พัฒนาคนเดียว โดยได้แรงบันดาลใจจาก Clash Royale ตั้งแต่แนวคิดและออกแบบระบบ ไปจนถึงเขียน Lua และปรับ game feel"
+                },
+                {
+                    "title": "Escape Lab",
+                    "desc": "โปรเจกต์ช่วงเริ่มต้นจาก Roblox Bootcamp ที่ช่วยให้ผมเรียนรู้ Lua, game logic และการเปลี่ยนไอเดียให้เป็นเกมที่เล่นได้"
+                }
+            ],
+            "discoverMore": "ดูเพิ่มเติม"
+        }
+    },
+    "projects": {
+        "title": "โปรเจกต์",
+        "subtitle": "เกม Roblox และโปรเจกต์พัฒนาเกมที่ทำทั้งคนเดียวและร่วมกับทีม",
+        "search": "ค้นหาโปรเจกต์...",
+        "viewAll": "ดูโปรเจกต์ทั้งหมด",
+        "viewProject": "ดูโปรเจกต์",
+        "liveDemo": "ทดลองเล่น",
+        "sourceCode": "ซอร์สโค้ด",
+        "techStack": "เทคโนโลยีที่ใช้",
+        "tools": "เครื่องมือที่ใช้",
+        "highlights": "จุดเด่น",
+        "challenges": "ความท้าทาย",
+        "filters": {
+            "all": "ทั้งหมด",
+            "ongoing": "กำลังพัฒนา",
+            "completed": "เสร็จแล้ว"
+        },
+        "sections": {
+            "missionBrief": "ภาพรวมโปรเจกต์",
+            "keyFeatures": "ฟีเจอร์สำคัญ",
+            "engineeringChronicles": "ความท้าทายและวิธีแก้",
+            "visualGallery": "แกลเลอรีภาพ",
+            "gameplayVideo": "วิดีโอการเล่น",
+            "installation": "วิธีติดตั้ง",
+            "projectAccess": "เข้าชมโปรเจกต์",
+            "technologies": "เทคโนโลยี",
+            "contents": "สารบัญ",
+            "moreProjects": "โปรเจกต์อื่น",
+            "backToProjects": "กลับไปหน้าโปรเจกต์",
+            "viewMore": "ดูเพิ่มเติม",
+            "viewLess": "แสดงน้อยลง",
+            "solution": "วิธีแก้",
+            "liveDemo": "ทดลองเล่น",
+            "sourceCode": "ซอร์สโค้ด"
+        },
+        "status": {
+            "ongoing": "กำลังพัฒนา",
+            "completed": "พัฒนาเสร็จแล้ว"
+        },
+        "metadata": {
+            "role": "หน้าที่",
+            "timeline": "ช่วงเวลา",
+            "team": "ทีม",
+            "techStack": "เทคโนโลยี",
+            "roleValue": "นักพัฒนา",
+            "teamValue": "ทำคนเดียว",
+            "techStackValue": "{count} เทคโนโลยี"
+        }
+    },
+    "experience": {
+        "title": "ประสบการณ์",
+        "subtitle": "การศึกษา โปรเจกต์พัฒนาเกม และประสบการณ์การเป็นพี่เลี้ยง",
+        "showDetail": "แสดงรายละเอียด",
+        "hideDetail": "ซ่อนรายละเอียด",
+        "tasks": "หน้าที่",
+        "learned": "สิ่งที่ได้เรียนรู้",
+        "impact": "ผลลัพธ์",
+        "present": "ปัจจุบัน",
+        "responsibilities": "ความรับผิดชอบ",
+        "skills": "ทักษะที่ใช้",
+        "month": "เดือน",
+        "months": "เดือน",
+        "year": "ปี",
+        "years": "ปี",
+        "type": {
+            "full-time": "เต็มเวลา",
+            "part-time": "พาร์ตไทม์",
+            "internship": "ฝึกงาน",
+            "freelance": "ฟรีแลนซ์",
+            "contract": "สัญญาจ้าง",
+            "apprenticeship": "ฝึกประสบการณ์",
+            "volunteer": "อาสาสมัคร"
+        },
+        "filters": {
+            "all": "ทั้งหมด",
+            "latest": "ล่าสุด",
+            "oldest": "เก่าที่สุด",
+            "ongoing": "กำลังทำอยู่"
+        },
+        "education": {
+            "title": "การศึกษา"
+        }
+    },
+    "expertise": {
+        "title": "ความสามารถหลัก",
+        "subtitle": "ทักษะและเครื่องมือพัฒนาเกมที่ใช้สร้างประสบการณ์บน Roblox",
+        "dragHint": "ลากหรือเลื่อนเพื่อดูเพิ่มเติม"
+    },
+    "skills": {
+        "title": "ทักษะและเครื่องมือ",
+        "subtitle": "Roblox Studio, Lua, Blender และเครื่องมือที่ใช้พัฒนาเกม",
+        "hard": "ทักษะด้านเทคนิค",
+        "soft": "ทักษะการทำงาน",
+        "technical": "ความสามารถด้านเทคนิค",
+        "tools": "เครื่องมือและซอฟต์แวร์",
+        "pillars": "ทักษะสำคัญ",
+        "achievements": "ผลงานที่ยืนยันได้",
+        "level": {
+            "beginner": "เริ่มต้น",
+            "intermediate": "ปานกลาง",
+            "advanced": "ชำนาญ",
+            "expert": "เชี่ยวชาญ"
+        }
+    },
+    "achievements": {
+        "title": "ผลงานและรางวัล",
+        "subtitle": "ประกาศนียบัตร รางวัล และความสำเร็จ",
+        "search": "ค้นหาผลงาน...",
+        "viewCredential": "ดูประกาศนียบัตร",
+        "category": {
+            "all": "ทั้งหมด",
+            "certification": "ประกาศนียบัตร",
+            "award": "รางวัล",
+            "publication": "ผลงานเผยแพร่",
+            "competition": "การแข่งขัน"
+        },
+        "sort": {
+            "newest": "ใหม่ที่สุด",
+            "oldest": "เก่าที่สุด"
+        },
+        "stats": {
+            "total": "ผลงานทั้งหมด",
+            "awards": "รางวัลที่ได้รับ",
+            "certifications": "ประกาศนียบัตร"
+        }
+    },
+    "contact": {
+        "title": "ติดต่อผม",
+        "subtitle": "พูดคุยเกี่ยวกับไอเดียเกม โปรเจกต์ Roblox หรือการร่วมงานกัน",
+        "form": {
+            "name": "ชื่อของคุณ",
+            "email": "อีเมลของคุณ",
+            "subject": "หัวข้อ",
+            "message": "ข้อความ",
+            "messagePlaceholder": "เล่าเกี่ยวกับโปรเจกต์ของคุณ...",
+            "send": "ส่งข้อความ",
+            "submit": "ส่งข้อความ",
+            "sending": "กำลังส่ง...",
+            "sent": "ส่งแล้ว",
+            "success": "ส่งข้อความเรียบร้อยแล้ว",
+            "error": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง"
+        },
+        "social": {
+            "title": "ติดตามช่องทางโซเชียล"
+        },
+        "faq": {
+            "title": "คำถามที่พบบ่อย"
+        },
+        "info": {
+            "email": "อีเมล",
+            "phone": "โทรศัพท์",
+            "location": "ที่อยู่",
+            "availability": "เปิดรับโอกาสใหม่"
+        },
+        "hero": {
+            "title": "มาคุยกัน",
+            "subtitle": "มีไอเดียเกมไหม? มาคุยกันว่าจะสร้างมันขึ้นมาด้วยกันได้อย่างไร",
+            "ticker": {
+                "build": "มาสร้างสิ่งดี ๆ ด้วยกัน · ",
+                "freelance": "เปิดรับการร่วมพัฒนาเกม · "
+            }
+        },
+        "faqData": [
+            {
+                "q": "คุณถนัดด้านใดเป็นพิเศษ?",
+                "a": "ผมเป็นนักศึกษาวิศวกรรมคอมพิวเตอร์ที่มุ่งเน้นการพัฒนาเกมด้วย Roblox Studio และ Lua สนใจสร้าง game logic ออกแบบระบบเกม และทำงานร่วมกับทีม"
+            },
+            {
+                "q": "เปิดรับงานวิจัยหรืองานฟรีแลนซ์ไหม?",
+                "a": "ผมยินดีพูดคุยเกี่ยวกับโปรเจกต์พัฒนาเกม game jam และโอกาสเรียนรู้หรือสร้างเกมร่วมกับทีม"
+            },
+            {
+                "q": "เครื่องมือหลักที่ใช้พัฒนามีอะไรบ้าง?",
+                "a": "เครื่องมือหลักของผมคือ Roblox Studio และ Lua นอกจากนี้ยังใช้ Blender สำหรับงาน 3D และใช้ Cursor AI ร่วมกับ MCP Server ใน workflow"
+            },
+            {
+                "q": "คุณเคยทำโปรเจกต์อะไรบ้าง?",
+                "a": "ผลงานของผมมี Bronopoly เกมเศรษฐศาสตร์แบบ multiplayer บน Roblox ที่ผ่านเข้ารอบระดับภูมิภาค NSC 2026, HEAT THIEVES ที่ทำใน GameJamX ภายใน 3 วัน และโปรเจกต์เดี่ยว Anime Royale กับ Escape Lab"
+            },
+            {
+                "q": "เริ่มพูดคุยเรื่องการร่วมงานได้อย่างไร?",
+                "a": "กรอกแบบฟอร์มติดต่อด้านบนหรือส่งอีเมลมาที่ Wi.koo25561@gmail.com ผมยินดีรับฟังไอเดียเกม การชวนร่วมงาน และโอกาสในการเรียนรู้"
+            }
+        ]
+    },
+    "footer": {
+        "copyright": "สงวนลิขสิทธิ์",
+        "madeWith": "สร้างด้วย",
+        "more": "เพิ่มเติม",
+        "marquee": [
+            "เปิดรับโอกาสใหม่",
+            "การพัฒนา Frontend",
+            "โครงสร้าง Backend",
+            "การออกแบบ UI/UX",
+            "การเขียนโค้ดสร้างสรรค์",
+            "การปรับปรุงระบบ"
+        ],
+        "cta": {
+            "title": "มาร่วมงาน",
+            "titleHighlight": "ด้วยกัน",
+            "subtitle": "มีโปรเจกต์ในใจไหม? มาสร้างสิ่งที่ยอดเยี่ยมและช่วยแก้ปัญหาจริงไปด้วยกัน"
+        },
+        "links": "ลิงก์",
+        "socials": "โซเชียล",
+        "localTime": "เวลาท้องถิ่น",
+        "version": "เวอร์ชัน",
+        "versionEdition": "ฉบับปี 2026"
+    },
+    "ctaSection": {
+        "title": "มาสร้างสิ่งใหม่",
+        "together": "ด้วยกัน",
+        "subtitle": "เปิดรับการร่วมพัฒนาเกม โปรเจกต์ทีม และโอกาสสร้างประสบการณ์ Roblox ที่น่าสนใจ",
+        "start": "ร่วมงานกับผม",
+        "work": "ดูเรซูเม่",
+        "words": {
+            "amazing": "ยอดเยี่ยม",
+            "innovative": "สร้างสรรค์",
+            "intelligent": "ชาญฉลาด",
+            "creative": "มีไอเดีย"
+        },
+        "ribbon1": "Roblox Studio • Lua • Blender • Python • C++ • Cursor AI",
+        "ribbon2": "นักพัฒนาเกม • Roblox • Lua • Game Logic • ออกแบบระบบ • เกม Multiplayer • Animation • VFX"
+    },
+    "stats": {
+        "systemStatus": "สถานะระบบ: กำลังเก็บสถิติ",
+        "portfolio": "สถิติการพัฒนาเกม",
+        "totalPulse": "กิจกรรมทั้งหมด",
+        "peakActivity": "ช่วงที่มีกิจกรรมสูงสุด",
+        "dailyAverage": "ค่าเฉลี่ยรายวัน",
+        "currentSprint": "ช่วงเวลาปัจจุบัน",
+        "engageFlow": "การทำงานต่อเนื่อง",
+        "weeklyEffort": "เวลาที่ใช้เขียนโค้ดในสัปดาห์นี้",
+        "processSpeed": "ความเร็วในการทำงาน",
+        "avgPerf": "ประสิทธิภาพเฉลี่ย",
+        "latency": "ความหน่วง: 14MS",
+        "system": "ระบบ: DARWIN_X64_STABLE",
+        "scanning": "กำลังตรวจสอบทรัพยากร",
+        "engineering": "การพัฒนา",
+        "metrics": "สถิติ",
+        "analyticsSub": "ข้อมูลวิเคราะห์ / โครงสร้างระบบ / ประสิทธิภาพ",
+        "statusOnline": "สถานะ: ออนไลน์",
+        "loadStable": "โหลดระบบ: ปกติ"
+    },
+    "projectHeader": {
+        "title": "ออกแบบโลกดิจิทัล",
+        "subtitle": "รวมโปรเจกต์พัฒนาเกมของผม ทั้ง <span class='font-bold text-foreground'>Roblox Studio</span>, การเขียนสคริปต์ Lua, ระบบการเล่น และประสบการณ์เกมรูปแบบต่าง ๆ"
+    },
+    "common": {
+        "loading": "กำลังโหลด...",
+        "error": "เกิดข้อผิดพลาด",
+        "notFound": "ไม่พบหน้านี้",
+        "backHome": "กลับหน้าแรก",
+        "viewMore": "ดูเพิ่มเติม",
+        "readMore": "อ่านต่อ",
+        "close": "ปิด",
+        "download": "ดาวน์โหลด",
+        "share": "แชร์",
+        "scrollAudit": "เลื่อนเพื่อดูเพิ่มเติม"
+    },
+    "technical": {
+        "github": {
+            "title": "กิจกรรมบน GitHub",
+            "description": "กิจกรรมบน GitHub ในช่วงปีที่ผ่านมา",
+            "total": "ทั้งหมด",
+            "thisWeek": "สัปดาห์นี้",
+            "best": "สูงสุด",
+            "average": "เฉลี่ย",
+            "less": "น้อย",
+            "more": "มาก"
+        },
+        "wakatime": {
+            "title": "สถิติ WakaTime",
+            "description": "กิจกรรมการเขียนโค้ดในช่วง 7 วันที่ผ่านมา",
+            "lastUpdate": "อัปเดตล่าสุด",
+            "startDate": "วันที่เริ่ม",
+            "endDate": "วันที่สิ้นสุด",
+            "dailyAverage": "ค่าเฉลี่ยรายวัน",
+            "totalWeek": "รวมสัปดาห์นี้",
+            "bestDay": "วันที่ทำได้ดีที่สุด",
+            "totalSince": "รวมตั้งแต่เริ่มใช้งาน",
+            "topLanguages": "ภาษาที่ใช้บ่อย"
+        }
+    },
+    "blog": {
+        "title": "เรื่องราวและการเรียนรู้",
+        "subtitle": "บันทึกการเรียนรู้พัฒนาเกมด้วย Roblox Studio และเปลี่ยนไอเดียให้เป็นเกมที่เล่นได้",
+        "sectionBadge": "คลังบทความ",
+        "search": "ค้นหาบทความ...",
+        "readTime": "นาทีในการอ่าน",
+        "readMore": "อ่านบทความ",
+        "back": "กลับไปหน้าบทความ",
+        "noResults": "ไม่พบบทความ",
+        "categories": {
+            "applied-ai": "การประยุกต์ใช้ AI",
+            "software-development": "การพัฒนาซอฟต์แวร์",
+            "about-me": "เกี่ยวกับผม",
+            "more": "อื่น ๆ"
+        }
+    },
+    "gallery": {
+        "title": "คลังภาพ",
+        "subtitle": "รวมภาพผลงาน เอกสารโปรเจกต์ และการทดลองสร้างสรรค์",
+        "filter": {
+            "all": "สื่อทั้งหมด",
+            "image": "ภาพถ่าย",
+            "video": "วิดีโอ"
+        },
+        "viewMedia": "ดูสื่อ"
+    },
+    "chatbot": {
+        "title": "ผู้ช่วย AI",
+        "subtitle": "ถามเกี่ยวกับ Paphangkorn",
+        "placeholder": "พิมพ์ข้อความ...",
+        "greeting": "สวัสดี! ผมเป็นผู้ช่วย AI ของ **{name}** 👋\n\nถามผมเกี่ยวกับเรื่องเหล่านี้ได้:\n- ทักษะและความเชี่ยวชาญ\n- โปรเจกต์และผลงาน\n- ประสบการณ์\n- การศึกษา\n- และเรื่องอื่น ๆ\n\nอยากรู้อะไรถามได้เลย!",
+        "suggestions": [
+            "ทักษะหลักของคุณมีอะไรบ้าง?",
+            "เล่าเกี่ยวกับโปรเจกต์ที่ภูมิใจที่สุดหน่อย",
+            "มีประสบการณ์ทำงานอะไรบ้าง?",
+            "ใช้เครื่องมืออะไรพัฒนาเกม?"
+        ],
+        "error": "เกิดข้อผิดพลาด กรุณาลองอีกครั้ง",
+        "invalidResponse": "ได้รับคำตอบจากเซิร์ฟเวอร์ไม่ถูกต้อง",
+        "unknownError": "เกิดข้อผิดพลาดที่ไม่ทราบสาเหตุ",
+        "retry": "ลองอีกครั้ง",
+        "inputHint": "กด Enter เพื่อส่ง หรือ Shift+Enter เพื่อขึ้นบรรทัดใหม่",
+        "close": "ปิดแชต"
+    }
+}

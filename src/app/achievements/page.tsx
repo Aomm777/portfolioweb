@@ -6,7 +6,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useMotionTemplate, 
 import { useTranslations } from 'next-intl';
 import { Search, SortAsc, SortDesc, ExternalLink, X, Calendar, Building2, Trophy, Medal, Award, Target, ChevronRight, ChevronLeft, MousePointer2, Eye, Share2, PanelLeftClose, PanelLeftOpen, LayoutGrid, List } from 'lucide-react';
 import { cn, formatDate } from '@/lib/utils';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolioData } from '@/hooks/usePortfolioData';
 import { Achievement } from '@/types';
 import dynamic from 'next/dynamic';
 
@@ -207,14 +207,16 @@ const AchievementCard = React.memo(React.forwardRef<HTMLDivElement, {
                         </div>
 
                         {/* Date Overlay */}
-                        <div className="absolute bottom-4 right-4 z-20 px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/10">
-                            <div className="flex items-center gap-1.5">
-                                <Calendar className="w-3 h-3 text-white/70" />
-                                <span className="text-[10px] text-white/90 font-bold drop-shadow-sm">
-                                    {new Date(achievement.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toUpperCase()}
-                                </span>
+                        {achievement.date && (
+                            <div className="absolute bottom-4 right-4 z-20 px-2.5 py-1 rounded-lg bg-white/10 backdrop-blur-md border border-white/10">
+                                <div className="flex items-center gap-1.5">
+                                    <Calendar className="w-3 h-3 text-white/70" />
+                                    <span className="text-[10px] text-white/90 font-bold drop-shadow-sm">
+                                        {new Date(achievement.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' }).toUpperCase()}
+                                    </span>
+                                </div>
                             </div>
-                        </div>
+                        )}
                     </div>
 
                     <div className={cn(
@@ -536,10 +538,12 @@ const AchievementModal = React.forwardRef<HTMLDivElement, {
                             </div>
 
                             <div className="grid grid-cols-1 gap-2.5 font-mono">
-                                <div className="group flex flex-col gap-1 p-4 rounded-xl bg-foreground/[0.03] border border-border/50 hover:bg-foreground/[0.05] transition-all">
-                                    <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/40">$ date --issued</span>
-                                    <span className="text-[10px] font-bold text-foreground/90 uppercase tracking-wider">{formatDate(achievement.date)}</span>
-                                </div>
+                                {achievement.date && (
+                                    <div className="group flex flex-col gap-1 p-4 rounded-xl bg-foreground/[0.03] border border-border/50 hover:bg-foreground/[0.05] transition-all">
+                                        <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/40">$ date --issued</span>
+                                        <span className="text-[10px] font-bold text-foreground/90 uppercase tracking-wider">{formatDate(achievement.date)}</span>
+                                    </div>
+                                )}
                                 <div className="group flex flex-col gap-1 p-4 rounded-xl bg-foreground/[0.03] border border-border/50 hover:bg-foreground/[0.05] transition-all">
                                     <span className="text-[8px] font-black uppercase tracking-[0.2em] text-muted-foreground/40">$ credential --id</span>
                                     <code className="text-[10px] font-bold text-primary">{achievement.credentialId || "VERIFIED_RECORD"}</code>
@@ -556,6 +560,7 @@ const AchievementModal = React.forwardRef<HTMLDivElement, {
 });
 
 export default function AchievementsPage() {
+    const portfolioData = usePortfolioData();
     const t = useTranslations('achievements');
     const { isLowPowerMode } = usePerformance();
     const [searchQuery, setSearchQuery] = useState('');
@@ -706,7 +711,7 @@ export default function AchievementsPage() {
         const certifications = portfolioData.achievements.filter(a => a.category.toLowerCase() === 'certification').length;
         const competitions = portfolioData.achievements.filter(a => a.category.toLowerCase() === 'competition').length;
         return { total, awards, certifications, competitions };
-    }, []);
+    }, [portfolioData.achievements]);
 
     const filteredAchievements = useMemo(() => {
         let achievements = [...portfolioData.achievements];
@@ -722,12 +727,12 @@ export default function AchievementsPage() {
             achievements = achievements.filter(a => a.category.toLowerCase() === activeCategory.toLowerCase());
         }
         achievements.sort((a, b) => {
-            const dateA = new Date(a.date).getTime();
-            const dateB = new Date(b.date).getTime();
+            const dateA = a.date ? new Date(a.date).getTime() : 0;
+            const dateB = b.date ? new Date(b.date).getTime() : 0;
             return sortOrder === 'newest' ? dateB - dateA : dateA - dateB;
         });
         return achievements;
-    }, [searchQuery, sortOrder, activeCategory]);
+    }, [searchQuery, sortOrder, activeCategory, portfolioData.achievements]);
 
     // Navigation logic for modal (Stabilized with useCallback)
     const currentIndex = useMemo(() => {

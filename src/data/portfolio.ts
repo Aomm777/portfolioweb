@@ -1,5 +1,7 @@
 import { PortfolioData } from '@/types';
 
+export const ROBLOX_PROFILE_URL = 'https://www.roblox.com/users/999846488/profile';
+
 export const portfolioData: PortfolioData = {
     personal: {
         name: 'ปภังกร ฐานะกาญจน์ (ออม)',
@@ -11,17 +13,17 @@ export const portfolioData: PortfolioData = {
         email: 'Wi.koo25561@gmail.com',
         phone: '0986627263',
         resumeUrl: '/resume.pdf',
-        website: 'https://github.com/Paphangkorn',
+        website: ROBLOX_PROFILE_URL,
         languages: [
             { name: 'Thai', level: 'Native' },
             { name: 'English', level: 'Professional' },
         ],
         socialLinks: [
             {
-                platform: 'GitHub',
-                url: 'https://github.com/Paphangkorn',
-                icon: 'github',
-                username: 'Paphangkorn',
+                platform: 'Roblox',
+                url: ROBLOX_PROFILE_URL,
+                icon: 'roblox',
+                username: '999846488',
             },
             {
                 platform: 'Instagram',
@@ -44,19 +46,17 @@ export const portfolioData: PortfolioData = {
             slug: 'bronopoly-nsc2026',
             title: 'Bronopoly',
             image: '/images/bronopoly.png',
-            description: 'เกม Multiplayer บน Roblox ที่ชวนผู้เล่นเรียนรู้เรื่องเศรษฐศาสตร์ ผ่านเข้ารอบระดับภูมิภาค NSC 2026',
-            longDescription: 'Bronopoly เป็นเกม Multiplayer ที่พัฒนาสำหรับการแข่งขัน National Software Contest (NSC) 2026 เพื่อเล่าแนวคิดด้านเศรษฐศาสตร์ผ่านการเล่นบน Roblox ผมทำหน้าที่ Team Leader และ Programmer ร่วมกับสมาชิกอีก 2 คน ดูแลการวาง System Design และพัฒนาระบบเกม ผลงานผ่านเข้ารอบระดับภูมิภาคของ NSC 2026',
+            description: 'เกม Multiplayer บน Roblox ที่ชวนผู้เล่นเรียนรู้เรื่องเศรษฐศาสตร์ ผ่านเข้ารอบระดับภูมิภาค NSC 2026 และยังอยู่ระหว่างพัฒนา',
+            longDescription: 'Bronopoly เป็นเกม Multiplayer ที่ยังอยู่ระหว่างพัฒนาสำหรับการแข่งขัน National Software Contest (NSC) 2026 เพื่อเล่าแนวคิดด้านเศรษฐศาสตร์ผ่านการเล่นบน Roblox ผมทำหน้าที่ Team Leader และ Programmer ร่วมกับสมาชิกอีก 2 คน ดูแลการวาง System Design และพัฒนาระบบเกม ผลงานผ่านเข้ารอบระดับภูมิภาคของ NSC 2026',
             techStack: ['Roblox Studio', 'Lua Script', 'System Design'],
             tools: ['VS Code', 'Roblox Studio', 'Cursor AI'],
-            status: 'completed',
-            repoUrl: 'https://github.com/Paphangkorn',
+            status: 'ongoing',
             demoUrl: '#',
             startDate: '2025-01-01',
-            endDate: '2026-03-01',
             role: 'Team Leader & Programmer',
-            customTimeline: 'NSC 2026 — เข้ารอบระดับภูมิภาค',
+            customTimeline: 'NSC 2026 — เข้ารอบระดับภูมิภาค • อยู่ระหว่างพัฒนา',
             team: 'Team Project (3 Members)',
-            highlights: ['Roblox Multiplayer Game', 'Economics Learning', 'NSC 2026 Regional Finalist'],
+            highlights: ['Roblox Multiplayer Game', 'Economics Learning', 'NSC 2026 Regional Finalist', 'อยู่ระหว่างพัฒนา'],
             category: 'Game Development',
             features: [
                 {
@@ -81,12 +81,12 @@ export const portfolioData: PortfolioData = {
             slug: 'heat-thieves-gamejamx',
             title: 'HEAT THIEVES',
             image: '/images/heatthieves.png',
+            videoUrl: '/videos/heat-thieves.mp4',
             description: 'เกม Battleground ที่ร่วมพัฒนากับทีมภายใน 3 วันในงาน HamsterHub GameJamX',
             longDescription: 'HEAT THIEVES เป็นเกมที่ทีมพัฒนาภายในเวลา 3 วันใน HamsterHub GameJamX ภายใต้โจทย์ “Lost Ship” ผมรับหน้าที่ Programmer ใช้ Roblox Studio และ Cursor AI ที่เชื่อมต่อ MCP Server ช่วยพัฒนาและแก้ปัญหาโค้ด พร้อมทำงานร่วมกับทีมเพื่อส่งมอบเกมตามเวลาที่กำหนด',
             techStack: ['Roblox Studio', 'Lua Script', 'Cursor AI'],
             tools: ['Roblox Studio', 'Cursor AI'],
             status: 'completed',
-            repoUrl: 'https://github.com/Paphangkorn',
             demoUrl: '#',
             startDate: '2026-04-24',
             endDate: '2026-04-27',
@@ -117,7 +117,6 @@ export const portfolioData: PortfolioData = {
             techStack: ['Roblox Studio', 'Lua Script', 'Blender'],
             tools: ['Roblox Studio', 'Cursor AI', 'Blender'],
             status: 'completed',
-            repoUrl: 'https://github.com/Paphangkorn',
             demoUrl: '#',
             startDate: '2026-01-01',
             role: 'Solo Developer',
@@ -148,7 +147,6 @@ export const portfolioData: PortfolioData = {
             techStack: ['Roblox Studio', 'Lua Script'],
             tools: ['Roblox Studio'],
             status: 'completed',
-            repoUrl: 'https://github.com/Paphangkorn',
             demoUrl: '#',
             startDate: '2025-06-01',
             endDate: '2025-07-01',
@@ -187,12 +185,11 @@ export const portfolioData: PortfolioData = {
             isOngoing: false,
             location: 'Remote',
             type: 'freelance',
+            timelineImage: '/experience/ai-camp-timeline.png',
             logo: '/images/profile-microsoft.webp',
             galleryImages: [
-                '/experience/FotoSC2.webp',
-                '/experience/FotoSC3.webp',
-                '/experience/FotoSC4.webp',
-                '/experience/FotoSC5.webp',
+                '/experience/ai-camp-project-setup.png',
+                '/experience/ai-camp-gameplay.png',
             ],
         },
         {
@@ -210,6 +207,11 @@ export const portfolioData: PortfolioData = {
             isOngoing: false,
             location: 'Remote',
             type: 'freelance',
+            timelineImage: '/experience/gamepee-camp-timeline.png',
+            galleryImages: [
+                '/experience/gamepee-camp-detail-1.png',
+                '/experience/gamepee-camp-detail-2.png',
+            ],
         },
     ],
 
@@ -242,102 +244,38 @@ export const portfolioData: PortfolioData = {
     achievements: [
         {
             id: 'ach-1',
-            title: 'AI Innovation Challenge',
-            issuer: 'AI Innovation Challenge',
-            date: '2024-01-01',
-            description: 'ใบประกาศนียบัตร AI Innovation Challenge',
-            image: '/certificate/AI Innovation Challenge.pdf',
+            title: 'MikroTik Certified Network Associate (MTCNA)',
+            issuer: 'MikroTik',
+            description: 'เกียรติบัตรรับรองความรู้ด้านระบบเครือข่าย MikroTik ระดับ MTCNA',
+            image: '/certificate/mikrotik-mtcna.png',
             category: 'certification',
         },
         {
             id: 'ach-2',
-            title: 'Algorithm & Data Structures with Python',
-            issuer: 'Online Course',
-            date: '2024-01-01',
-            description: 'ใบประกาศนียบัตร Algorithm & Data Structures with Python',
-            image: '/certificate/Algorithm & Data Structures with Python.pdf',
+            title: 'HamsterHub GameJamX',
+            issuer: 'HamsterHub',
+            date: '2026-04-27',
+            description: 'เกียรติบัตรเข้าร่วมกิจกรรม HamsterHub GameJamX ระหว่างวันที่ 24–27 เมษายน 2026',
+            image: '/certificate/hamsterhub-gamejamx.png',
             category: 'certification',
         },
         {
             id: 'ach-3',
-            title: 'AWS Academy Graduate — Introduction to Cloud',
-            issuer: 'Amazon Web Services Academy',
-            date: '2024-01-01',
-            description: 'AWS Academy Graduate - AWS Academy Introduction to Cloud 1',
-            image: '/certificate/AWS Academy Graduate - AWS Academy Introduction to Cloud 1.pdf',
+            title: 'Roblox Boot Camp',
+            issuer: 'HamsterHub',
+            date: '2025-06-01',
+            description: 'เกียรติบัตรเข้าร่วม Roblox Boot Camp',
+            image: '/certificate/roblox-boot-camp.png',
             category: 'certification',
         },
         {
             id: 'ach-4',
-            title: 'Back-End dengan JavaScript',
-            issuer: 'Dicoding',
-            date: '2024-01-01',
-            description: 'ใบประกาศนียบัตร Back-End dengan JavaScript จาก Dicoding',
-            image: '/certificate/Back-End dengan JavaScript.pdf',
-            category: 'certification',
-        },
-        {
-            id: 'ach-5',
-            title: 'Cloud Practitioner Essentials',
-            issuer: 'Dicoding / AWS',
-            date: '2024-01-01',
-            description: 'ใบประกาศนียบัตร Cloud Practitioner Essentials',
-            image: '/certificate/Cloud Practitioner Essentials.pdf',
-            category: 'certification',
-        },
-        {
-            id: 'ach-6',
-            title: 'Dasar Artificial Intelligence',
-            issuer: 'Dicoding',
-            date: '2024-01-01',
-            description: 'ใบประกาศนียบัตร Dasar Artificial Intelligence',
-            image: '/certificate/Dasar Artificial Intelligence.pdf',
-            category: 'certification',
-        },
-        {
-            id: 'ach-7',
-            title: 'Pemrograman dengan Python',
-            issuer: 'Dicoding',
-            date: '2024-01-01',
-            description: 'ใบประกาศนียบัตร Pemrograman dengan Python',
-            image: '/certificate/Pemrograman dengan Python.pdf',
-            category: 'certification',
-        },
-        {
-            id: 'ach-8',
-            title: 'Machine Learning Modeling (Beginner)',
-            issuer: 'Dicoding',
-            date: '2024-01-01',
-            description: 'ใบประกาศนียบัตร Machine Learning Modeling สำหรับ Beginner',
-            image: '/certificate/Machine Learning Modeling (Beginner).pdf',
-            category: 'certification',
-        },
-        {
-            id: 'ach-9',
-            title: 'Generative AI',
-            issuer: 'Dicoding',
-            date: '2024-01-01',
-            description: 'ใบประกาศนียบัตร Generative AI',
-            image: '/certificate/Generative AI.pdf',
-            category: 'certification',
-        },
-        {
-            id: 'ach-10',
-            title: 'Practical AI for Productivity',
-            issuer: 'Online Course',
-            date: '2024-01-01',
-            description: 'ใบประกาศนียบัตร Practical AI for Productivity',
-            image: '/certificate/Practical AI for Productivity.pdf',
-            category: 'certification',
-        },
-        {
-            id: 'ach-11',
-            title: 'NSC 2026 — เข้ารอบระดับภูมิภาค',
-            issuer: 'NECTEC / National Software Contest',
+            title: 'NSC Software Project',
+            issuer: 'National Software Contest',
             date: '2026-03-01',
-            description: 'ผลงาน Bronopoly ได้เข้ารอบระดับภูมิภาคในการแข่งขัน National Software Contest 2026',
-            category: 'award',
-            tags: ['NSC 2026', 'Game Development', 'Roblox']
+            description: 'เกียรติบัตรเข้าร่วมการแข่งขัน NSC Software Project',
+            image: '/certificate/nsc-software-project.png',
+            category: 'certification',
         }
     ],
 
@@ -403,3 +341,206 @@ export const portfolioData: PortfolioData = {
         { id: 'gal-6', title: 'Event 5', description: 'รูปกิจกรรม', date: '2026-01-01', type: 'image', url: '/experience/FotoSC5.webp', category: 'experience' },
     ],
 };
+
+const englishProjectCopy: Record<string, Partial<PortfolioData['projects'][number]>> = {
+    'project-1': {
+        description: 'An in-progress Roblox multiplayer game that introduces players to economics; selected for the regional round of NSC 2026.',
+        longDescription: 'Bronopoly is an in-progress multiplayer game for the National Software Contest (NSC) 2026, using Roblox gameplay to introduce economic concepts. I serve as team leader and programmer on a three-person team, helping shape the system design and build the game. Our project advanced to the regional round of NSC 2026.',
+        customTimeline: 'NSC 2026 — Regional Finalist • In Development',
+        highlights: ['Roblox Multiplayer Game', 'Economics Learning', 'NSC 2026 Regional Finalist', 'In Development'],
+        features: [{
+            title: 'Core Mechanics',
+            items: [
+                '**Multiplayer Gameplay**: Designed a shared Roblox experience for players.',
+                '**Economics Through Play**: Used in-game situations to introduce economic concepts.',
+                '**Team Leadership**: Coordinated a three-person team as team leader and programmer.'
+            ]
+        }],
+        challengesAndSolutions: [{
+            problem: 'Designing a multiplayer game that makes economic concepts understandable through play.',
+            solution: 'Worked with the team on system design and Roblox gameplay systems, with the player experience in mind.'
+        }]
+    },
+    'project-2': {
+        description: 'A team-built Roblox battleground game created in three days for HamsterHub GameJamX.',
+        longDescription: 'HEAT THIEVES was developed by a team in three days during HamsterHub GameJamX, based on the theme “Lost Ship.” I worked as a programmer, using Roblox Studio and Cursor AI connected to an MCP server to build features and debug code while collaborating with the team to finish on time.',
+        customTimeline: 'April 2026 — GameJamX (3 Days)',
+        features: [{
+            title: 'Gameplay',
+            items: [
+                '**Rapid Prototyping**: Planned and built a game with the team under a tight deadline.',
+                '**AI-Assisted Workflow**: Used Cursor AI and an MCP server to support development and debugging.'
+            ]
+        }]
+    },
+    'project-3': {
+        description: 'A solo strategy game inspired by Clash Royale, developed from the initial concept through its game systems.',
+        longDescription: 'Anime Royale is a game inspired by Clash Royale that I developed during the HamsterHub Roblox Bootcamp. I handled the project independently, from the game concept and system design to game feel, animation, VFX/SFX, and Lua scripting, using Cursor AI and an MCP server as development tools.',
+        customTimeline: 'Personal Project — 2026',
+        features: [{
+            title: 'Features',
+            items: [
+                '**Game Concept**: Built an original game inspired by Clash Royale.',
+                '**System Design**: Defined the game structure and core rules.',
+                '**Game Feel**: Used animation, VFX, and SFX to make gameplay more engaging.'
+            ]
+        }]
+    },
+    'project-4': {
+        description: 'An early Roblox Bootcamp project focused on practicing game logic and player experience design.',
+        longDescription: 'Escape Lab was one of the first games I developed during Roblox Bootcamp. Over approximately one month, I practiced using Roblox Studio and Lua and learned to turn a game concept into playable systems and rules.',
+        customTimeline: 'Roblox Bootcamp — June 2025 (1 Month)',
+        features: [{
+            title: 'Mechanics',
+            items: [
+                '**Game Logic**: Practiced turning game ideas into clear sequences of behavior.',
+                '**Roblox Studio**: Learned the fundamentals of building and developing Roblox games.'
+            ]
+        }]
+    }
+};
+
+const englishExperienceCopy: Record<string, Partial<PortfolioData['experiences'][number]>> = {
+    'exp-1': {
+        position: 'Teaching Assistant',
+        description: 'Supported participants in an AI Camp as they built projects in three days, including Roblox and Unity games and web apps. Introduced AI tools and helped debug code.',
+        responsibilities: [
+            'Introduced Cursor AI and MCP servers as part of the project workflow.',
+            'Helped participants review and debug AI-generated code.',
+            'Advised on game logic and planning work to meet the camp deadline.'
+        ]
+    },
+    'exp-2': {
+        position: 'Teaching Assistant',
+        description: 'Assisted at GamePee Camp by introducing participants to enemy AI behavior design for a Roblox game during a three-day program.',
+        responsibilities: [
+            'Introduced concepts for designing enemy NPC behavior.',
+            'Demonstrated AI tools and MCP servers in a game development workflow.',
+            'Advised participants on Roblox scripting.'
+        ]
+    }
+};
+
+const englishEducationCopy: Record<string, Partial<PortfolioData['education'][number]>> = {
+    'edu-1': {
+        institution: 'Mahidol University',
+        degree: 'Bachelor of Engineering',
+        major: 'Computer Engineering',
+        achievements: ['National Software Contest 2026 — Regional Finalist']
+    },
+    'edu-2': {
+        institution: 'Phanatpittayakarn School',
+        degree: 'High School Diploma',
+        major: 'Science and Mathematics',
+        achievements: ['GPA 3.59', 'Roblox Bootcamp Certificate', 'HamsterHub GameJamX Participant']
+    }
+};
+
+const englishAchievementDescriptions: Record<string, { title?: string; description: string }> = {
+    'ach-1': {
+        title: 'MikroTik Certified Network Associate (MTCNA)',
+        description: 'MikroTik certification recognizing networking knowledge at the MTCNA level.'
+    },
+    'ach-2': {
+        title: 'HamsterHub GameJamX',
+        description: 'Certificate of participation in HamsterHub GameJamX, held April 24–27, 2026.'
+    },
+    'ach-3': {
+        title: 'Roblox Boot Camp',
+        description: 'Certificate of participation in the Roblox Boot Camp.'
+    },
+    'ach-4': {
+        title: 'NSC Software Project',
+        description: 'Certificate of participation in the NSC Software Project competition.'
+    },
+    'ach-11': {
+        title: 'NSC 2026 — Regional Finalist',
+        description: 'Bronopoly advanced to the regional round of the National Software Contest 2026.'
+    }
+};
+
+const englishSoftSkillDescriptions: Record<string, string> = {
+    'Team Leadership': 'Served as team leader for the three-person Bronopoly team in NSC 2026.',
+    Teamwork: 'Collaborated with a team to complete a game for GameJamX on a tight deadline.',
+    'Time Management': 'Prioritized tasks while developing a game within three days.',
+    Mentorship: 'Helped camp participants with game development and debugging.',
+    'Problem Solving': 'Analyzed and resolved issues during game development and testing.'
+};
+
+const englishFaqs = [
+    {
+        question: 'What are your main areas of expertise?',
+        answer: 'I focus on game development with Roblox Studio and Lua, building gameplay logic and designing game systems. I also use Blender for animation and AI tools to support my workflow.'
+    },
+    {
+        question: 'Which project are you most proud of?',
+        answer: 'Bronopoly. I was the team leader and programmer on a three-person team building a Roblox multiplayer game about economics. The project advanced to the regional round of NSC 2026.'
+    },
+    {
+        question: 'How can I contact you?',
+        answer: 'Email me at Wi.koo25561@gmail.com or send me a direct message on Instagram at @ppk.tnk. I usually reply within 24 hours.'
+    }
+];
+
+const englishGalleryDescriptions: Record<string, string> = {
+    'gal-1': 'Photo taken at the Microsoft office.',
+    'gal-2': 'A city view at night.',
+    'gal-3': 'Photos from an event.',
+    'gal-4': 'Photos from an event.',
+    'gal-5': 'Photos from an event.',
+    'gal-6': 'Photos from an event.'
+};
+
+export function getPortfolioData(locale: string): PortfolioData {
+    if (locale === 'th') {
+        return portfolioData;
+    }
+
+    return {
+        ...portfolioData,
+        personal: {
+            ...portfolioData.personal,
+            subtitle: 'Aspiring game developer focused on Roblox, Lua, and game system design.',
+            bio: 'My curiosity about how games work led me to Roblox Studio and Lua. Since then, I have enjoyed turning ideas into playable games—from planning game logic and designing systems to collaborating with a team. My team advanced to the regional round of NSC 2026 with Bronopoly, and I have also helped develop a game for HamsterHub GameJamX and shared what I have learned at game development camps.'
+        },
+        projects: portfolioData.projects.map((project) => ({
+            ...project,
+            ...englishProjectCopy[project.id],
+            role: project.id === 'project-1' ? 'Team Leader & Programmer' : project.id === 'project-3' ? 'Solo Developer' : project.id === 'project-4' ? 'Developer' : project.role,
+            team: project.id === 'project-1' ? 'Team Project (3 Members)' : project.id === 'project-2' ? 'Team Project (5 Members)' : project.id === 'project-3' || project.id === 'project-4' ? 'Solo Project' : project.team,
+            highlights: project.id === 'project-1'
+                ? ['Roblox Multiplayer Game', 'Economics Learning', 'NSC 2026 Regional Finalist']
+                : project.id === 'project-2'
+                    ? ['3-Day Game Jam', 'Roblox Battleground', 'Team Programming', 'HamsterHub GameJamX']
+                    : project.id === 'project-3'
+                        ? ['Solo Game Development', 'Game Concept & System Design', 'Animation / VFX / SFX', 'Clash Royale Inspired']
+                        : project.highlights,
+            challengesAndSolutions: project.challengesAndSolutions?.map((item) => ({
+                problem: project.id === 'project-1' ? 'Designing a multiplayer game that makes economic concepts understandable through play.' : item.problem,
+                solution: project.id === 'project-1' ? 'Worked with the team on system design and Roblox gameplay systems, with the player experience in mind.' : item.solution
+            }))
+        })),
+        experiences: portfolioData.experiences.map((experience) => ({
+            ...experience,
+            ...englishExperienceCopy[experience.id]
+        })),
+        education: portfolioData.education.map((education) => ({
+            ...education,
+            ...englishEducationCopy[education.id]
+        })),
+        achievements: portfolioData.achievements.map((achievement) => ({
+            ...achievement,
+            ...englishAchievementDescriptions[achievement.id]
+        })),
+        softSkills: portfolioData.softSkills.map((skill) => ({
+            ...skill,
+            description: englishSoftSkillDescriptions[skill.name] ?? skill.description
+        })),
+        faqs: englishFaqs,
+        gallery: portfolioData.gallery.map((item) => ({
+            ...item,
+            title: item.id === 'gal-1' ? 'Microsoft Visit' : item.id === 'gal-2' ? 'City View' : `Event ${Number(item.id.slice(-1)) - 1}`,
+            description: englishGalleryDescriptions[item.id] ?? item.description
+        }))
+    };
+}

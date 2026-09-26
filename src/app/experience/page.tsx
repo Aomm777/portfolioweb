@@ -24,7 +24,7 @@ import {
     Link2
 } from 'lucide-react';
 import { cn, formatDate } from '@/lib/utils';
-import { portfolioData } from '@/data/portfolio';
+import { usePortfolioData } from '@/hooks/usePortfolioData';
 import dynamic from 'next/dynamic';
 import { useTheme } from 'next-themes';
 import { Experience, Education } from '@/types';
@@ -94,6 +94,7 @@ interface TabItem {
 import MagneticEffect from '@/components/ui/MagneticEffect';
 
 function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
+    const portfolioData = usePortfolioData();
     const contentRef = useRef<HTMLDivElement>(null);
     const [activeTab, setActiveTab] = useState<number>(1);
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
@@ -122,7 +123,7 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
         const cat = categories.find(c => c.id === selectedCategory);
         if (!cat) return [];
         return portfolioData.experiences.filter(exp => exp.id.startsWith(cat.prefix));
-    }, [selectedCategory]);
+    }, [selectedCategory, portfolioData.experiences]);
 
     return (
         <div className="mb-24">
@@ -752,7 +753,8 @@ function TimelineGallery({ images, id, title, externalLink, logo }: { images: st
         ...externalLinksArray.map((link, idx) => ({ type: 'link' as const, src: link, index: validImages.length + idx }))
     ];
 
-    const visibleItems = isExpanded ? galleryItems.slice(0, 4) : galleryItems.slice(0, 2);
+    const primaryItem = galleryItems[0];
+    const secondaryItems = isExpanded ? galleryItems.slice(1, 5) : galleryItems.slice(1, 3);
 
     if (galleryItems.length === 0) return null;
 
@@ -760,7 +762,34 @@ function TimelineGallery({ images, id, title, externalLink, logo }: { images: st
         <div className="space-y-4">
             <div className="grid grid-cols-2 gap-4">
                 <AnimatePresence mode="popLayout">
-                    {visibleItems.map((item) => (
+                    {primaryItem && primaryItem.type === 'image' && (
+                        <motion.div
+                            key={`${id}-gallery-${primaryItem.index}`}
+                            layoutId={`${id}-gallery-${primaryItem.index}`}
+                            layout
+                            initial={{ opacity: 0, scale: 0.9 }}
+                            animate={{ opacity: 1, scale: 1 }}
+                            exit={{ opacity: 0, scale: 0.9 }}
+                            transition={{ duration: 0.2 }}
+                            onClick={() => setSelectedImage(primaryItem.src)}
+                            className="relative col-span-2 h-48 md:h-72 w-full group rounded-xl overflow-hidden shadow-sm hover:shadow-md transition-shadow duration-200 bg-neutral-100 dark:bg-neutral-800 cursor-zoom-in"
+                        >
+                            <Image
+                                src={primaryItem.src}
+                                alt={`${title ?? 'Experience'} featured photo`}
+                                fill
+                                sizes="(max-width: 768px) 100vw, 768px"
+                                className="object-cover transition-transform duration-500 group-hover:scale-105"
+                                unoptimized
+                                priority
+                                onError={() => handleImageError(primaryItem.index)}
+                            />
+                            <span className="absolute bottom-3 left-3 rounded-full bg-black/60 px-3 py-1 text-xs font-semibold text-white backdrop-blur-sm">
+                                Featured
+                            </span>
+                        </motion.div>
+                    )}
+                    {secondaryItems.map((item) => (
                         item.type === 'image' ? (
                             <motion.div
                                 key={`${id}-gallery-${item.index}`}
@@ -777,6 +806,7 @@ function TimelineGallery({ images, id, title, externalLink, logo }: { images: st
                                     src={item.src}
                                     alt={`experience gallery ${item.index}`}
                                     fill
+                                    sizes="(max-width: 768px) 50vw, 384px"
                                     className="object-cover transition-transform duration-500 group-hover:scale-110"
                                     unoptimized
                                     loading="lazy"
@@ -795,7 +825,7 @@ function TimelineGallery({ images, id, title, externalLink, logo }: { images: st
                     ))}
                 </AnimatePresence>
             </div>
-            {galleryItems.length > 2 && (
+            {galleryItems.length > 3 && (
                 <button
                     onClick={() => setIsExpanded(!isExpanded)}
                     className="flex items-center gap-1.5 text-xs font-bold text-neutral-500 hover:text-primary transition-colors uppercase tracking-widest pl-1"
@@ -803,7 +833,7 @@ function TimelineGallery({ images, id, title, externalLink, logo }: { images: st
                     {isExpanded ? (
                         <>Show Less <ChevronDown className="w-3 h-3 rotate-180" /></>
                     ) : (
-                        <>+{galleryItems.length - 2} More Attachments <ChevronDown className="w-3 h-3" /></>
+                        <>+{galleryItems.length - 3} More Attachments <ChevronDown className="w-3 h-3" /></>
                     )}
                 </button>
             )}
@@ -844,6 +874,7 @@ function TimelineGallery({ images, id, title, externalLink, logo }: { images: st
 }
 
 function ExperienceTimeline({ isLowPowerMode }: { isLowPowerMode: boolean }) {
+    const portfolioData = usePortfolioData();
     const experiences = portfolioData.experiences;
 
     const groupedExperiences = useMemo(() => {
@@ -872,7 +903,9 @@ function ExperienceTimeline({ isLowPowerMode }: { isLowPowerMode: boolean }) {
         content: (
             <div className="space-y-12">
                 {group.experiences.map((exp) => {
-                    const logoSrc = exp.logo || "";
+                    const timelineImageSrc = exp.timelineImage || exp.logo || "";
+                    const hasTimelineImage = Boolean(exp.timelineImage);
+                    const logoSrc = timelineImageSrc;
                     const needsInvertInDarkMode = logoSrc.includes("McKinsey") || 
                                                 logoSrc.includes("TelkomUniversity") || 
                                                 logoSrc.includes("softagelogo") || 
@@ -897,15 +930,16 @@ function ExperienceTimeline({ isLowPowerMode }: { isLowPowerMode: boolean }) {
                         <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-neutral-200 dark:bg-neutral-800 border-2 border-white dark:border-black" />
 
                         {/* HOVER LOGO ON THE LEFT */}
-                        {exp.logo && (
-                            <div className="absolute top-0 right-full mr-6 w-32 h-10 md:w-40 md:h-16 opacity-0 group-hover/timeline:opacity-100 transition-all duration-300 pointer-events-none flex items-center justify-end -translate-x-4 group-hover/timeline:translate-x-0 hidden md:flex">
+                        {timelineImageSrc && (
+                            <div className={`absolute top-0 right-full mr-6 ${hasTimelineImage ? 'w-32 h-44 md:w-40 md:h-56' : 'w-32 h-10 md:w-40 md:h-16'} opacity-0 group-hover/timeline:opacity-100 transition-all duration-300 pointer-events-none flex items-center justify-end -translate-x-4 group-hover/timeline:translate-x-0 hidden md:flex`}>
                                 <div className="relative w-full h-full">
-                                    <Image 
-                                        src={exp.logo} 
-                                        alt={`${exp.company} Logo`} 
+                                    <Image
+                                        src={timelineImageSrc}
+                                        alt={hasTimelineImage ? `${exp.company} event photo` : `${exp.company} Logo`}
                                         fill 
+                                        sizes="160px"
                                         unoptimized
-                                        className={`object-contain object-right ${specificClasses}`}
+                                        className={`object-contain object-right ${hasTimelineImage ? '' : specificClasses}`}
                                     />
                                 </div>
                             </div>

@@ -2,7 +2,7 @@
 
 import { motion, useTransform, useScroll } from "framer-motion";
 import { useRef } from "react";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 import {
   Users, Brain, Users2, MessageSquare, Puzzle,
   RefreshCw, BookOpen, Network, LineChart, Search
@@ -36,15 +36,23 @@ const skillVisuals: Record<string, string> = {
   'Research Skills': 'https://illustrations.popsy.co/white/presentation.svg',
 };
 
-const allCards = portfolioData.softSkills.slice(0, 10).map((skill, index) => ({
-  id: index + 1,
-  title: skill.name,
-  description: skill.description,
-  url: skillVisuals[skill.name] || 'https://illustrations.popsy.co/white/abstract-art-6.svg',
-  Icon: skillIcons[skill.name] || Users
-}));
+interface SkillCard {
+  id: number;
+  title: string;
+  description?: string;
+  url: string;
+  Icon: typeof Users;
+}
 
 export const HorizontalScrollCarousel = () => {
+  const portfolioData = usePortfolioData();
+  const allCards: SkillCard[] = portfolioData.softSkills.slice(0, 10).map((skill, index) => ({
+    id: index + 1,
+    title: skill.name,
+    description: skill.description,
+    url: skillVisuals[skill.name] || 'https://illustrations.popsy.co/white/abstract-art-6.svg',
+    Icon: skillIcons[skill.name] || Users
+  }));
   const targetRef = useRef(null);
   const { scrollYProgress } = useScroll({
     target: targetRef,
@@ -90,7 +98,7 @@ export const HorizontalScrollCarousel = () => {
   );
 };
 
-const Card = ({ card }: { card: typeof allCards[0] }) => {
+const Card = ({ card }: { card: SkillCard }) => {
   const { Icon } = card;
   return (
     <div

@@ -10,7 +10,7 @@ import {
   SiVite, SiTypescript, SiTailwindcss, SiNextdotjs, 
   SiFlask, SiJavascript, SiVercel
 } from "react-icons/si";
-import { portfolioData } from "@/data/portfolio";
+import { usePortfolioData } from "@/hooks/usePortfolioData";
 import MagneticEffect from "@/components/ui/MagneticEffect";
 
 const fallbackUrls = [
@@ -39,6 +39,7 @@ const iconConfigs = [
 ];
 
 export default function FeatureSection() {
+  const portfolioData = usePortfolioData();
   const orbitCount = 3;
   const orbitGap = 9; // rem between orbits
   const iconsPerOrbit = Math.ceil(iconConfigs.length / orbitCount);
@@ -63,11 +64,6 @@ export default function FeatureSection() {
             <MagneticEffect strength={0.8} stiffness={120} damping={10}>
               <Button variant="default" asChild className="rounded-full px-6 md:px-8 py-5 md:py-6 font-semibold text-sm md:text-base bg-primary text-primary-foreground border border-transparent hover:!bg-white hover:!text-black dark:hover:!bg-black dark:hover:!text-white hover:!border-black dark:hover:!border-white transition-all duration-300 w-full sm:w-auto text-center justify-center">
                 <Link href="/projects">View Projects</Link>
-              </Button>
-            </MagneticEffect>
-            <MagneticEffect strength={0.8} stiffness={120} damping={10}>
-              <Button variant="outline" asChild className="rounded-full px-6 md:px-8 py-5 md:py-6 font-semibold text-sm md:text-base bg-transparent border border-gray-200 dark:border-white/20 text-foreground hover:!bg-black hover:!text-white dark:hover:!bg-white dark:hover:!text-black transition-all duration-300 w-full sm:w-auto text-center justify-center">
-                <Link href="/resume">My Resume</Link>
               </Button>
             </MagneticEffect>
           </div>
