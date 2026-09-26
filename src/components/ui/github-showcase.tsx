@@ -15,8 +15,6 @@ import {
   GitPullRequest,
   BookOpen,
   PlusCircle,
-  Star,
-  GitFork
 } from 'lucide-react';
 import Link from 'next/link';
 import { GithubCalendar } from './retro-space-shooter-git-hub-calendar';
@@ -27,54 +25,30 @@ import { useLenis } from 'lenis/react';
 
 const GITHUB_USER = "Paphangkorn";
 
-const PINNED_REPOS = [
+const FEATURED_PROJECTS = [
   {
-    name: "PersonalBlog",
-    desc: "Professional portfolio built with Next.js 15, TypeScript, and Tailwind CSS. Features 3D physics (R3F), GSAP animations, and real-time coding stats via WakaTime and GitHub APIs. Support EN/ID.",
-    stars: 67,
-    forks: 12,
-    lang: "TypeScript",
-    url: "https://github.com/Paphangkorn/PersonalBlog"
+    name: "Bronopoly",
+    desc: "A Roblox multiplayer economics game developed with a three-person team and selected for the NSC 2026 regional round.",
+    techStack: "Roblox Studio · Lua · System Design",
+    url: "/projects/bronopoly-nsc2026"
   },
   {
-    name: "Browser-Automation-Agent",
-    desc: "A robust CLI powering autonomous web agents. Seamlessly integrate Playwright, browser-use, and LangChain to automate your daily web workflows.",
-    stars: 10,
-    forks: 2,
-    lang: "Python",
-    url: "https://github.com/Paphangkorn/Browser-Automation-Agent"
+    name: "HEAT THIEVES",
+    desc: "A Roblox battleground game built with a team in three days for HamsterHub GameJamX.",
+    techStack: "Roblox Studio · Lua · Game Jam",
+    url: "/projects/heat-thieves-gamejamx"
   },
   {
-    name: "Security-Automation-GenAI",
-    desc: "Deep Learning and Generative AI (Transformers & Attention Mechanisms) for automated cybersecurity threat detection, covering SQL Injection, DDoS, Network Intrusion, and Malware analysis.",
-    stars: 9,
-    forks: 2,
-    lang: "Jupyter Notebook",
-    url: "https://github.com/Paphangkorn/Security-Automation-GenAI"
+    name: "Anime Royale",
+    desc: "A solo Roblox strategy game project, developed from its concept and systems to animation and visual effects.",
+    techStack: "Roblox Studio · Lua · Blender",
+    url: "/projects/anime-royale"
   },
   {
-    name: "POLABDC",
-    desc: "POLABDC (Pondok Labu Dental Care) Dental Clinic Management System (SaaS) powered by AI. Built with Typescript Next.js, Express, Prisma, Supabase, and Google Gemini AI for assistance.",
-    stars: 8,
-    forks: 15,
-    lang: "TypeScript",
-    url: "https://github.com/Paphangkorn/POLABDC"
-  },
-  {
-    name: "Digilibzx",
-    desc: "Modern Full-Stack Digital Library System built with Java Spring Boot and TypeScript Next.js . Features AI-powered book summarization (Gemini), smart borrowing cart, and Dockerized deployment.",
-    stars: 12,
-    forks: 2,
-    lang: "TypeScript",
-    url: "https://github.com/Paphangkorn/Digilibzx"
-  },
-  {
-    name: "Swarm-Agent-Orchestrator",
-    desc: "Autonomous multi-agent content orchestration system for high-performance blog drafting and research. Powered by OpenAI Swarm architecture.",
-    stars: 10,
-    forks: 5,
-    lang: "Vue",
-    url: "https://github.com/Paphangkorn/Swarm-Agent-Orchestrator"
+    name: "Escape Lab",
+    desc: "An early Roblox Bootcamp project focused on Lua scripting, game logic, and player experience.",
+    techStack: "Roblox Studio · Lua · Game Design",
+    url: "/projects/escape-lab"
   }
 ];
 
@@ -143,7 +117,6 @@ export const GitHubShowcase = () => {
     };
   }, [isExpanded, lenis]);
 
-  const [pinnedIndex, setPinnedIndex] = useState(0);
   const [data, setData] = useState<{
     user: any;
     activity: GitHubActivity[];
@@ -160,15 +133,6 @@ export const GitHubShowcase = () => {
     },
     topLanguages: []
   });
-
-  useEffect(() => {
-    if (isExpanded) {
-      const interval = setInterval(() => {
-        setPinnedIndex((prev) => (prev + 1) % PINNED_REPOS.length);
-      }, 3000);
-      return () => clearInterval(interval);
-    }
-  }, [isExpanded]);
 
   useEffect(() => {
     setMounted(true);
@@ -298,8 +262,6 @@ export const GitHubShowcase = () => {
     dark: ['#161b22', '#0e4429', '#006d32', '#26a641', '#39d353'],
   };
 
-  const currentRepo = PINNED_REPOS[pinnedIndex];
-
   // REVERT TO STABLE SPRING TRANSITION (v29)
   const springTransition = { type: "spring", damping: 25, stiffness: 120 };
 
@@ -366,9 +328,9 @@ export const GitHubShowcase = () => {
               <span className="text-sm font-bold tracking-[0.3em] uppercase opacity-70">GitHub Ecosystem</span>
             </motion.div>
             <motion.h2 layout className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9em] text-black dark:text-white">
-              {loading ? "Initializing..." : <>Creative Engineering, <br />
+              {loading ? "Initializing..." : <>Roblox Game Development, <br />
                 <span className="flex items-center gap-2">
-                  now <span className="text-[#39d353]">Open Source.</span>
+                  shown through <span className="text-[#39d353]">my projects.</span>
                   <Gift className="inline-flex text-[#39d353] rotate-12" size={40} />
                 </span></>}
             </motion.h2>
@@ -395,7 +357,7 @@ export const GitHubShowcase = () => {
           </motion.div>
 
           <motion.p layout className='max-w-sm font-semibold text-lg text-black/50 dark:text-white/40 leading-relaxed pt-12 md:pt-20'>
-            {"A verified dashboard of technical milestones, total contributions, and real-time project activity."}
+            {"A live view of my GitHub activity, alongside selected Roblox game projects and the tools behind them."}
           </motion.p>
         </motion.div>
       </motion.div>
@@ -437,9 +399,9 @@ export const GitHubShowcase = () => {
                       <span className="text-sm font-bold tracking-[0.3em] uppercase opacity-70">GitHub Ecosystem</span>
                     </div>
                     <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[0.9em] text-black dark:text-white">
-                      Creative Engineering, <br />
+                      Roblox Game Development, <br />
                       <span className="flex items-center gap-2">
-                        now <span className="text-[#39d353]">Open Source.</span>
+                        shown through <span className="text-[#39d353]">my projects.</span>
                         <Gift className="inline-flex text-[#39d353] rotate-12" size={40} />
                       </span>
                     </h2>
@@ -526,22 +488,18 @@ export const GitHubShowcase = () => {
                           whileTap={{ scale: 0.9 }}
                           className="bg-white text-black px-10 py-3 rounded-full text-xl font-black -rotate-1 shadow-xl hover:shadow-white/50 hover:shadow-2xl transition-all cursor-pointer"
                         >
-                          Pinned Repositories
+                          Featured Game Projects
                         </motion.h3>
                       </div>
                       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                        {PINNED_REPOS.map((repo, idx) => (
-                          <Link key={idx} href={repo.url} target="_blank" className="p-5 rounded-2xl bg-white dark:bg-black border border-black/5 dark:border-white/5 flex flex-col gap-3 group/repo hover:border-[#39d353]/50 transition-all">
+                        {FEATURED_PROJECTS.map((project) => (
+                          <Link key={project.name} href={project.url} className="p-5 rounded-2xl bg-white dark:bg-black border border-black/5 dark:border-white/5 flex flex-col gap-3 group/repo hover:border-[#39d353]/50 transition-all">
                             <div className="flex items-center gap-2">
                               <BookOpen size={14} className="text-[#39d353]" />
-                              <span className="text-sm font-black group-hover/repo:text-[#39d353] transition-colors">{repo.name}</span>
+                              <span className="text-sm font-black group-hover/repo:text-[#39d353] transition-colors">{project.name}</span>
                             </div>
-                            <p className="text-[10px] leading-relaxed opacity-50 line-clamp-2">{repo.desc}</p>
-                            <div className="flex items-center gap-4 text-[9px] font-bold opacity-40">
-                              <span className="flex items-center gap-1"><Star size={10} />{repo.stars}</span>
-                              <span className="flex items-center gap-1"><GitFork size={10} />{repo.forks}</span>
-                              <span>{repo.lang}</span>
-                            </div>
+                            <p className="text-[10px] leading-relaxed opacity-50 line-clamp-2">{project.desc}</p>
+                            <span className="text-[9px] font-bold opacity-40">{project.techStack}</span>
                           </Link>
                         ))}
                       </div>
@@ -606,4 +564,3 @@ export const GitHubShowcase = () => {
     </section>
   );
 };
-

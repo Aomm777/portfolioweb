@@ -7,9 +7,9 @@ import { ChevronDown } from 'lucide-react';
 const TERMINAL_TEXT = `// Initializing blog system...
 const blog = {
   mission: "Sharing knowledge, one post at a time",
-  topics: ["AI", "Web3", "Code", "Innovation"],
+  topics: ["Roblox", "Lua", "Game Design", "Game Jams"],
   status: "ACTIVE",
-  author: "Software Engineer"
+  author: "Game Developer"
 };
 
 blog.init();

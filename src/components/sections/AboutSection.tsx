@@ -32,57 +32,15 @@ import { WakaTimeShowcase } from "@/components/ui/wakatime-showcase";
 import { ShowcaseStack } from "@/components/ui/showcase-stack";
 
 const showcaseMembers = [
-    // 1. Cyber Physical Systems Laboratory
-    ...portfolioData.experiences.filter(exp => exp.id === 'prof-7').map(exp => ({
-        id: exp.id,
-        name: "Cyber Physical Systems Laboratory",
-        role: exp.position.replace(' (Contract-Based)', ''),
-        description: exp.description,
-        period: "August 2025 - Present",
-        image: "/journey/researchassistant2.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
+    ...portfolioData.experiences.map((experience) => ({
+        id: experience.id,
+        name: experience.company,
+        role: experience.position,
+        description: experience.description,
+        period: `${experience.startDate} — ${experience.isOngoing ? 'Present' : experience.endDate ?? ''}`,
+        image: experience.galleryImages?.[0] ?? '/images/profile.png',
+        social: { website: '/experience' },
     })),
-    // 2. HUMIC Engineering
-    ...portfolioData.experiences.filter(exp => exp.id === 'prof-3').map(exp => ({
-        id: exp.id,
-        name: "HUMIC Engineering",
-        role: exp.position,
-        description: exp.description,
-        period: "September 2025 - December 2025",
-        image: "/journey/aideveloperintern1.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
-    })),
-    // 3. Informatics Laboratory, Telkom University
-    ...portfolioData.experiences.filter(exp => exp.id === 'prof-6').map(exp => ({
-        id: exp.id,
-        name: exp.company,
-        role: exp.position.replace(' (Contract-Based)', ''),
-        description: exp.description,
-        period: "September 2025 - January 2026",
-        image: "/journey/computernetworkpracticumassistant2.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
-    })),
-    // 4. Digistar Club by Telkom Indonesia
-    ...portfolioData.experiences.filter(exp => exp.id === 'lead-2').map(exp => ({
-        id: exp.id,
-        name: exp.company,
-        role: exp.position,
-        description: exp.description,
-        period: "October 2025 - December 2025",
-        image: "/journey/chiefcommittee1.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
-    })),
-    // 5. Food and Agriculture Office of Bandung City
-    ...portfolioData.experiences.filter(exp => exp.id === 'prof-8').map(exp => ({
-        id: exp.id,
-        name: "Food and Agriculture Office of Bandung City",
-        role: exp.position,
-        description: exp.description,
-        period: "July - September 2025",
-        image: "/journey/dataentryassistant1.webp",
-        social: exp.externalLink ? { website: Array.isArray(exp.externalLink) ? exp.externalLink[0] : exp.externalLink } : undefined
-    })),
-    // 6. View more
     {
         id: 'view-more',
         name: 'View more',
@@ -279,25 +237,6 @@ const AboutLeadIn = () => {
         </div>
     );
 };
-
-// --- Tech Stack Logos (from portfolio.ts project data) ---
-const TECH_LOGOS = [
-    { name: "Python", slug: "python" },
-    { name: "TensorFlow", slug: "tensorflow" },
-    { name: "Next.js", slug: "nextdotjs" },
-    { name: "React", slug: "react" },
-    { name: "TypeScript", slug: "typescript" },
-    { name: "Docker", slug: "docker" },
-    { name: "FastAPI", slug: "fastapi" },
-    { name: "PostgreSQL", slug: "postgresql" },
-    { name: "LangChain", slug: "langchain" },
-    { name: "Firebase", slug: "firebase" },
-    { name: "Spring Boot", slug: "springboot" },
-    { name: "Solidity", slug: "solidity" },
-    { name: "Go", slug: "go" },
-    { name: "Prisma", slug: "prisma" },
-    { name: "Flask", slug: "flask" },
-];
 
 // --- Component 2: Core Engineering Panel ---
 // --- Component 1: Core Engineering Panel (Stats) ---
@@ -710,4 +649,3 @@ export default function AboutSection() {
         </section >
     );
 };
-

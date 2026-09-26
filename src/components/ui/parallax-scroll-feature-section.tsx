@@ -11,30 +11,30 @@ export const ParallaxScrollFeatureSection = () => {
     const sections = [
         {
             id: 1,
-            title: "Intelligence Systems",
-            subtitle: "AI & DATA SCIENCE",
-            description: "Specializing in architecting autonomous systems and intelligence-driven platforms. From fine-tuning LLMs and engineering RAG architectures to developing deep learning models for Computer Vision and NLP.",
+            title: "Roblox Game Systems",
+            subtitle: "GAME DEVELOPMENT",
+            description: "Turning game ideas into playable Roblox experiences with Lua scripting, gameplay logic, and carefully designed systems for solo and team projects.",
             imageUrl: '/feature/feature1.webp',
             reverse: false,
-            skills: ["LLM Fine-tuning", "RAG Systems", "Deep Learning", "Computer Vision", "MLOps", "Data Analytics"]
+            skills: ["Roblox Studio", "Lua", "Gameplay Logic", "System Design", "Multiplayer", "Game Feel"]
         },
         {
             id: 2,
-            title: "Scalable Systems",
-            subtitle: "SOFTWARE DEVELOPMENT",
-            description: "Building the foundation for resilient digital ecosystems. I engineer full-stack solutions with a focus on system architecture, modular design, and high-performance backends using Go, Next.js, and Python.",
+            title: "Gameplay & Scripting",
+            subtitle: "FROM CONCEPT TO PLAY",
+            description: "Building and refining game mechanics, from early concepts and scripting to testing, animation, and visual effects that make each experience engaging.",
             imageUrl: '/feature/feature2.webp',
             reverse: true,
-            skills: ["System Architecture", "Full-Stack Dev", "Docker & K8s", "API Design", "DevOps", "Software Design"]
+            skills: ["Lua Scripting", "Game Mechanics", "Animation", "VFX / SFX", "Testing", "Blender"]
         },
         {
             id: 3,
-            title: "Strategic Innovation",
-            subtitle: "SOFT SKILLS & LEADERSHIP",
-            description: "Translating complex technical requirements into impactful business solutions through systemic thinking, strategic leadership, and clear communication within cross-functional teams.",
+            title: "Teamwork & Mentoring",
+            subtitle: "COLLABORATION",
+            description: "Working with teammates to deliver game-jam projects on a tight schedule and helping camp participants learn game development through practical guidance.",
             imageUrl: '/feature/feature3.webp',
             reverse: false,
-            skills: ["Systemic Thinking", "Leadership", "Problem Solving", "Teamwork", "Communication", "Research"]
+            skills: ["Team Projects", "Game Jams", "Mentoring", "Problem Solving", "Communication", "Time Management"]
         }
     ]
 
@@ -106,7 +106,7 @@ export const ParallaxScrollFeatureSection = () => {
                                         "text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight leading-tight text-zinc-900 dark:text-white uppercase",
                                         "break-words max-w-full"
                                     )}>
-                                        {section.id === 1 ? "Intelligence Systems" : section.title}
+                                        {section.title}
                                     </h2>
                                 </div>
 
@@ -177,4 +177,3 @@ export const ParallaxScrollFeatureSection = () => {
         </div>
     );
 };
-

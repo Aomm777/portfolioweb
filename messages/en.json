@@ -36,7 +36,7 @@
     },
     "hero": {
         "greeting": "Welcome to my digital space",
-        "subtitle": "Full Stack Developer • AI Engineer • Data Scientist",
+        "subtitle": "Game Developer • Roblox Studio • Lua",
         "cta": {
             "primary": "Explore Projects",
             "secondary": "Get in Touch",
@@ -44,13 +44,13 @@
         },
         "badge": "Available for opportunities",
         "scroll": "Scroll Down",
-        "role": "Software Engineer",
-        "description": "Building intelligent systems at the intersection of <span class='text-primary font-semibold'>AI</span>, <span class='text-secondary font-semibold'>Engineering</span>, and <span class='text-accent font-semibold'>Scalable Architecture</span>."
+        "role": "Game Developer",
+        "description": "Building playable ideas with <span class='text-primary font-semibold'>Roblox Studio</span>, <span class='text-secondary font-semibold'>Lua</span>, and thoughtful <span class='text-accent font-semibold'>game systems</span>."
     },
     "about": {
         "title": "About Me",
-        "subtitle": "Tech Explorer & Problem Solver",
-        "description": "A passionate tech explorer specializing in Full Stack Development, Artificial Intelligence, and Data Science. Currently diving deep into AI Agents and Blockchain technology.",
+        "subtitle": "Roblox Game Developer & Lua Scripter",
+        "description": "I turn game ideas into playable Roblox experiences, from scripting gameplay logic and designing systems to collaborating with a team and helping other learners build their own projects.",
         "stats": {
             "experience": "Years Learning",
             "projects": "Projects Done",
@@ -63,62 +63,62 @@
         "leadIn": {
             "label": "WHAT I DO",
             "tagline": "CORE FOCUS",
-            "headlineAI": "Applied AI.",
-            "headlineData": "Scalable Data.",
-            "headlineSoftware": "Robust software engineering",
-            "thesis": "I build intelligent systems and the <span class='text-primary italic font-serif-elegant font-normal'>data infrastructure</span> that makes them reliable at scale.",
-            "scope": "Focusing on predictive models, optimized data processing, and RAG pipelines designed for production environments and measurable performance.",
-            "bridging": "Bridging labs and live systems.",
-            "integration": "Beyond models, I architect full-stack ecosystems: secure backends, robust data architectures, and scalable pipelines.",
-            "signature": "Azril",
-            "role": "AI, Data & Software Engineer",
+            "headlineAI": "Game Logic.",
+            "headlineData": "Roblox Systems.",
+            "headlineSoftware": "Games built to be played",
+            "thesis": "I bring game ideas to life with <span class='text-primary italic font-serif-elegant font-normal'>Lua scripting</span> and intentional system design.",
+            "scope": "My focus is Roblox game development: gameplay logic, multiplayer experiences, and the small details that make a game feel engaging.",
+            "bridging": "From first idea to playable build.",
+            "integration": "I enjoy both solo projects and team development, and share what I learn while mentoring game-camp participants.",
+            "signature": "Paphangkorn",
+            "role": "Roblox Game Developer",
             "aboutMe": "About Me",
             "scroll": "Scroll to Explore",
             "shortStory": "My Short Story"
         },
         "coreEngineering": {
-            "label": "Core Engineering",
-            "title": "Proven <span class='text-primary italic font-serif font-light lowercase'>stack.</span> <br /> Measurable <span class='italic font-serif font-light text-foreground'>results.</span>",
-            "p1": "I develop applied AI systems using TensorFlow, Scikit-learn, and LangChain, structuring workflows and exposing models as services through Flask and FastAPI.",
-            "p2": "Integrated into full-stack apps with Next.js, Express.js, and Spring Boot, backed by PostgreSQL and Prisma ORM.",
-            "p3": "All projects use disciplined version control, Docker containerization, and are built for stable production deployment.",
+            "label": "Game Development",
+            "title": "Thoughtful <span class='text-primary italic font-serif font-light lowercase'>systems.</span> <br /> Playable <span class='italic font-serif font-light text-foreground'>ideas.</span>",
+            "p1": "I use Roblox Studio and Lua to turn game concepts into interactive experiences, with a focus on clear gameplay logic.",
+            "p2": "My projects range from solo experiments to team-built multiplayer games, including Bronopoly, a regional NSC 2026 finalist.",
+            "p3": "I also explore game feel through animation and VFX, and use Blender and AI-assisted tools as part of my workflow.",
             "gpa": "Academic GPA",
             "projects": "Projects Built",
             "years": "Years Exp."
         },
         "emergingResearch": {
-            "label": "Exploration Phase",
-            "title": "EMERGING RESEARCH <span class='italic font-serif font-light text-primary lowercase'>&</span> EXPANSION",
+            "label": "Game Design Practice",
+            "title": "LEARNING <span class='italic font-serif font-light text-primary lowercase'>&</span> BUILDING",
             "agentic": {
-                "title": "AGENTIC AI SYSTEMS",
-                "desc": "Exploring autonomous agents, multi-agent orchestration, and reasoning frameworks — extending my applied AI foundation into self-directed decision-making systems."
+                "title": "GAMEPLAY SYSTEMS",
+                "desc": "Practicing how game rules, player actions, and scripted behaviors work together to create clear and enjoyable gameplay."
             },
             "web3": {
-                "title": "WEB3 & BLOCKCHAIN",
-                "desc": "Building decentralized applications with Solidity and Hardhat. Currently hands-on with smart contract development through projects like the Web3 Guestbook DApp on Ethereum."
+                "title": "GAME FEEL",
+                "desc": "Exploring animation, VFX, and sound as ways to make game interactions feel more expressive."
             }
         },
         "profile": {
-            "title": "Architecting Scalable Systems <br /> Where Intelligence Meets Engineering.",
+            "title": "Designing Game Systems <br /> Where Ideas Become Playable.",
             "narrativeLabel": "Core Narrative",
-            "narrative": "As an Information Technology student specializing in Artificial Intelligence and Software Engineering, I focus on building systems that bridge research foundations with production-ready implementation.",
-            "narrative2": "My work combines algorithmic thinking, backend engineering, and scalable architecture to deliver solutions that are intelligent, reliable, and built for real-world impact.",
+            "narrative": "I am a Computer Engineering student and game developer focused on Roblox Studio, Lua scripting, and game system design.",
+            "narrative2": "I have built projects independently and with a team, reached the regional round of NSC 2026 with Bronopoly, and supported learners at game development camps.",
             "pillars": {
                 "reliable": {
-                    "title": "Robust by Design",
-                    "desc": "Engineered for reliability under scale and operational pressure."
+                    "title": "Designed with Purpose",
+                    "desc": "Game rules and interactions shaped around a clear player experience."
                 },
                 "optimized": {
-                    "title": "Production-Ready",
-                    "desc": "From prototype to deployment with engineering discipline."
+                    "title": "From Idea to Play",
+                    "desc": "Turning a concept into a playable Roblox project through iteration."
                 },
                 "maintainable": {
-                    "title": "Architected for Evolution",
-                    "desc": "Designed to grow, adapt, and sustain long-term system development."
+                    "title": "Built with a Team",
+                    "desc": "Collaborating on game projects and learning through shared development."
                 },
                 "evolvable": {
-                    "title": "Data-Driven Intelligence",
-                    "desc": "Decisions powered by models, metrics, and measurable performance."
+                    "title": "Always Learning",
+                    "desc": "Growing through solo experiments, game jams, and teaching camps."
                 }
             }
         },
@@ -137,51 +137,42 @@
             },
             "experiencesList": [
                 {
-                    "company": "Dicoding Academy",
-                    "role": "MACHINE LEARNING CODE REVIEWER",
-                    "desc": "Technical evaluation and quality assurance of ML project submissions. Validating logical correctness, efficiency, and enforcing industry best practices for learners."
+                    "company": "HamsterHub",
+                    "role": "AI CAMP TEACHING ASSISTANT",
+                    "desc": "Supported participants building Roblox, Unity, and web projects in a three-day camp, including guidance on Cursor AI, MCP Server, and debugging AI-generated code."
                 },
                 {
-                    "company": "Advanced Software Engineering Laboratory",
-                    "role": "SYSTEM ANALYST INTERN",
-                    "desc": "Translating complex requirements into SRS documentation and designing system architectures using UML diagrams. focused on software design."
+                    "company": "GamePee Camp",
+                    "role": "GAME DEVELOPMENT TEACHING ASSISTANT",
+                    "desc": "Introduced participants to enemy AI behavior and Roblox scripting during a three-day game development camp."
                 },
                 {
-                    "company": "Cyber Physical System Laboratory",
-                    "role": "RESEARCH ASSISTANT (CONTRACT)",
-                    "desc": "Developing AI-driven research products and designing learning materials for Deep Learning and Computer Vision. Contributing to intelligent systems."
+                    "company": "HamsterHub",
+                    "role": "ROBLOX BOOTCAMP PARTICIPANT",
+                    "desc": "Learned Roblox Studio and Lua while developing early game projects such as Escape Lab and Anime Royale."
                 },
                 {
-                    "company": "HUMIC Engineering Research Center",
-                    "role": "AI DEVELOPER INTERN",
-                    "desc": "Built Transformer-based attack detection models for cybersecurity applications. Managed large-scale datasets through the full ML pipeline."
-                },
-                {
-                    "company": "Cyber Physical System Laboratory",
-                    "role": "COMPUTER VISION RESEARCHER INTERN",
-                    "desc": "End-to-end development of intelligent models using state-of-the-art Deep Learning architectures. Implemented ML algorithms for real-world applications."
+                    "company": "HamsterHub GameJamX",
+                    "role": "PROGRAMMER",
+                    "desc": "Collaborated with a team to develop the Roblox game HEAT THIEVES in three days."
                 }
             ],
             "projectsList": [
                 {
-                    "title": "Creative Portfolio Website",
-                    "desc": "Modern, animated portfolio with 3D elements, physics-simulated interactions, and shader-based warp effects. Engineered for high performance & optimization."
+                    "title": "Bronopoly",
+                    "desc": "A Roblox multiplayer game about economics, developed with a three-person team and selected for the regional round of NSC 2026."
                 },
                 {
-                    "title": "SNBTIn - Platform Persiapan SNBT 2025",
-                    "desc": "Leading EdTech platform in Indonesia for exam preparation. Featuring a comprehensive learning ecosystem with interactive and real-time analytics."
+                    "title": "HEAT THIEVES",
+                    "desc": "A Roblox battleground game built with a team in three days for HamsterHub GameJamX."
                 },
                 {
-                    "title": "TerraFlow Platform",
-                    "desc": "Enterprise IoT solution for precision agriculture. ESP32 sensor nodes communicate with Firebase via a Go (Gin), with a Next.js dashboard for real-time monitoring"
+                    "title": "Anime Royale",
+                    "desc": "A solo Roblox game inspired by Clash Royale, developed from game concept and system design through Lua scripting and game feel."
                 },
                 {
-                    "title": "DocsInsight Engine",
-                    "desc": "Private RAG platform for intelligent document analysis. Powered by local LLMs through Ollama, with LangChain orchestration and ChromaDB vector search."
-                },
-                {
-                    "title": "POLABDC Dental Management",
-                    "desc": "AI-powered dental clinic SaaS with disease prediction, real-time queue management, and a Monorepo architecture Next.js, Express.js, and Python"
+                    "title": "Escape Lab",
+                    "desc": "An early Roblox Bootcamp project that helped me learn Lua, game logic, and how to turn a game idea into a playable experience."
                 }
             ],
             "discoverMore": "Discover More"
@@ -189,7 +180,7 @@
     },
     "projects": {
         "title": "Projects",
-        "subtitle": "A showcase of my creative and technical work",
+        "subtitle": "Roblox games and game development projects built solo and with a team",
         "search": "Search projects...",
         "viewAll": "View All Projects",
         "viewProject": "View Project",
@@ -237,7 +228,7 @@
     },
     "experience": {
         "title": "Experience",
-        "subtitle": "My professional journey and growth",
+        "subtitle": "My education, game development projects, and mentoring experience",
         "showDetail": "Show Detail",
         "hideDetail": "Hide Detail",
         "tasks": "TASKS",
@@ -271,12 +262,12 @@
     },
     "expertise": {
         "title": "Core Capabilities",
-        "subtitle": "Specialized in cutting-edge technologies that power modern digital experiences",
+        "subtitle": "Game development skills and tools I use to bring Roblox experiences to life",
         "dragHint": "Drag or scroll to explore"
     },
     "skills": {
         "title": "Skills & Tools",
-        "subtitle": "Technologies and tools I work with",
+        "subtitle": "Roblox Studio, Lua, Blender, and the tools behind my game projects",
         "hard": "Hard Skills",
         "soft": "Soft Skills",
         "technical": "Technical Proficiency",
@@ -314,7 +305,7 @@
     },
     "contact": {
         "title": "Get in Touch",
-        "subtitle": "Let's build something amazing together",
+        "subtitle": "Let's talk about game ideas, Roblox projects, or collaboration",
         "form": {
             "name": "Your Name",
             "email": "Your Email",
@@ -342,32 +333,32 @@
         },
         "hero": {
             "title": "LET'S TALK",
-            "subtitle": "Have an idea? Let's build something extraordinary together.",
+            "subtitle": "Have a game idea? Let's explore how we could build it together.",
             "ticker": {
                 "build": "Let's Build Something Amazing · ",
-                "freelance": "Available for Freelance · "
+                "freelance": "Open to Game Development Collaboration · "
             }
         },
         "faqData": [
             {
                 "q": "What is your main area of expertise?",
-                "a": "As an Information Technology student at Telkom University and a Research Assistant at the Cyber Physical System Laboratory, I specialize in the intersection of Artificial Intelligence (Computer Vision & Deep Learning), Full-stack Development (Next.js & Node.js), and emerging Blockchain/Web3 technologies."
+                "a": "I am a Computer Engineering student focused on game development with Roblox Studio and Lua. I enjoy building game logic, designing game systems, and working with a team."
             },
             {
                 "q": "Are you available for research or freelance collaborations?",
-                "a": "Absolutely. I am currently active in AI research at the CPS Lab and HUMIC Research Center, but I'm always open to innovative freelance projects, internships, or technical collaborations that bridge innovation with strategic execution."
+                "a": "I am open to conversations about game development projects, game jams, and opportunities to keep learning and building with a team."
             },
             {
                 "q": "What is your typical tech stack for production?",
-                "a": "For AI projects, I primarily use Python with TensorFlow, PyTorch, and YOLO. For web applications, my go-to is the T3-style stack: Next.js, TypeScript, and Tailwind CSS, often integrated with AI Agents or Smart Contracts where appropriate."
+                "a": "My main game development tools are Roblox Studio and Lua. I also use Blender for 3D work and Cursor AI with MCP Server as part of my development workflow."
             },
             {
-                "q": "Do you have experience with enterprise or lab projects?",
-                "a": "Yes, I've served as a System Analyst and AI Developer in various research-driven environments. I've architected everything from AIoT platforms and attack detection systems to student practicum modules for global audiences."
+                "q": "What projects have you worked on?",
+                "a": "My projects include Bronopoly, a Roblox multiplayer economics game that reached the regional round of NSC 2026; HEAT THIEVES, made during a three-day GameJamX; and solo projects such as Anime Royale and Escape Lab."
             },
             {
                 "q": "How can we start a partnership or project?",
-                "a": "The most efficient way is to use the contact form above or reach out directly via email at azril4974@gmail.com. I'm usually able to respond within 24 hours to discuss how my technical skill set can add value to your initiatives."
+                "a": "Use the contact form above or email me at Wi.koo25561@gmail.com. I would be glad to hear about a game idea, collaboration, or learning opportunity."
             }
         ]
     },
@@ -397,7 +388,7 @@
     "ctaSection": {
         "title": "Let's Build Something",
         "together": "Together",
-        "subtitle": "Open to strategic collaborations in AI driven systems and scalable full Stack Engineering. Let’s transform ambitious ideas into production ready solutions.",
+        "subtitle": "Open to game development collaborations, team projects, and opportunities to build engaging Roblox experiences.",
         "start": "Hire Me",
         "work": "View My Resume",
         "words": {
@@ -406,8 +397,8 @@
             "intelligent": "Intelligent",
             "creative": "Creative"
         },
-        "ribbon1": "Next.js • React • Python • PyTorch • Pandas • TypeScript • Node.js • Scikit-Learn • TensorFlow • SQL",
-        "ribbon2": "Software Engineer • AI Engineer • Data Scientist • Data Analyst • Machine Learning Engineer • Backend Developer • Full Stack Engineer • NLP Engineer • Data Engineer • Web Developer"
+        "ribbon1": "Roblox Studio • Lua • Blender • Python • C++ • Cursor AI",
+        "ribbon2": "Game Developer • Roblox Developer • Lua Scripter • Game Logic • System Design • Multiplayer Games • Animation • VFX"
     },
     "stats": {
         "systemStatus": "System Status: Analytics Active",
@@ -431,7 +422,7 @@
     },
     "projectHeader": {
         "title": "Architecting Digital Reality",
-        "subtitle": "A curated showcase of technical innovation and creative engineering. Exploring the frontiers of <span class='font-bold text-foreground'>Artificial Intelligence</span>, Blockchain, Data, and Immersive Web experiences."
+        "subtitle": "A showcase of my game development projects, exploring <span class='font-bold text-foreground'>Roblox Studio</span>, Lua scripting, gameplay systems, and creative game experiences."
     },
     "common": {
         "loading": "Loading...",
@@ -471,7 +462,7 @@
     },
     "blog": {
         "title": "Thoughts & Explorations",
-        "subtitle": "Bridging the gap between technical complexity and practical implementation. A collection of insights on AI, Web3, and Software Engineering.",
+        "subtitle": "Notes on learning game development, building with Roblox Studio, and turning ideas into playable experiences.",
         "sectionBadge": "The Digital Archive",
         "search": "Search articles...",
         "readTime": "min read",
@@ -497,14 +488,14 @@
     },
     "chatbot": {
         "title": "AI Assistant",
-        "subtitle": "Ask me about Azril",
+        "subtitle": "Ask me about Paphangkorn",
         "placeholder": "Type a message...",
         "greeting": "Hi! I'm an AI assistant for **{name}**. 👋\n\nI can answer questions about:\n- Skills & technical expertise\n- Projects and work\n- Experience\n- Education\n- And more!\n\nAnything you'd like to ask?",
         "suggestions": [
             "What are your main skills?",
             "Tell me about your best project",
             "What is your work experience?",
-            "What AI skills do you have?"
+            "What tools do you use for game development?"
         ],
         "error": "An error occurred. Please try again.",
         "invalidResponse": "Invalid response from server.",

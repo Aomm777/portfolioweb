@@ -1044,8 +1044,8 @@ export default function AchievementsPage() {
                         >
                             <ErrorBoundary fallback={<div className="text-center opacity-50">Visuals Unavailable</div>}>
                                 <FallingText
-                                    text="Python TensorFlow LangChain Next.js PyTorch OpenCV Blockchain Kubernetes Docker TypeScript DeepLearning Ultralytics Nodejs MLOps Cloud"
-                                    highlightWords={['Python', 'TensorFlow', 'LangChain', 'Blockchain', 'DeepLearning']}
+                                    text="Roblox Studio Lua Blender Game Design System Design Class Diagram Animation VFX C++ Python GameJamX NSC2026"
+                                    highlightWords={['Roblox Studio', 'Lua', 'Game Design', 'GameJamX', 'NSC2026']}
                                     trigger="scroll"
                                     gravity={0.8}
                                     mouseConstraintStiffness={0.2}

@@ -88,30 +88,30 @@ export default function AboutMeHub() {
 
     const items = [
         {
-            title: "Competency",
-            subtitle: "Tech Stack & Soft Skills",
-            description: "A comprehensive matrix of my technical arsenal from AI/ML research to enterprise full-stack architectures.",
+            title: "Skills",
+            subtitle: "Game Dev & Tools",
+            description: "My hands-on toolkit for Roblox game development, including Lua scripting, game logic, system design, and 3D art.",
             href: "/skills",
             icon: Cpu
         },
         {
-            title: "Trajectory",
-            subtitle: "Professional Journey",
-            description: "A detailed timeline of my evolution within CPS Lab, HUMIC Engineering, and high-impact industrial roles.",
+            title: "Journey",
+            subtitle: "Learning & Mentoring",
+            description: "Explore my education, game development projects, and experience supporting learners at game camps.",
             href: "/experience",
             icon: Briefcase
         },
         {
-            title: "Production",
-            subtitle: "Featured Engineering",
-            description: "Deep-dives into my most significant builds across AI systems, Web3 protocols, and enterprise SaaS.",
+            title: "Projects",
+            subtitle: "Games I've Built",
+            description: "Take a closer look at my Roblox projects, from solo game concepts to team-built multiplayer experiences.",
             href: "/projects",
             icon: Rocket
         },
         {
-            title: "Validation",
-            subtitle: "Credentials & Honors",
-            description: "A curated archive of global certifications, academic honors, and professional industry validation.",
+            title: "Milestones",
+            subtitle: "Awards & Learning",
+            description: "A collection of certificates, competitions, and milestones from my journey as a game developer.",
             href: "/achievements",
             icon: Award
         }

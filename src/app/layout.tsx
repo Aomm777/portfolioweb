@@ -32,11 +32,11 @@ const signature = Alex_Brush({
 
 export const metadata: Metadata = {
     title: {
-        default: 'Paphangkorn | AI & Software Engineer',
+        default: 'Paphangkorn | Roblox Game Developer',
         template: '%s | Portfolio',
     },
-    description: 'Game Developer & Software Engineer passionate about scalable systems and Roblox Studio.',
-    keywords: ['developer', 'portfolio', 'game developer', 'software engineer', 'roblox'],
+    description: 'Roblox game developer focused on Lua scripting, game logic, and system design.',
+    keywords: ['portfolio', 'game developer', 'Roblox', 'Lua', 'game design', 'game systems'],
     authors: [{ name: 'Paphangkorn' }],
     creator: 'Paphangkorn',
     metadataBase: new URL('https://github.com/Paphangkorn'),
@@ -44,14 +44,14 @@ export const metadata: Metadata = {
         type: 'website',
         locale: 'en_US',
         url: 'https://github.com/Paphangkorn',
-        title: 'Paphangkorn | Game Developer & Software Engineer',
-        description: 'Game Developer & Software Engineer passionate about scalable systems and Roblox Studio.',
+        title: 'Paphangkorn | Roblox Game Developer',
+        description: 'Roblox game developer focused on Lua scripting, game logic, and system design.',
         siteName: 'Portfolio',
     },
     twitter: {
         card: 'summary_large_image',
-        title: 'Paphangkorn | Game Developer & Software Engineer',
-        description: 'Game Developer & Software Engineer passionate about scalable systems and Roblox Studio.',
+        title: 'Paphangkorn | Roblox Game Developer',
+        description: 'Roblox game developer focused on Lua scripting, game logic, and system design.',
         creator: '@Paphangkorn',
     },
     robots: {

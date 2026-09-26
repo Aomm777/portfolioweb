@@ -8,7 +8,7 @@ import {
   RefreshCw, BookOpen, Network, LineChart, Search
 } from "lucide-react";
 
-// Lucide icons disesuaikan dengan skill baru (AI & Software Engineer)
+// Icons are keyed to the portfolio's game-development soft skills.
 const skillIcons: Record<string, any> = {
   'Problem Solving': Puzzle,
   'Systemic Thinking': Network,

@@ -176,7 +176,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
               transition={{ duration: 0.8, delay: 0.2 }}
               className="text-[10px] md:text-xs text-muted-foreground text-start md:text-right leading-relaxed max-w-[200px] md:max-w-[220px] font-medium uppercase tracking-[0.2em]"
             >
-              Hi, I'm {personal.name}. I craft games and build software with logic and creativity.
+              Hi, I'm {personal.name}. I build Roblox games with Lua, thoughtful game systems, and a love of learning by making.
             </motion.p>
             <div className="relative">
               <div ref={githubRef} className="absolute -top-4 right-0 md:right-2 text-primary/60 hover:text-primary z-20 opacity-0">
@@ -260,7 +260,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
               transition={{ duration: 1.2, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
               className="text-[clamp(2rem,8vw,10rem)] md:flex items-center font-black leading-[0.85] tracking-tighter text-shiny will-change-transform px-4"
             >
-              <span className="">& SOFT</span>
+              <span className="">& ROBLOX</span>
               <div
                 ref={botRef}
                 className="mx-[0.05em] relative cursor-pointer group"
@@ -276,7 +276,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
               >
                 <Bot className="w-[0.85em] h-[0.85em] text-yellow-500 fill-yellow-500/10 group-hover:text-yellow-400 group-hover:fill-yellow-400/20 transition-colors" />
               </div>
-              <span className="">WARE ENG.</span>
+              <span className="">DEV</span>
             </motion.h1>
 
             <motion.p
@@ -295,7 +295,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
           <div className="flex items-center gap-6">
             <Separator className="flex-1 h-[1px] bg-foreground/10 hidden md:block" />
             <div className="text-[10px] md:text-xs whitespace-nowrap font-bold tracking-[0.3em] text-muted-foreground uppercase">
-              JAKARTA, ID — 2026
+              THAILAND — 2026
             </div>
             <Link
               href="/resume"
@@ -329,7 +329,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
             className="bg-white text-black py-10 px-4 text-[10px] font-black uppercase tracking-[0.5em] shadow-2xl rounded-r-3xl border-r border-y border-zinc-200 cursor-pointer"
           >
             <span className="rotate-0 [writing-mode:vertical-rl]">
-              AVAILABLE FOR OPPORTUNITY
+              OPEN TO COLLABORATION
             </span>
           </motion.div>
         </div>
@@ -347,8 +347,8 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
             >
               <ProfileCard
                 name={personal.name}
-                title="AI Engineer & Software Engineer"
-                description={`${personal.name} is a dedicated AI & Software Engineer focused on building scalable, intelligent systems and robust software architectures. He specializes in bridging technical innovation with high-performance execution to deliver meaningful and impactful digital solutions.`}
+                title={personal.title}
+                description={personal.bio}
                 imageUrl={personal.avatar}
                 githubUrl={personal.socialLinks.find(s => s.platform === 'GitHub')?.url}
                 linkedinUrl={personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url}

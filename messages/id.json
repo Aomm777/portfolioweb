@@ -36,7 +36,7 @@
     },
     "hero": {
         "greeting": "Selamat datang di ruang digital saya",
-        "subtitle": "Full Stack Developer • AI Engineer • Data Scientist",
+        "subtitle": "Game Developer • Roblox Studio • Lua",
         "cta": {
             "primary": "Jelajahi Proyek",
             "secondary": "Hubungi Saya",
@@ -44,13 +44,13 @@
         },
         "badge": "Terbuka untuk peluang",
         "scroll": "Gulir ke Bawah",
-        "role": "Software Engineer",
-        "description": "Membangun sistem cerdas di persimpangan <span class='text-primary font-semibold'>AI</span>, <span class='text-secondary font-semibold'>Rekayasa</span>, dan <span class='text-accent font-semibold'>Arsitektur Skalabel</span>."
+        "role": "Game Developer",
+        "description": "Mewujudkan ide menjadi game yang bisa dimainkan dengan <span class='text-primary font-semibold'>Roblox Studio</span>, <span class='text-secondary font-semibold'>Lua</span>, dan <span class='text-accent font-semibold'>desain sistem game</span>."
     },
     "about": {
         "title": "Tentang Saya",
-        "subtitle": "Tech Explorer & Problem Solver",
-        "description": "Seorang tech explorer yang bersemangat dengan spesialisasi dalam Full Stack Development, Artificial Intelligence, dan Data Science. Saat ini sedang mendalami AI Agents dan teknologi Blockchain.",
+        "subtitle": "Roblox Game Developer & Lua Scripter",
+        "description": "Saya mengembangkan ide menjadi pengalaman bermain di Roblox, mulai dari gameplay logic dan desain sistem hingga kolaborasi tim serta membantu peserta lain membangun proyek mereka.",
         "stats": {
             "experience": "Tahun Belajar",
             "projects": "Proyek Selesai",
@@ -63,62 +63,62 @@
         "leadIn": {
             "label": "APA YANG SAYA LAKUKAN",
             "tagline": "FOKUS INTI",
-            "headlineAI": "AI Terapan.",
-            "headlineData": "Data Skalabel.",
-            "headlineSoftware": "Rekayasa Perangkat Lunak Tangguh",
-            "thesis": "Saya membangun sistem cerdas dan <span class='text-primary italic font-serif-elegant font-normal'>infrastruktur data</span> yang membuatnya handal dalam skala besar.",
-            "scope": "Berfokus pada model prediktif, pemrosesan data yang dioptimalkan, dan pipeline RAG yang dirancang untuk lingkungan produksi dan performa terukur.",
-            "bridging": "Menghubungkan lab dan sistem langsung.",
-            "integration": "Selain model, saya merancang ekosistem full-stack: backend yang aman, arsitektur data yang kuat, dan pipeline yang skalabel.",
-            "signature": "Azril",
-            "role": "AI, Data & Software Engineer",
+            "headlineAI": "Game Logic.",
+            "headlineData": "Roblox Systems.",
+            "headlineSoftware": "Game yang siap dimainkan",
+            "thesis": "Saya mewujudkan ide game dengan <span class='text-primary italic font-serif-elegant font-normal'>Lua scripting</span> dan desain sistem yang terencana.",
+            "scope": "Fokus saya adalah pengembangan game Roblox: gameplay logic, pengalaman multiplayer, dan detail yang membuat game terasa menarik.",
+            "bridging": "Dari ide awal menjadi game yang bisa dimainkan.",
+            "integration": "Saya menikmati proyek solo maupun kerja tim, dan berbagi pengalaman saat mendampingi peserta di camp pengembangan game.",
+            "signature": "Paphangkorn",
+            "role": "Roblox Game Developer",
             "aboutMe": "Tentang Saya",
             "scroll": "Scroll untuk Jelajah",
             "shortStory": "Cerita Singkat Saya"
         },
         "coreEngineering": {
-            "label": "Rekayasa Inti",
-            "title": "<span class='text-primary italic font-serif font-light lowercase'>stack</span> yang Terbukti. <br /> <span class='italic font-serif font-light text-foreground'>hasil</span> yang Terukur.",
-            "p1": "Saya mengembangkan sistem AI terapan menggunakan TensorFlow, Scikit-learn, dan LangChain, menyusun alur kerja dan mengekspos model sebagai layanan melalui Flask dan FastAPI.",
-            "p2": "Diintegrasikan ke dalam aplikasi full-stack dengan Next.js, Express.js, dan Spring Boot, didukung oleh PostgreSQL dan Prisma ORM.",
-            "p3": "Semua proyek menggunakan kontrol versi yang disiplin, kontainerisasi Docker, dan dibangun untuk penerapan produksi yang stabil.",
+            "label": "Game Development",
+            "title": "<span class='text-primary italic font-serif font-light lowercase'>sistem</span> yang Terencana. <br /> <span class='italic font-serif font-light text-foreground'>ide</span> yang Bisa Dimainkan.",
+            "p1": "Saya menggunakan Roblox Studio dan Lua untuk mengubah konsep game menjadi pengalaman interaktif dengan gameplay logic yang jelas.",
+            "p2": "Proyek saya mencakup eksperimen solo hingga game multiplayer bersama tim, termasuk Bronopoly yang lolos ke babak regional NSC 2026.",
+            "p3": "Saya juga mengeksplorasi game feel melalui animasi dan VFX, serta menggunakan Blender dan AI-assisted tools dalam workflow.",
             "gpa": "IPK Akademik",
             "projects": "Proyek yang Dibangun",
             "years": "Tahun Pengalaman"
         },
         "emergingResearch": {
-            "label": "Fase Eksplorasi",
-            "title": "RISET YANG MUNCUL <span class='italic font-serif font-light text-primary lowercase'>&</span> EKSPANSI",
+            "label": "Latihan Game Design",
+            "title": "BELAJAR <span class='italic font-serif font-light text-primary lowercase'>&</span> MEMBANGUN",
             "agentic": {
-                "title": "SISTEM AI AGENTIK",
-                "desc": "Menjelajahi agen otonom, orkestrasi multi-agen, dan kerangka kerja penalaran — memperluas fondasi AI terapan saya ke dalam sistem pengambilan keputusan mandiri."
+                "title": "GAMEPLAY SYSTEMS",
+                "desc": "Berlatih menyusun aturan game, aksi pemain, dan perilaku scripted agar menjadi gameplay yang jelas dan menyenangkan."
             },
             "web3": {
-                "title": "WEB3 & BLOCKCHAIN",
-                "desc": "Membangun aplikasi terdesentralisasi dengan Solidity dan Hardhat. Saat ini sedang mengerjakan pengembangan smart contract melalui proyek-proyek seperti Web3 Guestbook DApp di Ethereum."
+                "title": "GAME FEEL",
+                "desc": "Mengeksplorasi animasi, VFX, dan suara untuk membuat interaksi dalam game terasa lebih ekspresif."
             }
         },
         "profile": {
-            "title": "Membangun <br class='hidden lg:block' /> Sistem Skalabel <br /> Tempat <span class='text-primary italic font-serif font-light lowercase'>Kecerdasan</span> <br /> Bertemu Rekayasa.",
+            "title": "Merancang Sistem Game <br /> Tempat Ide Menjadi Bisa Dimainkan.",
             "narrativeLabel": "Narasi Inti",
-            "narrative": "Sebagai mahasiswa Teknologi Informasi yang berfokus pada Kecerdasan Buatan dan Rekayasa Perangkat Lunak, saya membangun sistem yang menjembatani fondasi riset dengan implementasi siap produksi.",
-            "narrative2": "Pekerjaan saya memadukan pemikiran algoritmik, rekayasa backend, dan arsitektur yang skalabel untuk menghadirkan solusi yang cerdas, andal, dan siap digunakan di dunia nyata.",
+            "narrative": "Saya adalah mahasiswa Teknik Komputer dan game developer yang berfokus pada Roblox Studio, Lua scripting, dan desain sistem game.",
+            "narrative2": "Saya mengembangkan proyek secara mandiri maupun bersama tim, membawa Bronopoly ke babak regional NSC 2026, dan mendampingi peserta di camp pengembangan game.",
             "pillars": {
                 "reliable": {
-                    "title": "Robust by Design",
-                    "desc": "Direkayasa untuk keandalan di bawah skala dan tekanan operasional."
+                    "title": "Dirancang dengan Tujuan",
+                    "desc": "Aturan dan interaksi game dibentuk untuk pengalaman pemain yang jelas."
                 },
                 "optimized": {
-                    "title": "Siap Produksi",
-                    "desc": "Dari prototipe hingga deployment dengan disiplin rekayasa."
+                    "title": "Dari Ide Menjadi Game",
+                    "desc": "Mengubah konsep menjadi proyek Roblox yang bisa dimainkan melalui iterasi."
                 },
                 "maintainable": {
-                    "title": "Dirancang untuk Evolusi",
-                    "desc": "Didesain untuk tumbuh, beradaptasi, dan mempertahankan pengembangan sistem jangka panjang."
+                    "title": "Dibangun Bersama Tim",
+                    "desc": "Berkolaborasi dalam proyek game dan belajar melalui proses pengembangan bersama."
                 },
                 "evolvable": {
-                    "title": "Kecerdasan Berbasis Data",
-                    "desc": "Keputusan didukung oleh model, metrik, dan performa yang terukur."
+                    "title": "Terus Belajar",
+                    "desc": "Berkembang melalui proyek solo, game jam, dan camp mengajar."
                 }
             }
         },
@@ -137,51 +137,42 @@
             },
             "experiencesList": [
                 {
-                    "company": "Dicoding Academy",
-                    "role": "PENGULAS KODE MACHINE LEARNING",
-                    "desc": "Evaluasi teknis dan penjaminan kualitas pengajuan proyek ML. Memvalidasi kebenaran logis, efisiensi, dan menegakkan praktik terbaik industri bagi peserta."
+                    "company": "HamsterHub",
+                    "role": "ASISTEN PENGAJAR AI CAMP",
+                    "desc": "Mendampingi peserta membuat proyek Roblox, Unity, dan web app dalam camp tiga hari, termasuk penggunaan Cursor AI, MCP Server, dan debugging kode yang dihasilkan AI."
                 },
                 {
-                    "company": "Advanced Software Engineering Laboratory",
-                    "role": "MAGANG ANALIS SISTEM",
-                    "desc": "Menerjemahkan persyaratan kompleks ke dalam dokumentasi SRS dan merancang arsitektur sistem menggunakan diagram UML. Rekayasa kolaboratif yang berfokus pada desain perangkat lunak yang kuat."
+                    "company": "GamePee Camp",
+                    "role": "ASISTEN PENGAJAR GAME DEVELOPMENT",
+                    "desc": "Mengenalkan peserta pada desain enemy AI behavior dan Roblox scripting dalam camp pengembangan game selama tiga hari."
                 },
                 {
-                    "company": "Cyber Physical System Laboratory",
-                    "role": "ASISTEN PENELITI (KONTRAK)",
-                    "desc": "Mengembangkan produk riset berbasis AI dan merancang materi pembelajaran untuk Deep Learning and Computer Vision. Berkontribusi dalam inisiatif riset kolaboratif dalam sistem cerdas."
+                    "company": "HamsterHub",
+                    "role": "PESERTA ROBLOX BOOTCAMP",
+                    "desc": "Mempelajari Roblox Studio dan Lua sambil mengembangkan proyek game seperti Escape Lab dan Anime Royale."
                 },
                 {
-                    "company": "Pusat Riset HUMIC Engineering",
-                    "role": "MAGANG PENGEMBANG AI",
-                    "desc": "Membangun model deteksi serangan berbasis Transformer untuk aplikasi keamanan siber. Mengelola dataset skala besar melalui pipeline ML penuh — dari prapemprosesan hingga optimasi hiperparameter."
-                },
-                {
-                    "company": "Cyber Physical System Laboratory",
-                    "role": "MAGANG PENELITI COMPUTER VISION",
-                    "desc": "Pengembangan model cerdas end-to-end menggunakan arsitektur Deep Learning terkini. Menerapkan algoritma ML untuk aplikasi AIoT dunia nyata termasuk sistem estimasi pose manusia."
+                    "company": "HamsterHub GameJamX",
+                    "role": "PROGRAMMER",
+                    "desc": "Berkolaborasi mengembangkan game Roblox HEAT THIEVES bersama tim dalam tiga hari."
                 }
             ],
             "projectsList": [
                 {
-                    "title": "Creative Portfolio Website",
-                    "desc": "Portofolio modern dan beranimasi dengan elemen 3D, interaksi simulasi fisika, dan efek warp berbasis shader. Direkayasa untuk performa tinggi dan pengalaman pengguna yang imersif."
+                    "title": "Bronopoly",
+                    "desc": "Game multiplayer Roblox tentang ekonomi, dikembangkan bersama tim tiga orang dan lolos ke babak regional NSC 2026."
                 },
                 {
-                    "title": "SNBTIn - Platform Persiapan SNBT 2025",
-                    "desc": "Platform EdTech terkemuka di Indonesia untuk persiapan ujian. Menampilkan ekosistem pembelajaran komprehensif dengan video interaktif, latihan soal, dan analitik real-time."
+                    "title": "HEAT THIEVES",
+                    "desc": "Game battleground Roblox yang dikembangkan bersama tim dalam tiga hari untuk HamsterHub GameJamX."
                 },
                 {
-                    "title": "TerraFlow Platform",
-                    "desc": "Solusi IoT perusahaan untuk pertanian presisi. Node sensor ESP32 berkomunikasi langsung dengan Firebase melalui backend Go (Gin), dengan dashboard Next.js untuk monitoring real-time dan kontrol aktuator."
+                    "title": "Anime Royale",
+                    "desc": "Game Roblox solo yang terinspirasi Clash Royale, dikembangkan dari game concept dan system design hingga Lua scripting dan game feel."
                 },
                 {
-                    "title": "DocsInsight Engine",
-                    "desc": "Platform RAG privat untuk analisis dokumen cerdas. Didukung oleh LLM lokal melalui Ollama, dengan orkestrasi LangChain dan ChromaDB vector search — sepenuhnya self-hosted untuk privasi data."
-                },
-                {
-                    "title": "Manajemen Dental POLABDC",
-                    "desc": "SaaS klinik gigi bertenaga AI dengan prediksi penyakit, manajemen antrean real-time, dan arsitektur Monorepo yang menghubungkan Next.js, Express.js, dan microservice AI Python."
+                    "title": "Escape Lab",
+                    "desc": "Proyek awal dari Roblox Bootcamp yang membantu saya mempelajari Lua, game logic, dan cara mengubah ide menjadi game yang bisa dimainkan."
                 }
             ],
             "discoverMore": "Temukan Lebih Lanjut"
@@ -189,7 +180,7 @@
     },
     "projects": {
         "title": "Proyek",
-        "subtitle": "Showcase karya kreatif dan teknis saya",
+        "subtitle": "Game Roblox dan proyek game development yang saya buat sendiri maupun bersama tim",
         "search": "Cari proyek...",
         "viewAll": "Lihat Semua Proyek",
         "viewProject": "Lihat Proyek",
@@ -237,7 +228,7 @@
     },
     "experience": {
         "title": "Pengalaman",
-        "subtitle": "Perjalanan profesional dan perkembangan saya",
+        "subtitle": "Pendidikan, proyek game development, dan pengalaman mendampingi peserta",
         "showDetail": "Tampilkan Detail",
         "hideDetail": "Sembunyikan Detail",
         "tasks": "TUGAS",
@@ -271,12 +262,12 @@
     },
     "expertise": {
         "title": "Kapabilitas Inti",
-        "subtitle": "Spesialisasi dalam teknologi mutakhir yang mendukung pengalaman digital modern",
+        "subtitle": "Keahlian dan tools game development untuk membangun pengalaman Roblox",
         "dragHint": "Geser atau gulir untuk menjelajah"
     },
     "skills": {
         "title": "Keahlian & Tools",
-        "subtitle": "Teknologi dan tools yang saya gunakan",
+        "subtitle": "Roblox Studio, Lua, Blender, dan tools di balik proyek game saya",
         "hard": "Keahlian Teknis",
         "soft": "Soft Skills",
         "tools": "Tools & Software",
@@ -299,7 +290,7 @@
     },
     "contact": {
         "title": "Hubungi Saya",
-        "subtitle": "Mari membangun sesuatu yang luar biasa bersama",
+        "subtitle": "Mari berdiskusi tentang ide game, proyek Roblox, atau kolaborasi",
         "form": {
             "name": "Nama Anda",
             "email": "Email Anda",
@@ -327,32 +318,32 @@
         },
         "hero": {
             "title": "MARI BICARA",
-            "subtitle": "Punya ide? Mari bangun sesuatu yang luar biasa bersama.",
+            "subtitle": "Punya ide game? Mari diskusikan cara membangunnya bersama.",
             "ticker": {
                 "build": "Mari Bangun Sesuatu yang Luar Biasa · ",
-                "freelance": "Tersedia untuk Freelance · "
+                "freelance": "Terbuka untuk Kolaborasi Game Development · "
             }
         },
         "faqData": [
             {
                 "q": "Apa bidang keahlian utama Anda?",
-                "a": "Sebagai mahasiswa Teknologi Informasi di Telkom University dan Asisten Peneliti di Laboratorium Cyber Physical System, saya berspesialisasi dalam persimpangan Kecerdasan Buatan (Computer Vision & Deep Learning), Full-stack Development (Next.js & Node.js), dan teknologi Blockchain/Web3 yang sedang berkembang."
+                "a": "Saya mahasiswa Teknik Komputer yang berfokus pada game development dengan Roblox Studio dan Lua. Saya senang membangun game logic, merancang sistem game, dan bekerja bersama tim."
             },
             {
                 "q": "Apakah Anda tersedia untuk kolaborasi riset atau freelance?",
-                "a": "Tentu saja. Saat ini saya aktif dalam riset AI di CPS Lab dan Pusat Riset HUMIC, tetapi saya selalu terbuka untuk proyek freelance inovatif, magang, atau kolaborasi teknis yang menjembatani inovasi dengan eksekusi strategis."
+                "a": "Saya terbuka untuk berdiskusi tentang proyek game development, game jam, dan kesempatan untuk terus belajar serta membangun game bersama tim."
             },
             {
                 "q": "Apa tech stack tipikal Anda untuk produksi?",
-                "a": "Untuk proyek AI, saya menggunakan Python dengan TensorFlow, PyTorch, dan YOLO. Untuk aplikasi web, andalan saya adalah stack T3: Next.js, TypeScript, dan Tailwind CSS, sering kali diintegrasikan dengan Agen AI atau Smart Contracts jika sesuai."
+                "a": "Tools utama saya untuk game development adalah Roblox Studio dan Lua. Saya juga menggunakan Blender untuk 3D serta Cursor AI dengan MCP Server dalam workflow pengembangan."
             },
             {
-                "q": "Apakah Anda memiliki pengalaman dengan proyek enterprise atau lab?",
-                "a": "Ya, saya pernah menjabat sebagai System Analyst dan Pengembang AI di berbagai lingkungan berbasis riset. Saya telah merancang mulai dari platform AIoT dan sistem deteksi serangan hingga modul praktikum siswa untuk audiens global."
+                "q": "Proyek apa saja yang pernah Anda kerjakan?",
+                "a": "Proyek saya termasuk Bronopoly, game ekonomi multiplayer Roblox yang lolos ke babak regional NSC 2026; HEAT THIEVES yang dibuat dalam tiga hari di GameJamX; serta proyek solo Anime Royale dan Escape Lab."
             },
             {
                 "q": "Bagaimana cara memulai kemitraan atau proyek?",
-                "a": "Cara paling efisien adalah menggunakan formulir kontak di atas atau menghubungi langsung melalui email di azril4974@gmail.com. Saya biasanya dapat merespons dalam waktu 24 jam untuk mendiskusikan bagaimana keterampilan teknis saya dapat memberikan nilai tambah bagi inisiatif Anda."
+                "a": "Gunakan formulir kontak di atas atau kirim email ke Wi.koo25561@gmail.com. Saya senang mendengar ide game, ajakan kolaborasi, atau kesempatan belajar."
             }
         ]
     },
@@ -378,7 +369,7 @@
     },
     "projectHeader": {
         "title": "Merancang Realitas Digital",
-        "subtitle": "Pameran kurasi inovasi teknis dan rekayasa kreatif. Menjelajahi batas-batas <span class='font-bold text-foreground'>Kecerdasan Buatan</span>, Blockchain, Data, dan pengalaman Web Imersif."
+        "subtitle": "Kumpulan proyek game development saya yang mengeksplorasi <span class='font-bold text-foreground'>Roblox Studio</span>, Lua scripting, gameplay systems, dan pengalaman bermain kreatif."
     },
     "footer": {
         "copyright": "Hak cipta dilindungi.",
@@ -406,7 +397,7 @@
     "ctaSection": {
         "title": "Mari Membangun Sesuatu yang",
         "together": "Bersama",
-        "subtitle": "Terbuka untuk kolaborasi strategis dalam pengembangan sistem berbasis AI dan rekayasa full stack yang skalabel. Mari kita transformasikan ide ambisius menjadi solusi siap produksi.",
+        "subtitle": "Terbuka untuk kolaborasi game development, proyek tim, dan kesempatan membangun pengalaman Roblox yang menarik.",
         "start": "Hire Me",
         "work": "View My Resume",
         "words": {
@@ -415,8 +406,8 @@
             "intelligent": "Cerdas",
             "creative": "Kreatif"
         },
-        "ribbon1": "Next.js • React • Python • PyTorch • Pandas • TypeScript • Node.js • Scikit-Learn • TensorFlow • SQL",
-        "ribbon2": "Software Engineer • AI Engineer • Data Scientist • Data Analyst • Machine Learning Engineer • Backend Developer • Full Stack Engineer • NLP Engineer • Data Engineer • Web Developer"
+        "ribbon1": "Roblox Studio • Lua • Blender • Python • C++ • Cursor AI",
+        "ribbon2": "Game Developer • Roblox Developer • Lua Scripter • Game Logic • System Design • Multiplayer Games • Animation • VFX"
     },
     "common": {
         "loading": "Memuat...",
@@ -456,7 +447,7 @@
     },
     "blog": {
         "title": "Pemikiran & Eksplorasi",
-        "subtitle": "Menjembatani kesenjangan antara kompleksitas teknis dan implementasi praktis. Kumpulan wawasan tentang AI, Web3, dan Software Engineering.",
+        "subtitle": "Catatan tentang belajar game development, membangun dengan Roblox Studio, dan mengubah ide menjadi pengalaman yang bisa dimainkan.",
         "sectionBadge": "Digital Archive",
         "search": "Cari artikel...",
         "readTime": "menit baca",
@@ -482,14 +473,14 @@
     },
     "chatbot": {
         "title": "Asisten AI",
-        "subtitle": "Tanya saya tentang Azril",
+        "subtitle": "Tanya saya tentang Paphangkorn",
         "placeholder": "Ketik pesan...",
         "greeting": "Halo! Saya asisten AI untuk **{name}**. 👋\n\nSaya bisa menjawab pertanyaan seputar:\n- Skill & keahlian teknis\n- Project dan karya\n- Pengalaman kerja\n- Pendidikan\n- Dan info lainnya!\n\nAda yang ingin kamu tanyakan?",
         "suggestions": [
             "Apa keahlian utama kamu?",
             "Ceritakan project terbaik kamu",
             "Apa pengalaman kerja kamu?",
-            "Skill AI apa yang kamu kuasai?"
+            "Tools apa yang kamu gunakan untuk game development?"
         ],
         "error": "Terjadi kesalahan. Silakan coba lagi.",
         "invalidResponse": "Respons tidak valid dari server.",

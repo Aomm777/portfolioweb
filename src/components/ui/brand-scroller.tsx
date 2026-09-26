@@ -6,14 +6,23 @@ import { motion } from "framer-motion";
 import { portfolioData } from "@/data/portfolio";
 import { cn } from "@/lib/utils";
 
-const techStackItems = [
-    // 5 AI & Data
-    ...portfolioData.techStack.filter(s => s.name === 'TensorFlow' || s.name === 'PyTorch' || s.name === 'LangChain' || s.name === 'Scikit-learn' || s.name === 'OpenCV'),
-    // 5 Software Engineering
-    ...portfolioData.techStack.filter(s => s.name === 'TypeScript' || s.name === 'Next.js' || s.name === 'Python' || s.name === 'Node.js' || s.name === 'React')
-].slice(0, 10);
+const iconSlugs: Record<string, string> = {
+    'Lua Script': 'lua',
+    Python: 'python',
+    'C++': 'cplusplus',
+    Blender: 'blender',
+    'Roblox Studio': 'roblox',
+    'Cursor AI': 'openai',
+    'VS Code': 'visualstudiocode',
+};
 
-const toolItems = portfolioData.tools.slice(0, 10);
+const toScrollerItem = (name: string) => ({
+    name,
+    icon: `https://cdn.simpleicons.org/${iconSlugs[name] ?? name.toLowerCase().replace(/[\s.]+/g, '')}`,
+});
+
+const techStackItems = portfolioData.techStack.map((item) => toScrollerItem(item.name));
+const toolItems = portfolioData.tools.map((item) => toScrollerItem(item.name));
 
 const ScrollerItem = ({ name, icon }: { name: string; icon: string }) => (
     <div className="flex items-center gap-4 px-12 py-4 transition-all duration-300 group">
