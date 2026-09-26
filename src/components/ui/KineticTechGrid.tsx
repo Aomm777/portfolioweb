@@ -87,7 +87,7 @@ const TechCard = ({ tech, idx, isLowPowerMode }: { tech: TechItem, idx: number, 
                         src={tech.icon}
                         alt={tech.name}
                         fill
-                        className="object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300 unoptimized"
+                        className={`object-contain grayscale group-hover:grayscale-0 group-hover:scale-110 transition-all duration-300 unoptimized ${['Roblox Studio', 'Cursor AI'].includes(tech.name) ? 'dark:invert' : ''}`}
                         unoptimized
                         loading="lazy"
                     />

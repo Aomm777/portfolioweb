@@ -162,7 +162,7 @@ export function ArchedTechIconsInteractive({ icons }: ArchedIconsProps) {
                             src={icon} 
                             alt={`tech-icon-${i}`} 
                             fill 
-                            className="object-contain opacity-90 transform-gpu" 
+                            className={`object-contain opacity-90 transform-gpu ${icon.includes('/roblox/') || icon.includes('/cursor/') ? 'dark:invert' : ''}`}
                             unoptimized 
                             priority={true} 
                             draggable={false}

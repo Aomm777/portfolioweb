@@ -12,7 +12,7 @@ const iconSlugs: Record<string, string> = {
     'C++': 'cplusplus',
     Blender: 'blender',
     'Roblox Studio': 'roblox',
-    'Cursor AI': 'openai',
+    'Cursor AI': 'cursor',
     'VS Code': 'visualstudiocode',
 };
 
@@ -31,7 +31,7 @@ const ScrollerItem = ({ name, icon }: { name: string; icon: string }) => (
                 src={icon}
                 alt={name}
                 fill
-                className="object-contain"
+                className={`object-contain ${name === 'Roblox Studio' || name === 'Cursor AI' ? 'dark:invert' : ''}`}
                 unoptimized
             />
         </div>

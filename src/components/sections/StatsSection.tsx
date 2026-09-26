@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { ZoomParallax } from "@/components/ui/zoom-parallax";
 import { Book } from "@/components/ui/book";
@@ -14,39 +14,23 @@ const CATEGORY_COLORS: Record<string, string> = {
     'more': '#FED954', // Yellow
 };
 
+const WORK_IMAGES = [
+    { src: '/images/bronopoly.png', alt: 'Bronopoly Roblox game cover' },
+    { src: '/project/bronopoly1.png', alt: 'Bronopoly gameplay screenshot' },
+    { src: '/images/heatthieves.png', alt: 'HEAT THIEVES Roblox game cover' },
+    { src: '/images/heat-thieves-gameplay.jpg', alt: 'HEAT THIEVES gameplay screenshot' },
+    { src: '/images/anime-royale.png', alt: 'Anime Royale Roblox game cover' },
+    { src: '/project/escapelab1.png', alt: 'Escape Lab gameplay screenshot' },
+    { src: '/experience/ai-camp-gameplay.png', alt: 'HamsterHub AI Camp game project' },
+];
+
 
 export default function StatsSection({ scrollYProgress, showOnly }: { scrollYProgress?: any, showOnly?: 'top' | 'bottom' }) {
-    const [images, setImages] = useState<any[]>([]);
-    const [loading, setLoading] = useState(true);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [direction, setDirection] = useState(0);
 
     const blogs = portfolioData.blogs.slice(0, 6);
     const visibleCount = 3;
-
-    useEffect(() => {
-        const galleryImages = [
-            { src: '/gallery/Foto Utama.webp', alt: 'Foto Utama' },
-            { src: '/gallery/FotoSC1.webp', alt: 'Foto SC1' },
-            { src: '/gallery/FotoSC2.webp', alt: 'Foto SC2' },
-            { src: '/gallery/FotoSC3.webp', alt: 'Foto SC3' },
-            { src: '/gallery/FotoSC4.webp', alt: 'Foto SC4' },
-            { src: '/gallery/FotoSC5.webp', alt: 'Foto SC5' },
-            { src: '/gallery/academicaffairsdivision1.webp', alt: 'Academic Affairs' },
-            { src: '/gallery/computernetworkpracticumassistant2.webp', alt: 'Computer Network' },
-            { src: '/gallery/dataentryassistant1.webp', alt: 'Data Entry' },
-            { src: '/gallery/delegateaiesecfutureleaders20241.webp', alt: 'AIESEC' },
-            { src: '/gallery/environmentalhygieneteam1.webp', alt: 'Hygiene Team 1' },
-            { src: '/gallery/environmentalhygieneteam2.webp', alt: 'Hygiene Team 2' },
-            { src: '/gallery/logisticsoperatorcampusexpo20242.webp', alt: 'Logistics' },
-            { src: '/gallery/researchassistant1.webp', alt: 'Research Assistant 1' },
-            { src: '/gallery/researchassistant2.webp', alt: 'Research Assistant 2' },
-        ];
-        // Shuffle images randomly
-        const shuffledImages = [...galleryImages].sort(() => 0.5 - Math.random());
-        setImages(shuffledImages);
-        setLoading(false);
-    }, []);
 
     const nextSlide = () => {
         setDirection(1);
@@ -67,12 +51,6 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
         }
         return result;
     };
-
-    if (loading || images.length === 0) return (
-        <div className="h-[400px] w-full flex items-center justify-center bg-background">
-            <div className="w-12 h-12 border-4 border-primary/20 border-t-primary rounded-full animate-spin" />
-        </div>
-    );
 
     return (
         <section className="relative z-20 bg-background overflow-visible flex flex-col items-center transition-colors duration-500">
@@ -101,7 +79,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
 
                     {/* Immersive Zoom Parallax Component */}
                     <div className="w-full">
-                        <ZoomParallax images={images}>
+                        <ZoomParallax images={WORK_IMAGES}>
                             <Link 
                                 href="/gallery" 
                                 className="group flex items-center gap-3 px-6 py-3.5 bg-foreground text-background rounded-full font-bold uppercase tracking-widest text-xs hover:scale-105 active:scale-95 transition-all shadow-xl border border-border/10"

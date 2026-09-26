@@ -6,9 +6,10 @@ import Image from "next/image";
 // import { portfolioData } from "@/data/portfolio";
 import { X, Play, Maximize2, ChevronLeft, ChevronRight, Minimize2, ListFilter, ArrowDownUp, ImageIcon, Video, ArrowRight, LayoutGrid, StretchHorizontal, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { getAllGalleryImages, GalleryImage } from "@/app/actions/getGalleryImages";
+import { getAllGalleryImages } from "@/app/actions/getGalleryImages";
 import MagneticEffect from "@/components/ui/MagneticEffect";
 import { InfiniteImageField } from "@/components/ui/infinite-image-field";
+import type { GalleryItem } from "@/types";
 
 type FilterType = 'all' | 'image' | 'video';
 // type SortType = 'newest' | 'oldest';
@@ -22,21 +23,21 @@ export default function CleanFilmGrid({ isLowPowerMode }: { isLowPowerMode?: boo
     const [viewMode, setViewMode] = useState<'rows' | 'grid' | 'infinite'>('grid'); // Default grid
     const [isLightboxMaximized, setIsLightboxMaximized] = useState(false);
     const [visibleCount, setVisibleCount] = useState(12);
-    const [galleryItems, setGalleryItems] = useState<any[]>([]);
+    const [galleryItems, setGalleryItems] = useState<GalleryItem[]>([]);
 
     useEffect(() => {
         const fetchImages = async () => {
             try {
                 const images = await getAllGalleryImages();
-                const formattedItems = images.map((img, index) => ({
-                    id: `gallery-${index}`,
-                    title: img.filename.split('.')[0].replace(/-/g, ' '),
-                    type: 'image',
-                    category: 'Gallery',
+                const formattedItems = images.map((img) => ({
+                    id: img.id,
+                    title: img.title,
+                    type: 'image' as const,
+                    category: img.category,
                     date: '2024',
                     thumbnail: img.src,
                     url: img.src,
-                    description: 'Gallery Image'
+                    description: `Detail image for ${img.category}`
                 }));
                 setGalleryItems(formattedItems);
             } catch (error) {

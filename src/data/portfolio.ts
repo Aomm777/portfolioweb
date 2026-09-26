@@ -74,6 +74,11 @@ export const portfolioData: PortfolioData = {
                     problem: 'การออกแบบเกม Multiplayer ที่สื่อแนวคิดเศรษฐศาสตร์ให้เข้าใจได้ผ่านการเล่น',
                     solution: 'ร่วมกับทีมวาง System Design และพัฒนาระบบเกมบน Roblox โดยคำนึงถึงประสบการณ์ของผู้เล่น'
                 }
+            ],
+            galleryImages: [
+                '/project/bronopoly1.png',
+                '/project/bronopoly2.png',
+                '/project/bronopoly3.png',
             ]
         },
         {
@@ -105,7 +110,8 @@ export const portfolioData: PortfolioData = {
                 }
             ],
             installation: [],
-            challengesAndSolutions: []
+            challengesAndSolutions: [],
+            galleryImages: ['/images/heat-thieves-gameplay.jpg']
         },
         {
             id: 'project-3',
@@ -135,7 +141,8 @@ export const portfolioData: PortfolioData = {
                 }
             ],
             installation: [],
-            challengesAndSolutions: []
+            challengesAndSolutions: [],
+            galleryImages: ['/project/animeroyale1.png']
         },
         {
             id: 'project-4',
@@ -165,7 +172,8 @@ export const portfolioData: PortfolioData = {
                 }
             ],
             installation: [],
-            challengesAndSolutions: []
+            challengesAndSolutions: [],
+            galleryImages: ['/project/escapelab1.png']
         }
     ],
 
