@@ -235,7 +235,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                   onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                   onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
                 >
-                  <Zap className="w-[0.8em] h-[0.8em] text-sky-400 group-hover:text-sky-300 transition-colors" strokeWidth={1.5} />
+                  <Zap className="w-[0.8em] h-[0.8em] text-primary group-hover:brightness-125 transition-[filter]" strokeWidth={1.5} />
                 </div>
                 <div
                   ref={zapSmallRef}
@@ -245,7 +245,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                   onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                   onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
                 >
-                  <Zap className="w-[0.8em] h-[0.8em] text-sky-400 group-hover:text-sky-300 transition-colors" strokeWidth={2} />
+                  <Zap className="w-[0.8em] h-[0.8em] text-primary group-hover:brightness-125 transition-[filter]" strokeWidth={2} />
                 </div>
                 <span className="">LOPER</span>
               </motion.h1>
@@ -274,7 +274,7 @@ export function HeroVisual({ isExiting = false }: { isExiting?: boolean }) {
                 onMouseMove={(e) => setTooltip(prev => ({ ...prev, x: e.clientX, y: e.clientY }))}
                 onMouseLeave={() => setTooltip(prev => ({ ...prev, show: false }))}
               >
-                <Bot className="w-[0.85em] h-[0.85em] text-yellow-500 fill-yellow-500/10 group-hover:text-yellow-400 group-hover:fill-yellow-400/20 transition-colors" />
+                <Bot className="w-[0.85em] h-[0.85em] text-primary fill-primary/10 group-hover:brightness-125 transition-[filter]" />
               </div>
               <span className="">DEV</span>
             </motion.h1>
