@@ -14,7 +14,7 @@ export const portfolioData: PortfolioData = {
         website: 'https://github.com/Paphangkorn',
         languages: [
             { name: 'Thai', level: 'Native' },
-            { name: 'English', level: 'Working Proficiency' },
+            { name: 'English', level: 'Professional' },
         ],
         socialLinks: [
             {
