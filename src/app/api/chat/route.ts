@@ -3,43 +3,43 @@ import { portfolioData } from '@/data/portfolio';
 
 // ─── Build system prompt from portfolio data ─────────────────────────────────
 function buildSystemPrompt(locale: string = 'en'): string {
-    const { personal, projects, experience, education, skills, achievements, softSkills, tools } = portfolioData as any;
+    const { personal, projects, experiences, education, hardSkills, achievements, softSkills, tools } = portfolioData;
 
-    const projectList = (projects ?? [])
-        .map((p: any) =>
+    const projectList = projects
+        .map((p) =>
             `- ${p.title} (${p.category}): ${p.description}. Tech: ${(p.techStack ?? []).join(', ')}. Role: ${p.role ?? 'Developer'}. ${p.demoUrl && p.demoUrl !== '#' ? `Demo: ${p.demoUrl}` : ''} ${p.repoUrl ? `Repo: ${p.repoUrl}` : ''}`
         )
         .join('\n');
 
-    const expList = (experience ?? [])
-        .map((e: any) =>
-            `- ${e.role ?? e.position} at ${e.company} (${e.period ?? e.duration}): ${e.description ?? (e.responsibilities ?? []).join('; ')}`
+    const expList = experiences
+        .map((e) =>
+            `- ${e.position} at ${e.company} (${e.startDate}${e.endDate ? ` to ${e.endDate}` : e.isOngoing ? ' to present' : ''}): ${e.description}`
         )
         .join('\n');
 
-    const eduList = (education ?? [])
-        .map((e: any) =>
-            `- ${e.degree} at ${e.institution} (${e.period ?? e.duration}). ${e.description ?? ''}`
+    const eduList = education
+        .map((e) =>
+            `- ${e.degree}, ${e.major} at ${e.institution}. ${e.gpa ? `GPA: ${e.gpa}.` : ''}`
         )
         .join('\n');
 
-    const skillList = (skills ?? [])
-        .map((s: any) => `${s.name} (${s.level ?? s.proficiency ?? ''})`)
+    const skillList = hardSkills
+        .map((s) => `${s.name}${s.level ? ` (${s.level})` : ''}`)
         .join(', ');
 
-    const softSkillList = (softSkills ?? [])
-        .map((s: any) => s.name ?? s)
+    const softSkillList = softSkills
+        .map((s) => s.name)
         .join(', ');
 
-    const toolList = (tools ?? [])
-        .map((t: any) => t.name ?? t)
+    const toolList = tools
+        .map((t) => t.name)
         .join(', ');
 
-    const achievementList = (achievements ?? [])
-        .map((a: any) => `- ${a.title}: ${a.description ?? ''}`)
+    const achievementList = achievements
+        .map((a) => `- ${a.title}: ${a.description ?? ''}`)
         .join('\n');
 
-    return `You are an AI assistant for ${personal.name}'s portfolio website. You are friendly, helpful, and knowledgeable about ${personal.name}'s background. Answer questions accurately based on the information below.
+    return `You are an AI assistant for ${personal.name}'s portfolio website. You are friendly, helpful, and knowledgeable about ${personal.name}'s background. Answer questions accurately based only on the information below.
 
 ## Personal Info
 - Name: ${personal.name}
@@ -56,19 +56,19 @@ function buildSystemPrompt(locale: string = 'en'): string {
 ${projectList}
 
 ## Work Experience
-${expList || 'See portfolio for details.'}
+${expList || 'No work experience is listed.'}
 
 ## Education
-${eduList || 'Information Technology, Telkom University.'}
+${eduList || 'No education details are listed.'}
 
 ## Technical Skills
-${skillList || 'AI, Machine Learning, Full Stack Development, Blockchain.'}
+${skillList || 'No technical skills are listed.'}
 
 ## Soft Skills
-${softSkillList || 'Leadership, Communication, Problem Solving.'}
+${softSkillList || 'No soft skills are listed.'}
 
 ## Tools & Technologies
-${toolList || 'VS Code, Docker, GitHub, Figma.'}
+${toolList || 'No tools are listed.'}
 
 ## Achievements & Certifications
 ${achievementList || 'See portfolio for details.'}

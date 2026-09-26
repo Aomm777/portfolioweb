@@ -433,7 +433,7 @@ export function ProjectDetail({ project, onClose, isLowPowerMode }: { project: P
                                         {/* Metadata Strip */}
                                         <motion.div variants={itemVariants} className="flex flex-wrap justify-center gap-x-12 gap-y-8 py-10 border-y border-black/25 dark:border-white/5">
                                             {[
-                                                { label: 'Role', value: project.role || 'Full Stack Dev', icon: Code },
+                                                { label: 'Role', value: project.role || 'Game Developer', icon: Code },
                                                 { label: 'Timeline', value: project.customTimeline || '3 Months', icon: Calendar },
                                                 { label: 'Tech', value: project.techStack?.[0] || 'Next.js', icon: Cpu },
                                                 { label: 'Status', value: project.status === 'ongoing' ? 'Ongoing' : 'Finished', icon: Info },

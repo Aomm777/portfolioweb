@@ -103,9 +103,9 @@ export const BlogBento = () => {
                         <p>
                             <span className="text-foreground font-medium">My passion is building innovative solutions.</span>{" "}
                             <span className="text-muted-foreground">
-                                An AI Engineer and Full Stack Developer with expertise in architecting intelligent systems that combine Machine Learning, IoT infrastructure, and Web3 technologies.
-                                Currently focused on advancing AI Agent frameworks and exploring decentralized blockchain applications, bridging the gap between cutting-edge research and practical implementation.
-                                Experienced in designing scalable software architectures and engineering complex technical solutions from concept to deployment.
+                                A game developer focused on Roblox Studio and Lua, building interactive experiences through game logic and system design.
+                                My projects range from solo game experiments to team-built multiplayer titles, including Bronopoly, which reached the regional round of NSC 2026.
+                                I also enjoy sharing what I learn while helping participants develop and debug their own game projects.
                             </span>
                         </p>
                     </Block>

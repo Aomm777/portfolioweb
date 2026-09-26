@@ -4,6 +4,7 @@ import { ArrowRight, ChevronDown, Github, ArrowUpRight } from "lucide-react";
 import Link from "next/link";
 import { cn } from "@/lib/utils";
 import MagneticEffect from "@/components/ui/MagneticEffect";
+import { portfolioData } from "@/data/portfolio";
 
 interface ProjectData {
   title: string;
@@ -14,48 +15,14 @@ interface ProjectData {
   slug: string;
 }
 
-const PROJECT_DATA: ProjectData[] = [
-  {
-    title: "Browser Automation Agent",
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop&fm=webp",
-    category: "AI & Automation",
-    year: "2026",
-    description: "AI-driven browser interaction & testing engine.",
-    slug: "browser-automation-agent"
-  },
-  {
-    title: "Swarm AI Blog Writer",
-    image: "/project/swarmaiblogwriter1.webp",
-    category: "AI & Content",
-    year: "2025",
-    description: "Multi-agent orchestration for research-backed content.",
-    slug: "swarm-ai-blog-writer"
-  },
-  {
-    title: "Creative Portfolio Website",
-    image: "/project/creativeportfoliowebsite1.webp",
-    category: "Creative Tech",
-    year: "2025",
-    description: "Immersive 3D portfolio with WebGL shaders.",
-    slug: "creative-portfolio-website"
-  },
-  {
-    title: "SNBTIn Platform",
-    image: "/project/snbtinplatformpersiapansnbt20251.webp",
-    category: "EdTech",
-    year: "2025",
-    description: "Leading e-learning platform for SNBT preparation.",
-    slug: "snbtin-platform"
-  },
-  {
-    title: "Terraflow Platform",
-    image: "/project/terraflowplatform1.webp",
-    category: "IoT & Embedded",
-    year: "2025",
-    description: "Enterprise IoT solution for precision agriculture.",
-    slug: "terraflow-platform"
-  },
-];
+const PROJECT_DATA: ProjectData[] = portfolioData.projects.map((project) => ({
+  title: project.title,
+  image: project.image ?? '/images/profile.png',
+  category: project.category ?? 'Game Development',
+  year: project.startDate.slice(0, 4),
+  description: project.description,
+  slug: project.slug,
+}));
 
 export function ArgentLoopInfiniteSlider() {
   const containerRef = React.useRef<HTMLDivElement>(null);

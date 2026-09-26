@@ -72,12 +72,13 @@ export const ProjectContact = ({ isLowPowerMode }: { isLowPowerMode?: boolean })
                         isLowPowerMode={isLowPowerMode}
                         text={
                             <>
-                                <strong><Hover3DFlipText text="Ready to build the extraordinary?" /></strong> <Hover3DFlipText text="From intelligent AI solutions to scalable software architectures, let's collaborate on your big idea." />
+                                <strong><Hover3DFlipText text="Have a game idea?" /></strong> <Hover3DFlipText text="Let's bring it to life with Roblox Studio, Lua, and a thoughtful approach to game design." />
                             </>
                         }
                         examples={[
-                            "Looking for a Software & AI Engineer?",
-                            "Need an AI solution for your business?",
+                            "Looking for a Roblox game developer?",
+                            "Have a game concept to build together?",
+                            "Want to talk about game development?",
                             "Just want to say hi?",
                         ]}
                     />

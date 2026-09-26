@@ -16,6 +16,10 @@ import { cn } from '@/lib/utils';
 import { DeferredMount } from '@/components/ui/DeferredMount';
 
 const techLogos: Record<string, string> = {
+    'Lua Script': 'https://cdn.simpleicons.org/lua',
+    'C++': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
+    'Roblox Studio': 'https://cdn.simpleicons.org/roblox',
+    'Blender': 'https://cdn.simpleicons.org/blender',
     'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
     'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',
@@ -33,6 +37,14 @@ const techLogos: Record<string, string> = {
     'Scikit-learn': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/scikitlearn/scikitlearn-original.svg',
     'Pandas': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/pandas/pandas-original.svg',
     'NumPy': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/numpy/numpy-original.svg',
+};
+
+const bubbleIconUrls: Record<string, string> = {
+    python: techLogos.Python,
+    lua: techLogos['Lua Script'],
+    blender: techLogos.Blender,
+    cplusplus: techLogos['C++'],
+    roblox: techLogos['Roblox Studio'],
 };
 
 function TechSchematic() {
@@ -106,7 +118,7 @@ function Bubble({ b, mouseX, mouseY }: { b: any, mouseX: any, mouseY: any }) {
             className="flex items-center justify-center w-14 h-14 md:w-20 md:h-20 rounded-full bg-foreground/[0.05] dark:bg-white/5 backdrop-blur-2xl border border-foreground/10 dark:border-white/10 shadow-[0_0_40px_rgba(0,0,0,0.05)] transition-colors duration-500"
         >
             <motion.img
-                src={`https://cdn.jsdelivr.net/gh/devicons/devicon/icons/${b.icon}/${b.icon}-original.svg`}
+                src={bubbleIconUrls[b.icon]}
                 className="w-7 h-7 md:w-10 md:h-10"
                 style={{
                     filter: useTransform(grayscale, (v) => `grayscale(${v}%)`),
@@ -119,19 +131,19 @@ function Bubble({ b, mouseX, mouseY }: { b: any, mouseX: any, mouseY: any }) {
 
 function FloatingTechBubbles({ mouseX, mouseY }: { mouseX: any, mouseY: any }) {
     const bubbles = [
-        // LEFT SIDE (Mixed AI & Software)
+        // LEFT SIDE (Game development tools)
         { icon: "python", top: "15%", left: "8%", delay: 0.2 },
-        { icon: "react", top: "28%", left: "20%", delay: 1.5 },
-        { icon: "pytorch", top: "45%", left: "6%", delay: 0.7 },
-        { icon: "nodejs", top: "62%", left: "18%", delay: 2.4 },
-        { icon: "tensorflow", top: "78%", left: "10%", delay: 1.1 },
+        { icon: "lua", top: "28%", left: "20%", delay: 1.5 },
+        { icon: "blender", top: "45%", left: "6%", delay: 0.7 },
+        { icon: "cplusplus", top: "62%", left: "18%", delay: 2.4 },
+        { icon: "roblox", top: "78%", left: "10%", delay: 1.1 },
 
-        // RIGHT SIDE (Mixed AI & Software)
-        { icon: "nextjs", top: "18%", right: "12%", delay: 0.4 },
-        { icon: "opencv", top: "35%", right: "22%", delay: 1.8 },
-        { icon: "typescript", top: "52%", right: "10%", delay: 1.3 },
-        { icon: "pandas", top: "68%", right: "24%", delay: 2.8 },
-        { icon: "postgresql", top: "82%", right: "15%", delay: 0.9 },
+        // RIGHT SIDE (Roblox scripting and game creation)
+        { icon: "blender", top: "18%", right: "12%", delay: 0.4 },
+        { icon: "cplusplus", top: "35%", right: "22%", delay: 1.8 },
+        { icon: "lua", top: "52%", right: "10%", delay: 1.3 },
+        { icon: "python", top: "68%", right: "24%", delay: 2.8 },
+        { icon: "roblox", top: "82%", right: "15%", delay: 0.9 },
     ];
 
     return (
@@ -326,13 +338,13 @@ export default function SkillsPage() {
                                     transition={{ duration: 0.5, delay: 0.2 }}
                                     className="text-[10px] font-mono uppercase tracking-[0.5em] text-primary/80 font-bold block"
                                 >
-                                    CORE TECHNOLOGIES
+                                    GAME DEVELOPMENT TOOLS
                                 </motion.span>
                                 <h2 className="text-4xl md:text-6xl font-medium tracking-tight text-foreground">
-                                    The Engineering Foundation
+                                    My Game Development Toolkit
                                 </h2>
                                 <p className="text-sm md:text-base text-muted-foreground leading-relaxed pt-2">
-                                    Building scalable architectures using modern languages and frameworks optimized for high-performance execution.
+                                    Building Roblox games with Lua, designing game systems, and exploring animation and 3D art.
                                 </p>
                             </motion.div>
                         </div>

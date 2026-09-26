@@ -8,20 +8,20 @@ import ImageTrail from "@/components/ImageTrail";
 const INITIAL_CHIPS = [
   {
     id: 1,
-    title: "AI Engineer",
-    description: "Architect intelligent systems",
+    title: "Game Developer",
+    description: "Build playable Roblox experiences",
     icon: BrainCircuit,
   },
   {
     id: 2,
-    title: "Data Engineer",
-    description: "Building scalable pipelines",
+    title: "Lua Scripter",
+    description: "Turn gameplay ideas into game logic",
     icon: Database,
   },
   {
     id: 3,
-    title: "Software Engineer",
-    description: "Crafting robust applications",
+    title: "Game Designer",
+    description: "Shape systems, mechanics, and game feel",
     icon: Code2,
   },
 ];

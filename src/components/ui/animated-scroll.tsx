@@ -14,9 +14,9 @@ const pages = [
         leftComponent: <Loader type="ai" />,
         leftContent: null,
         rightContent: {
-            heading: 'Intelligence Systems',
-            description: 'Specializing in architecting autonomous systems and intelligence-driven platforms. From fine-tuning LLMs and engineering RAG architectures to developing deep learning models for Computer Vision and NLP.',
-            skills: ["LLM Fine-tuning", "RAG Systems", "Deep Learning", "Computer Vision", "MLOps", "Data Analytics"],
+            heading: 'Roblox Game Development',
+            description: 'Turning ideas into playable Roblox experiences with Lua, clear gameplay logic, and systems designed around the player.',
+            skills: ["Roblox Studio", "Lua Scripting", "Game Logic", "Gameplay Systems", "Multiplayer", "Prototyping"],
             hoverColor: "bg-red-600/10"
         },
     },
@@ -26,9 +26,9 @@ const pages = [
         leftComponent: null,
         rightComponent: <Loader type="software" />,
         leftContent: {
-            heading: 'Scalable Systems',
-            description: 'Building the foundation for resilient digital ecosystems. I engineer full-stack solutions with a focus on system architecture, modular design, and high-performance backends using Go, Next.js, and Python.',
-            skills: ["System Architecture", "Full-Stack Dev", "Docker & K8s", "API Design", "DevOps", "Software Design"],
+            heading: 'Game Design & Systems',
+            description: 'Planning how a game works, from its core concept and player flow to systems that make the experience engaging.',
+            skills: ["Game Concept", "System Design", "Class Diagrams", "Game Mechanics", "Animation", "VFX / SFX"],
             hoverColor: "bg-blue-600/10"
         },
         rightContent: null,
@@ -39,15 +39,15 @@ const pages = [
         leftComponent: <Loader type="softskill" />,
         leftContent: null,
         rightContent: {
-            heading: 'Strategic Innovation',
-            description: 'Translating complex technical requirements into impactful business solutions through systemic thinking, strategic leadership, and clear communication within cross-functional teams.',
-            skills: ["Systemic Thinking", "Leadership", "Problem Solving", "Teamwork", "Communication", "Research"],
+            heading: 'Learning Together',
+            description: 'Building games with a team, learning through game jams, and helping camp participants solve development challenges.',
+            skills: ["Teamwork", "GameJamX", "Mentoring", "Debugging", "Time Management", "Problem Solving"],
             hoverColor: "bg-purple-600/10"
         },
     },
     {
         isBridge: true,
-        heading: 'Discover my latest work and creative solutions that bring ideas to life',
+        heading: 'Explore my Roblox games, game systems, and the projects I have built with others',
         subheading: 'SCROLL TO EXPLORE',
     }
 ];
@@ -237,7 +237,7 @@ function BridgeSlide({ page, isActive, scrollProgress, index }: { page: any, isA
         >
             <motion.div style={{ y }} className="space-y-16 max-w-[1200px] w-full px-[5%]">
                 <h2 className="text-4xl md:text-5xl lg:text-7xl font-medium tracking-tight text-foreground dark:text-white leading-[1.1] font-sans">
-                    <HoverScrambleText text={"Discover my latest work and creative solutions \nthat bring ideas to life"} />
+                    <HoverScrambleText text={page.heading} />
                 </h2>
                 <div className="flex flex-col items-center gap-6 opacity-30 pt-10">
                     <span className="text-[11px] font-mono font-bold tracking-[0.5em] uppercase text-foreground dark:text-white">
@@ -372,4 +372,3 @@ function MagneticTag({ text, index }: { text: string, index: number }) {
         </div>
     );
 }
-

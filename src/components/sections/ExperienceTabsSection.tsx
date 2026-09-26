@@ -73,7 +73,7 @@ function EducationContent() {
                     </h2>
 
                     <p className="text-muted-foreground leading-relaxed max-w-md">
-                        {education.major} major with a GPA of {education.gpa}. Focused on AI Engineering and Systems Research. Active in multiple high-impact research laboratories and national competitions.
+                        {education.degree} in {education.major}. {education.isOngoing ? "Currently studying." : ""} My education supports the problem-solving and system-design skills I use in game development.
                     </p>
                 </div>
 
@@ -93,19 +93,21 @@ function EducationContent() {
                         </div>
 
                         <div className="flex flex-wrap justify-center gap-2">
-                            <span className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
-                                GPA {education.gpa}
+                            {education.gpa && (
+                                <span className="px-3 py-1.5 rounded-full text-xs font-medium bg-primary/10 text-primary border border-primary/20">
+                                    GPA {education.gpa}
+                                </span>
+                            )}
+                            <span className="px-3 py-1.5 rounded-full text-xs font-medium bg-secondary/50 text-foreground border border-secondary/30">
+                                Game Developer
                             </span>
                             <span className="px-3 py-1.5 rounded-full text-xs font-medium bg-secondary/50 text-foreground border border-secondary/30">
-                                AI Researcher
-                            </span>
-                            <span className="px-3 py-1.5 rounded-full text-xs font-medium bg-secondary/50 text-foreground border border-secondary/30">
-                                IT Major
+                                {education.major}
                             </span>
                         </div>
 
                         <p className="text-xs font-mono text-muted-foreground tracking-widest uppercase">
-                            Digital Innovation Hub
+                            Game Development
                         </p>
                     </div>
                 </motion.div>

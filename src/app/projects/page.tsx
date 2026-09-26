@@ -6,7 +6,7 @@ import { motion, AnimatePresence, useMotionValue, useSpring, useTransform, useMo
 import { gsap } from 'gsap';
 import { useLenis } from 'lenis/react';
 import { useTranslations } from 'next-intl';
-import { Search, X, Layers, ArrowRight, ArrowUpRight, Sparkles, Code2, Zap, Brain, Cpu, Wifi, Blocks, Globe, Database, LayoutGrid, List } from 'lucide-react';
+import { Search, X, Layers, ArrowRight, ArrowUpRight, Sparkles, Code2, Zap, Cpu, Wifi, Blocks, Globe, LayoutGrid, List } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { portfolioData } from '@/data/portfolio';
 import { Project } from '@/types';
@@ -1026,9 +1026,7 @@ export default function ProjectsPage() {
 
     const categories = [
         { id: 'All', label: 'All Realms', icon: Globe },
-        { id: 'AI & Machine Learning', label: 'Artificial Intelligence', icon: Brain },
-        { id: 'Software Engineering', label: 'Software Architecture', icon: Database },
-        { id: 'More', label: 'More', icon: Layers },
+        { id: 'Game Development', label: 'Game Development', icon: Code2 },
     ];
 
     const [projects, setProjects] = useState(portfolioData.projects);
@@ -1064,11 +1062,7 @@ export default function ProjectsPage() {
 
         // Category Filter
         if (selectedCategory !== 'All') {
-            if (selectedCategory === 'More') {
-                currentProjects = currentProjects.filter(p => p.category && ['IoT & Embedded', 'Blockchain', 'Creative Tech'].includes(p.category));
-            } else {
-                currentProjects = currentProjects.filter(p => p.category === selectedCategory);
-            }
+            currentProjects = currentProjects.filter(p => p.category === selectedCategory);
         }
 
         // Search Filter

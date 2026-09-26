@@ -1,9 +1,9 @@
 "use client";
 import React from "react";
-import Image from "next/image";
-import { GraduationCap, BookOpen, Binary, Sparkles, Clock } from "lucide-react";
+import { GraduationCap, BookOpen, Sparkles, Clock } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
+import { portfolioData } from "@/data/portfolio";
 
 const CornerAccents = ({ hoverClass }: { hoverClass: string }) => (
     <>
@@ -15,11 +15,13 @@ const CornerAccents = ({ hoverClass }: { hoverClass: string }) => (
 );
 
 export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isLowPowerMode?: boolean }) {
+    const [higherEducation, highSchool] = portfolioData.education;
+
     return (
         <div className="w-full max-w-6xl mx-auto p-4 md:p-8">
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                 
-                {/* Telkom University Box (Left) - Hover Effect: Translate Y & Blue Glow */}
+                {/* Current university card */}
                 <motion.div 
                     initial={isLowPowerMode ? {} : { opacity: 0, y: 20 }}
                     whileInView={isLowPowerMode ? {} : { opacity: 1, y: 0 }}
@@ -33,25 +35,15 @@ export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isL
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 group-hover:text-blue-600 dark:group-hover:text-blue-400 transition-colors">Higher Education • Current</span>
                         </div>
-                        <h3 className="text-3xl font-black text-neutral-900 dark:text-white mb-4">Telkom University</h3>
+                        <h3 className="text-3xl font-black text-neutral-900 dark:text-white mb-4">{higherEducation.institution}</h3>
                         <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                            Information Technology major with a GPV of 3.8/4.0. Focused on AI Engineering and Systems Research. Active in multiple high-impact research laboratories and national competitions.
+                            {higherEducation.degree} in {higherEducation.major}. {higherEducation.isOngoing ? "Currently studying." : ""}
                         </p>
                     </div>
 
                     {/* Visual Section (Bottom) */}
                     <div className="flex-1 flex items-center justify-center relative p-8 mt-auto border-t border-black/10 dark:border-white/10 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5 overflow-hidden">
-                        {/* Background Logo */}
-                        <div className="absolute inset-0">
-                            <Image
-                                src="/assets/TelkomUniversityLogo.webp?v=3"
-                                alt="Telkom University"
-                                fill
-                                className="object-cover opacity-20 dark:opacity-30 blur-[2px] scale-125 group-hover:scale-110 transition-transform duration-700"
-                                unoptimized
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-black/40 to-black/10 dark:from-blue-950/90 dark:via-black/50 dark:to-transparent transition-opacity duration-500 group-hover:opacity-80" />
-                        </div>
+                        <div className="absolute inset-0 bg-gradient-to-t from-blue-950/80 via-black/40 to-black/10 dark:from-blue-950/90 dark:via-black/50 dark:to-transparent transition-opacity duration-500 group-hover:opacity-80" />
 
                         {/* Animated Background Element */}
                         <div className="absolute inset-0 opacity-10 pointer-events-none">
@@ -61,17 +53,16 @@ export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isL
                         <div className="relative z-10 flex flex-col items-center transition-transform duration-500 group-hover:scale-105">
                             <div className="relative mb-6">
                                 <GraduationCap className={cn("w-20 h-20 text-white drop-shadow-xl", !isLowPowerMode && "animate-pulse")} />
-                                <Binary className={cn("w-8 h-8 text-blue-400 absolute -top-2 -right-2 opacity-80", !isLowPowerMode && "animate-bounce")} />
                             </div>
 
                             <div className="flex flex-wrap gap-2 justify-center mb-4">
-                                {["GPA 3.8", "AI Researcher", "IT Major"].map(s => (
+                                {[higherEducation.major, ...(higherEducation.gpa ? [`GPA ${higherEducation.gpa}`] : [])].map(s => (
                                     <span key={s} className="px-3 py-1 rounded-full text-[10px] bg-black/40 dark:bg-white/10 text-white border border-white/20 font-mono font-bold backdrop-blur-md shadow-lg group-hover:bg-blue-600/50 transition-colors">
                                         {s}
                                     </span>
                                 ))}
                             </div>
-                            <p className="text-[10px] font-mono text-white/90 uppercase tracking-widest bg-black/50 px-2 py-1 rounded backdrop-blur-sm border border-white/10 group-hover:border-blue-500/50 transition-colors">Digital Innovation Hub</p>
+                            <p className="text-[10px] font-mono text-white/90 uppercase tracking-widest bg-black/50 px-2 py-1 rounded backdrop-blur-sm border border-white/10 group-hover:border-blue-500/50 transition-colors">{higherEducation.degree}</p>
                         </div>
 
                         {/* Holographic Scan Effect */}
@@ -81,7 +72,7 @@ export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isL
                     </div>
                 </motion.div>
 
-                {/* SMAN 88 Box (Right) - Hover Effect: Scale & Orange Glow */}
+                {/* High school card */}
                 <motion.div 
                     initial={isLowPowerMode ? {} : { opacity: 0, y: 20 }}
                     whileInView={isLowPowerMode ? {} : { opacity: 1, y: 0 }}
@@ -95,25 +86,15 @@ export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isL
                         <div className="flex items-center gap-2 mb-4">
                             <span className="text-xs font-bold uppercase tracking-widest text-neutral-500 dark:text-neutral-400 group-hover:text-orange-600 dark:group-hover:text-orange-400 transition-colors">Foundation • High School</span>
                         </div>
-                        <h3 className="text-3xl font-black text-neutral-900 dark:text-white mb-4">SMAN 88 Jakarta</h3>
+                        <h3 className="text-3xl font-black text-neutral-900 dark:text-white mb-4">{highSchool.institution}</h3>
                         <p className="text-sm text-neutral-600 dark:text-neutral-400 leading-relaxed">
-                            Science Major (IPA). Developed strong analytical foundations in Mathematics and Physics, shaping a logical approach to problem-solving and technical engineering.
+                            {highSchool.degree} — {highSchool.major}. {highSchool.gpa ? `GPA ${highSchool.gpa}.` : ""}
                         </p>
                     </div>
 
                     {/* Visual Section (Bottom) */}
                     <div className="flex-1 flex items-center justify-center relative p-8 mt-auto border-t border-black/10 dark:border-white/10 bg-gradient-to-b from-transparent to-black/5 dark:to-white/5 overflow-hidden">
-                         {/* Background Logo */}
-                         <div className="absolute inset-0">
-                            <Image
-                                src="/assets/sman88logo.webp"
-                                alt="SMAN 88 Jakarta"
-                                fill
-                                className="object-cover opacity-10 dark:opacity-15 blur-sm scale-125 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-700"
-                                unoptimized
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-orange-950/70 via-black/40 to-black/10 dark:from-orange-950/90 dark:via-black/50 dark:to-transparent mix-blend-multiply dark:mix-blend-normal transition-opacity duration-500 group-hover:opacity-80" />
-                        </div>
+                         <div className="absolute inset-0 bg-gradient-to-t from-orange-950/70 via-black/40 to-black/10 dark:from-orange-950/90 dark:via-black/50 dark:to-transparent mix-blend-multiply dark:mix-blend-normal transition-opacity duration-500 group-hover:opacity-80" />
 
                         <div className="absolute inset-0 opacity-10 pointer-events-none">
                             <div className="absolute inset-0 bg-[radial-gradient(#80808012_1px,transparent_1px)] [background-size:16px_16px]"></div>
@@ -126,13 +107,13 @@ export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isL
                             </div>
 
                             <div className="flex flex-wrap gap-2 justify-center mb-4">
-                                {["Science Major", "Jakarta", "Foundation"].map(s => (
+                                {[highSchool.major, ...(highSchool.gpa ? [`GPA ${highSchool.gpa}`] : [])].map(s => (
                                     <span key={s} className="px-3 py-1 rounded-full text-[10px] bg-black/40 dark:bg-white/10 text-white border border-white/20 font-mono font-bold backdrop-blur-md shadow-lg group-hover:bg-orange-600/50 transition-colors">
                                         {s}
                                     </span>
                                 ))}
                             </div>
-                            <p className="text-[10px] font-mono text-white/90 uppercase tracking-widest bg-black/50 px-2 py-1 rounded backdrop-blur-sm border border-white/10 group-hover:border-orange-500/50 transition-colors">Logical Foundation</p>
+                            <p className="text-[10px] font-mono text-white/90 uppercase tracking-widest bg-black/50 px-2 py-1 rounded backdrop-blur-sm border border-white/10 group-hover:border-orange-500/50 transition-colors">{highSchool.institution}</p>
                         </div>
                     </div>
                 </motion.div>
@@ -180,4 +161,3 @@ export default function ExperienceStickyScroll({ isLowPowerMode = false }: { isL
         </div>
     );
 }
-

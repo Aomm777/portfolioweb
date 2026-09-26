@@ -41,17 +41,17 @@ const highlightContent = {
     education: {
         title: "Building the Future",
         highlight: "Through Knowledge",
-        description: "Every line of code starts with understanding. My academic journey at Telkom University shapes how I approach complex problems with systematic thinking."
+        description: "I study Computer Engineering and apply that foundation to game logic, system design, and building with Roblox Studio."
     },
     journey: {
         title: "Crafting Experiences",
         highlight: "That Matter",
-        description: "From internships to leadership roles, each step has been a lesson in collaboration, innovation, and pushing boundaries."
+        description: "From Roblox Bootcamp and game jams to leading a small NSC project team, each project has helped me grow as a developer."
     },
     experience: {
         title: "Turning Ideas",
         highlight: "Into Reality",
-        description: "Real-world projects that solve real problems. Building solutions that make a difference."
+        description: "A closer look at the Roblox games I have built solo and with a team."
     }
 };
 
@@ -99,16 +99,13 @@ function ExperienceTabSlider({ isLowPowerMode }: { isLowPowerMode: boolean }) {
     const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
 
     const tabs: TabItem[] = [
-        { id: 'education', label: 'Education', description: 'Building strong foundations through academic excellence at Telkom University and SMAN 88 Jakarta.' },
+        { id: 'education', label: 'Education', description: 'My Computer Engineering studies and the foundations behind my approach to game development.' },
         { id: 'journey', label: 'Journey', description: 'A timeline of roles, responsibilities, and professional growth across various organizations.' },
         { id: 'experience', label: 'Experience', description: 'Detailed breakdown of work experiences with project highlights and achievements.' },
     ];
 
     const categories = [
-        { id: 'professional', label: 'Professional Experience', icon: Briefcase, color: 'bg-blue-600', prefix: 'prof-' },
-        { id: 'leadership', label: 'Leadership & Organizational', icon: Users, color: 'bg-purple-600', prefix: 'lead-' },
-        { id: 'volunteer', label: 'Volunteer Experience', icon: Heart, color: 'bg-orange-500', prefix: 'vol-' },
-        { id: 'certifications', label: 'Certifications & Development', icon: Award, color: 'bg-emerald-500', prefix: 'cert-' },
+        { id: 'teaching', label: 'Teaching & Mentorship', icon: Users, color: 'bg-purple-600', prefix: 'exp-' },
     ];
 
     const heightFix = () => {
