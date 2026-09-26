@@ -36,18 +36,14 @@ interface CertificateHeroScrollProps {
     isLowPowerMode?: boolean;
 }
 
-const CERTIFICATE_POOL = [
-    "Data Analytics on Google Cloud.webp",
-    "Deep Learning Beginner.webp",
-    "Docker, Kubernetes dan DevOps.webp",
-    "Fullstack Programming Untuk Pemula.webp",
-    "Introduction to Generative AI.webp",
-    "Machine Learning Foundations.webp",
-    "Mastering Smart Contract.webp",
-    "Started with Databases.webp",
-    "Supervised Machine Learning Regression and Classification.webp",
-    "elevAIte with Dicoding Program 2025.webp"
-];
+const CERTIFICATES: ImageItem[] = portfolioData.achievements
+    .filter((achievement) => achievement.image)
+    .map((achievement) => ({
+        id: achievement.id,
+        src: achievement.image!,
+        alt: achievement.title,
+        isPdf: /\.pdf$/i.test(achievement.image!)
+    }));
 
 const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick, isLowPowerMode: isLowPowerModeProp }) => {
     const spacerRef = useRef<HTMLDivElement>(null);
@@ -57,24 +53,6 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
     const { isLowPowerMode: performanceLowPower, isMobile } = usePerformance();
     const isLowPowerMode = isLowPowerModeProp ?? performanceLowPower;
 
-    // Select and randomize certificates on mount to avoid hydration mismatch
-    const [randomCertificates, setRandomCertificates] = useState<ImageItem[]>([]);
-
-    const createCertItem = useCallback((filename: string): ImageItem => ({
-        id: filename.replace(/\s+/g, '-').toLowerCase(),
-        src: `/certificate/${filename}`,
-        alt: filename.replace(/\.(pdf|jpg|jpeg|png|webp)$/i, ''),
-        isPdf: /\.pdf$/i.test(filename)
-    }), []);
-
-    useEffect(() => {
-        // Randomly pick 6 unique items from the pool
-        const shuffled = [...CERTIFICATE_POOL].sort(() => 0.5 - Math.random());
-        const selected = shuffled.slice(0, 6).map(createCertItem);
-        setRandomCertificates(selected);
-    }, [createCertItem]);
-
-
     const getPositions = useCallback((): Positions => {
         const vw = typeof window !== "undefined" ? window.innerWidth : 1920;
         const vh = typeof window !== "undefined" ? window.innerHeight : 1080;
@@ -83,11 +61,9 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
         // ... (Desktop positions)
         const desktopInitial: Record<string, Position> = {
             cert1: { top: vh * 0.15, left: vw * 0.05, width: vw * 0.22, height: vh * 0.22, borderRadius: 12, zIndex: 1 },
-            cert2: { top: vh * 0.12, left: vw * 0.38, width: vw * 0.2, height: vh * 0.2, borderRadius: 12, zIndex: 1 },
-            cert3: { top: vh * 0.18, left: vw * 0.72, width: vw * 0.22, height: vh * 0.22, borderRadius: 12, zIndex: 1 },
-            cert4: { top: vh * 0.70, left: vw * 0.08, width: vw * 0.2, height: vh * 0.25, borderRadius: 12, zIndex: 1 },
-            cert5: { top: vh * 0.75, left: vw * 0.42, width: vw * 0.2, height: vh * 0.18, borderRadius: 12, zIndex: 1 },
-            cert6: { top: vh * 0.65, left: vw * 0.75, width: vw * 0.18, height: vh * 0.25, borderRadius: 12, zIndex: 1 },
+            cert2: { top: vh * 0.15, left: vw * 0.72, width: vw * 0.22, height: vh * 0.22, borderRadius: 12, zIndex: 1 },
+            cert3: { top: vh * 0.65, left: vw * 0.08, width: vw * 0.22, height: vh * 0.22, borderRadius: 12, zIndex: 1 },
+            cert4: { top: vh * 0.65, left: vw * 0.70, width: vw * 0.22, height: vh * 0.22, borderRadius: 12, zIndex: 1 },
         };
 
         // Mobile Grid Calculations (Pre-calculated for initial state to match final sizes and avoid layout thrashing)
@@ -100,9 +76,7 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
             cert1: { top: vh * 0.15, left: vw * 0.05, width: mColW, height: fixedHeight, borderRadius: 8, zIndex: 1 },
             cert2: { top: vh * 0.12, left: vw * 0.52, width: mColW, height: fixedHeight, borderRadius: 8, zIndex: 1 },
             cert3: { top: vh * 0.35, left: vw * 0.08, width: mColW, height: fixedHeight, borderRadius: 8, zIndex: 1 },
-            cert4: { top: vh * 0.60, left: vw * 0.10, width: mColW, height: fixedHeight, borderRadius: 8, zIndex: 1 },
-            cert5: { top: vh * 0.65, left: vw * 0.55, width: mColW, height: fixedHeight, borderRadius: 8, zIndex: 1 },
-            cert6: { top: vh * 0.40, left: vw * 0.50, width: mColW, height: fixedHeight, borderRadius: 8, zIndex: 1 },
+            cert4: { top: vh * 0.60, left: vw * 0.52, width: mColW, height: fixedHeight, borderRadius: 8, zIndex: 1 },
         };
 
         const initial = isCurrentlyMobile ? mobileInitial : desktopInitial;
@@ -112,17 +86,14 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
         const startX = (vw - gridW) / 2;
         const startY = (vh - gridH) / 2 + (vh * 0.05);
         const gap = 16;
-        const col1W = (gridW - 2 * gap) * 0.4;
-        const col2W = (gridW - 2 * gap) * 0.3;
-        const col3W = (gridW - 2 * gap) * 0.3;
+        const colW = (gridW - gap) / 2;
+        const rowH = (gridH - gap) / 2;
 
         const desktopFinal: Record<string, Position> = {
-            cert1: { top: startY, left: startX, width: col1W, height: (gridH - gap) * 0.55, borderRadius: 8, zIndex: 10 },
-            cert2: { top: startY + (gridH - gap) * 0.55 + gap, left: startX, width: col1W, height: (gridH - gap) * 0.45, borderRadius: 8, zIndex: 10 },
-            cert3: { top: startY, left: startX + col1W + gap, width: col2W, height: (gridH - gap) * 0.4, borderRadius: 8, zIndex: 10 },
-            cert4: { top: startY + (gridH - gap) * 0.4 + gap, left: startX + col1W + gap, width: col2W, height: (gridH - gap) * 0.6, borderRadius: 8, zIndex: 10 },
-            cert5: { top: startY, left: startX + col1W + col2W + 2 * gap, width: col3W, height: (gridH - gap) * 0.65, borderRadius: 8, zIndex: 10 },
-            cert6: { top: startY + (gridH - gap) * 0.65 + gap, left: startX + col1W + col2W + 2 * gap, width: col3W, height: (gridH - gap) * 0.35, borderRadius: 8, zIndex: 10 },
+            cert1: { top: startY, left: startX, width: colW, height: rowH, borderRadius: 8, zIndex: 10 },
+            cert2: { top: startY, left: startX + colW + gap, width: colW, height: rowH, borderRadius: 8, zIndex: 10 },
+            cert3: { top: startY + rowH + gap, left: startX, width: colW, height: rowH, borderRadius: 8, zIndex: 10 },
+            cert4: { top: startY + rowH + gap, left: startX + colW + gap, width: colW, height: rowH, borderRadius: 8, zIndex: 10 },
         };
 
         const mStartX = (vw - mGridW) / 2;
@@ -133,8 +104,6 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
             cert2: { top: mStartY, left: mStartX + mColW + mGap, width: mColW, height: 160, borderRadius: 8, zIndex: 10 },
             cert3: { top: mStartY + 170, left: mStartX, width: mColW, height: 160, borderRadius: 8, zIndex: 10 },
             cert4: { top: mStartY + 170, left: mStartX + mColW + mGap, width: mColW, height: 160, borderRadius: 8, zIndex: 10 },
-            cert5: { top: mStartY + 340, left: mStartX, width: mColW, height: 160, borderRadius: 8, zIndex: 10 },
-            cert6: { top: mStartY + 340, left: mStartX + mColW + mGap, width: mColW, height: 160, borderRadius: 8, zIndex: 10 },
         };
 
         const final = isCurrentlyMobile ? mobileFinal : desktopFinal;
@@ -143,7 +112,7 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
     }, []);
 
     useEffect(() => {
-        if (typeof window === "undefined" || randomCertificates.length === 0) return;
+        if (typeof window === "undefined" || CERTIFICATES.length === 0) return;
 
         gsap.registerPlugin(ScrollTrigger);
 
@@ -250,7 +219,7 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
         });
 
         return () => ctx.revert();
-    }, [getPositions, randomCertificates, isLowPowerMode]);
+    }, [getPositions, isLowPowerMode]);
 
     return (
         <>
@@ -289,7 +258,7 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
                 </div>
 
                 {/* Images */}
-                {randomCertificates.map((cert, index) => (
+                {CERTIFICATES.map((cert, index) => (
                     <div
                         key={`${cert.id}-${index}`}
                         ref={(el) => {
@@ -320,9 +289,8 @@ const CertificateHeroScroll: FC<CertificateHeroScrollProps> = ({ onDownloadClick
                                     fill
                                     priority={index < 2} // Priority loading for first few
                                     sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
-                                    className="object-cover opacity-90 hover:opacity-100 transition-opacity"
+                                    className="object-contain bg-white opacity-100 transition-opacity"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/40 to-transparent opacity-60 pointer-events-none" />
                             </>
                         )}
                     </div>

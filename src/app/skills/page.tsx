@@ -18,7 +18,8 @@ import { DeferredMount } from '@/components/ui/DeferredMount';
 const techLogos: Record<string, string> = {
     'Lua Script': 'https://cdn.simpleicons.org/lua',
     'C++': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg',
-    'Roblox Studio': 'https://cdn.simpleicons.org/roblox',
+    'Roblox Studio': 'https://cdn.simpleicons.org/roblox/000000',
+    'Cursor AI': 'https://cdn.simpleicons.org/cursor/000000',
     'Blender': 'https://cdn.simpleicons.org/blender',
     'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',

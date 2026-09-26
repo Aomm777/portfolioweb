@@ -17,6 +17,8 @@ const toolLogos: Record<string, string> = {
     'Git': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg',
     'Conda': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/anaconda/anaconda-original.svg',
     'Google Colab': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/googlecolab/googlecolab-original.svg',
+    'Roblox Studio': 'https://cdn.simpleicons.org/roblox/000000',
+    'Cursor AI': 'https://cdn.simpleicons.org/cursor/000000',
 };
 
 export const ToolsSection = () => {
@@ -125,7 +127,7 @@ const ToolPill = ({ tool }: { tool: any }) => {
                     fill
                     className={cn(
                         "object-contain filter grayscale transition-all duration-500 group-hover:grayscale-0 group-hover:drop-shadow-[0_0_15px_rgba(255,255,255,0.3)]",
-                        tool.name === 'GitHub' && "dark:invert"
+                        (tool.name === 'GitHub' || tool.name === 'Roblox Studio' || tool.name === 'Cursor AI') && "dark:invert"
                     )}
                     unoptimized
                 />

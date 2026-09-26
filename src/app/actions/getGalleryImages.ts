@@ -1,39 +1,21 @@
 'use server';
 
-import fs from 'fs';
-import path from 'path';
+import { portfolioData } from '@/data/portfolio';
 
 export interface GalleryImage {
+    id: string;
     src: string;
-    filename: string;
+    title: string;
+    category: string;
 }
 
 export async function getAllGalleryImages(): Promise<GalleryImage[]> {
-    const publicDir = path.join(process.cwd(), 'public');
-    const galleryDir = path.join(publicDir, 'gallery');
-
-    try {
-        if (!fs.existsSync(galleryDir)) {
-            return [];
-        }
-
-        const files = fs.readdirSync(galleryDir);
-
-        const imageExtensions = ['.jpg', '.jpeg', '.png', '.webp', '.gif'];
-
-        const images = files
-            .filter(file => {
-                const ext = path.extname(file).toLowerCase();
-                return imageExtensions.includes(ext);
-            })
-            .map(file => ({
-                src: `/gallery/${file}`,
-                filename: file
-            }));
-
-        return images;
-    } catch (error) {
-        console.error('Error reading gallery directory:', error);
-        return [];
-    }
+    return portfolioData.projects.flatMap((project) =>
+        (project.galleryImages ?? []).map((src, index) => ({
+            id: `${project.id}-detail-${index + 1}`,
+            src,
+            title: `${project.title} — Detail ${index + 1}`,
+            category: project.title,
+        }))
+    );
 }
