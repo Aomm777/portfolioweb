@@ -4,6 +4,7 @@ import { ArrowUp, ExternalLink } from "lucide-react";
 import { motion, AnimatePresence, useMotionValue, useTransform, animate, useInView } from "framer-motion";
 import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import { portfolioData } from "@/data/portfolio";
 
 function Counter({ value, decimals = 0 }: { value: number; decimals?: number }) {
   const count = useMotionValue(1);
@@ -33,9 +34,16 @@ export default function Testimonial1() {
     cta: string;
   }
 
+  const completedProjects = portfolioData.projects.filter(project => project.status === "completed").length;
+  const techAndTools = new Set([
+    ...portfolioData.techStack.map(item => item.name),
+    ...portfolioData.tools.map(item => item.name),
+  ]).size;
+  const gpa = Number(portfolioData.education.find(education => education.gpa)?.gpa ?? 0);
+
   const stats: StatItem[] = [
     {
-      value: 3.62,
+      value: gpa,
       decimals: 2,
       suffix: "/4.0",
       label: "Current GPA",
@@ -43,25 +51,25 @@ export default function Testimonial1() {
       cta: "View Resume",
     },
     {
-      value: 20,
+      value: completedProjects,
       decimals: 0,
-      suffix: "+",
+      suffix: "",
       label: "Projects Completed",
       href: "/projects",
       cta: "View Projects",
     },
     {
-      value: 2,
+      value: 1,
       decimals: 0,
-      suffix: " Years",
+      suffix: " Year",
       label: "Professional Exp",
       href: "/experience",
       cta: "Explore Career",
     },
     {
-      value: 34,
+      value: techAndTools,
       decimals: 0,
-      suffix: "+",
+      suffix: "",
       label: "Tech & Tools",
       href: "/skills",
       cta: "See Skills",
