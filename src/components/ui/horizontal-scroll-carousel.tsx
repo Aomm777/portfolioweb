@@ -22,18 +22,12 @@ const skillIcons: Record<string, any> = {
   'Research Skills': Search,
 };
 
-// Popsy SVG illustrations yang dipastikan berfungsi
 const skillVisuals: Record<string, string> = {
-  'Problem Solving': 'https://illustrations.popsy.co/white/genius.svg',
-  'Systemic Thinking': 'https://illustrations.popsy.co/white/abstract-art-6.svg',
-  'Critical Thinking': 'https://illustrations.popsy.co/white/idea-launch.svg',
-  'Continuous Learning': 'https://illustrations.popsy.co/white/student-going-to-school.svg',
-  'Analytical Thinking': 'https://illustrations.popsy.co/white/success.svg',
-  'Adaptability': 'https://illustrations.popsy.co/white/creative-work.svg',
-  'Leadership': 'https://illustrations.popsy.co/white/team-idea.svg',
-  'Communication': 'https://illustrations.popsy.co/white/communication.svg',
-  'Teamwork': 'https://illustrations.popsy.co/white/shaking-hands.svg',
-  'Research Skills': 'https://illustrations.popsy.co/white/presentation.svg',
+  'Team Leadership': '/experience/bronopoly-team-leadership.png',
+  Teamwork: '/images/heatthieves.png',
+  'Time Management': '/images/heat-thieves-gameplay.jpg',
+  Mentorship: '/experience/gamepee-camp-detail-1.png',
+  'Problem Solving': '/experience/gamepee-camp-detail-2.png',
 };
 
 interface SkillCard {
@@ -50,7 +44,7 @@ export const HorizontalScrollCarousel = () => {
     id: index + 1,
     title: skill.name,
     description: skill.description,
-    url: skillVisuals[skill.name] || 'https://illustrations.popsy.co/white/abstract-art-6.svg',
+    url: skillVisuals[skill.name] || '/experience/bronopoly-exhibition.png',
     Icon: skillIcons[skill.name] || Users
   }));
   const targetRef = useRef(null);
@@ -115,7 +109,7 @@ const Card = ({ card }: { card: SkillCard }) => {
         <img
           src={card.url}
           alt={card.title}
-          className="w-full h-full object-contain dark:invert-0 invert"
+          className="w-full h-full object-cover"
         />
       </div>
 
