@@ -8,7 +8,7 @@ export const portfolioData: PortfolioData = {
         title: 'Game Developer | Roblox & Lua',
         subtitle: 'นักพัฒนาเกมที่สนใจ Roblox, Lua และการออกแบบระบบเกม',
         bio: 'ผมเริ่มต้นจากความสงสัยว่าเกมทำงานอย่างไร ก่อนจะได้ลองสร้างเกมด้วย Roblox Studio และ Lua ตั้งแต่นั้นมาผมสนุกกับการเปลี่ยนไอเดียให้เป็นเกมที่เล่นได้ ตั้งแต่การวาง Game Logic และออกแบบระบบ ไปจนถึงการทำงานร่วมกับทีม ผลงาน Bronopoly พาทีมผ่านเข้ารอบระดับภูมิภาค NSC 2026 และผมยังได้ร่วมพัฒนาเกมใน HamsterHub GameJamX รวมถึงถ่ายทอดความรู้ในค่ายสอนทำเกม',
-        avatar: '/images/profile.png',
+        avatar: '/images/profile-cutout.png',
         location: 'Thailand',
         email: 'Wi.koo25561@gmail.com',
         phone: '0986627263',

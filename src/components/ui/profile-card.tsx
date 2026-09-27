@@ -55,13 +55,13 @@ export function ProfileCard(props: ProfileCardProps) {
       {/* Desktop */}
       <div className='hidden md:flex relative items-center'>
         {/* Square Image */}
-        <div className='w-[480px] h-[480px] rounded-[2.5rem] overflow-hidden bg-gray-200 dark:bg-gray-800 flex-shrink-0 shadow-2xl relative z-0'>
+        <div className='w-[480px] h-[480px] rounded-[2.5rem] overflow-hidden bg-transparent flex-shrink-0 shadow-2xl relative z-0'>
           <Image
             src={imageUrl}
             alt={name}
             width={480}
             height={480}
-            className='w-full h-full object-cover'
+            className='w-full h-full object-contain'
             draggable={false}
             priority
           />
@@ -112,13 +112,13 @@ export function ProfileCard(props: ProfileCardProps) {
         className='md:hidden max-w-sm mx-auto text-center bg-white dark:bg-zinc-900 p-6 rounded-[2.5rem] shadow-2xl border border-white/5'
       >
         {/* Square Mobile Image */}
-        <div className='w-full aspect-square bg-gray-200 dark:bg-gray-700 rounded-3xl overflow-hidden mb-6 flex items-center justify-center'>
+        <div className='w-full aspect-square bg-transparent rounded-3xl overflow-hidden mb-6 flex items-center justify-center'>
           <Image
             src={imageUrl}
             alt={name}
             width={400}
             height={400}
-            className='w-full h-full object-cover'
+            className='w-full h-full object-contain'
             draggable={false}
             priority
           />

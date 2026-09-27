@@ -69,12 +69,9 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
 
     // 2. Internal Content Scroll
     const contentY = useTransform(localProgress, [0.35, 1], ["0%", "-70%"], { ease: easeInOut });
-    const imageParallaxY = useTransform(localProgress, [0.35, 1], ["-10%", "10%"], { ease: easeInOut });
-
     // 3. Elements specific animations
     const phase0Opacity = useTransform(localProgress, [0, 0.15], [1, 0]);
     const cardContentOpacity = useTransform(localProgress, [0.1, 0.3], [0, 1]);
-    const photoScale = useTransform(localProgress, [0.3, 0.8], [1.15, 1], { ease: easeInOut });
     const textOpacity = useTransform(localProgress, [0.85, 1], [0, 1]);
 
     useMotionValueEvent(localProgress, "change", (latest) => {
@@ -213,9 +210,6 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
                             {/* Image area - THIS is what clips. Vault frame is OUTSIDE this. */}
                             <div className="absolute inset-0 overflow-hidden">
                                 <motion.div
-                                    style={{
-                                        scale: photoScale,
-                                    }}
                                     animate={{
                                         filter: isHovered ? "grayscale(0%) contrast(1)" : "grayscale(100%) contrast(1.1)",
                                     }}
@@ -223,22 +217,14 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
                                     className="relative w-full h-full"
                                 >
                                     <div className="absolute inset-0">
-                                        {/* Parallax wrapper */}
-                                        <div className="absolute w-[calc(100%+100px)] h-[130vh] -top-[15vh] -left-[50px]">
-                                            <motion.div 
-                                                className="relative h-full w-full" 
-                                                style={{ y: imageParallaxY }}
-                                            >
-                                                <Image
-                                                    src={portfolioData.personal.avatar}
-                                                    alt="Profile"
-                                                    fill
-                                                    className="object-cover object-bottom grayscale-0"
-                                                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
-                                                    priority
-                                                />
-                                            </motion.div>
-                                        </div>
+                                        <Image
+                                            src={portfolioData.personal.avatar}
+                                            alt="Profile"
+                                            fill
+                                            className="object-contain object-bottom grayscale-0"
+                                            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 100vw, 100vw"
+                                            priority
+                                        />
                                     </div>
                                 </motion.div>
                             </div>
