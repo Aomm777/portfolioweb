@@ -88,8 +88,7 @@ const CenterImage = ({ scrollY }: { scrollY: MotionValue<number> }) => {
                     scale,
                     borderRadius,
                     opacity,
-                    backgroundImage:
-                        "url('/experience/Foto Utama.webp')",
+                    backgroundImage: "url('/experience/bronopoly-exhibition.png')",
                     backgroundPosition: "center",
                     backgroundSize: "cover",
                     backgroundRepeat: "no-repeat",
@@ -141,65 +140,54 @@ const ParallaxImages = ({ scrollY }: { scrollY: MotionValue<number> }) => {
                end={negative} -> Moves UP past the view.
             */}
 
-            {/* 1. Left Small - Moves Fast */}
+            {/* Bronopoly presentation */}
             <div className="col-span-3 col-start-2">
                 <ParallaxImg
                     scrollY={scrollY}
-                    src="/experience/FotoSC1.webp"
-                    alt="Space launch"
+                    src="/experience/bronopoly-team-leadership.png"
+                    alt="Presenting the Bronopoly project"
                     start={800}
                     end={-1500}
                     className="w-full shadow-2xl rounded-2xl border border-white/10 aspect-[4/3] object-cover"
                 />
             </div>
 
-            {/* 2. Right Small - Moves Moderate */}
+            {/* Escape Lab gameplay */}
             <div className="col-span-3 col-start-10 mb-32">
                 <ParallaxImg
                     scrollY={scrollY}
-                    src="/experience/FotoSC2.webp"
-                    alt="Space launch"
+                    src="/experience/gamepee-camp-1.png"
+                    alt="Escape Lab gameplay"
                     start={1000}
                     end={-1500}
                     className="w-full shadow-2xl rounded-2xl border border-white/10 aspect-square object-cover"
                 />
             </div>
 
-            {/* 3. Center Wide - Moves Slowest (Background-ish) */}
+            {/* Anime Royale gameplay */}
             <div className="col-span-4 col-start-5 mb-10">
                 <ParallaxImg
                     scrollY={scrollY}
-                    src="/experience/FotoSC3.webp"
-                    alt="Satellite view"
+                    src="/experience/gamepee-camp-2.png"
+                    alt="Anime Royale gameplay"
                     start={900}
                     end={-1800}
                     className="w-full shadow-2xl rounded-2xl border border-white/10 aspect-video object-cover"
                 />
             </div>
 
-            {/* 4. Far Left Tall - Moves Very Fast */}
+            {/* Roblox game development session */}
             <div className="col-span-3 col-start-1 mb-64">
                 <ParallaxImg
                     scrollY={scrollY}
-                    src="/experience/FotoSC4.webp"
-                    alt="Space texture"
+                    src="/experience/gamepee-camp-3.png"
+                    alt="Roblox game development session"
                     start={1200}
                     end={-2000}
                     className="w-full shadow-2xl rounded-2xl border border-white/10 aspect-[3/4] object-cover"
                 />
             </div>
 
-            {/* 5. Far Right Wide - Moves Fast */}
-            <div className="col-span-4 col-start-8 mb-40">
-                <ParallaxImg
-                    scrollY={scrollY}
-                    src="/experience/FotoSC5.webp"
-                    alt="Orbiting satellite"
-                    start={1100}
-                    end={-2000}
-                    className="w-full shadow-2xl rounded-2xl border border-white/10 aspect-video object-cover"
-                />
-            </div>
         </div>
     );
 };
