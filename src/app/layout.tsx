@@ -30,6 +30,11 @@ const signature = Alex_Brush({
     display: 'swap',
 });
 
+// Vercel exposes the production domain at build time; fall back to the dev server locally.
+const siteUrl = process.env.VERCEL_PROJECT_PRODUCTION_URL
+    ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+    : 'http://localhost:3000';
+
 export const metadata: Metadata = {
     title: {
         default: 'Paphangkorn | Roblox Game Developer',
@@ -39,11 +44,11 @@ export const metadata: Metadata = {
     keywords: ['portfolio', 'game developer', 'Roblox', 'Lua', 'game design', 'game systems'],
     authors: [{ name: 'Paphangkorn' }],
     creator: 'Paphangkorn',
-    metadataBase: new URL('https://portfolio-sable-pi.vercel.app'),
+    metadataBase: new URL(siteUrl),
     openGraph: {
         type: 'website',
         locale: 'en_US',
-        url: 'https://portfolio-sable-pi.vercel.app',
+        url: siteUrl,
         title: 'Paphangkorn | Roblox Game Developer',
         description: 'Roblox game developer focused on Lua scripting, game logic, and system design.',
         siteName: 'Portfolio',
@@ -52,7 +57,6 @@ export const metadata: Metadata = {
         card: 'summary_large_image',
         title: 'Paphangkorn | Roblox Game Developer',
         description: 'Roblox game developer focused on Lua scripting, game logic, and system design.',
-        creator: '@Paphangkorn',
     },
     robots: {
         index: true,

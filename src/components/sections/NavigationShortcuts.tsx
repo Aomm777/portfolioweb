@@ -10,21 +10,19 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useTranslations } from 'next-intl';
 
 const GALLERY_IMAGES = [
-    '/gallery/Foto Utama.webp',
-    '/gallery/FotoSC1.webp',
-    '/gallery/FotoSC2.webp',
-    '/gallery/FotoSC3.webp',
-    '/gallery/FotoSC4.webp',
-    '/gallery/FotoSC5.webp',
-    '/gallery/academicaffairsdivision1.webp',
-    '/gallery/computernetworkpracticumassistant2.webp',
-    '/gallery/dataentryassistant1.webp',
-    '/gallery/delegateaiesecfutureleaders20241.webp',
-    '/gallery/environmentalhygieneteam1.webp',
-    '/gallery/environmentalhygieneteam2.webp',
-    '/gallery/logisticsoperatorcampusexpo20242.webp',
-    '/gallery/researchassistant1.webp',
-    '/gallery/researchassistant2.webp',
+    '/experience/bronopoly-exhibition.png',
+    '/experience/bronopoly-team-leadership.png',
+    '/experience/hamsterhub-showcase.png',
+    '/experience/ai-camp-gameplay.png',
+    '/experience/ai-camp-project-setup.png',
+    '/experience/gamepee-camp-1.png',
+    '/experience/gamepee-camp-2.png',
+    '/experience/gamepee-camp-detail-1.png',
+    '/project/bronopoly1.png',
+    '/project/bronopoly2.png',
+    '/project/animeroyale1.png',
+    '/project/escapelab1.png',
+    '/images/heat-thieves-gameplay.jpg',
 ];
 
 export const NavigationShortcuts = () => {
@@ -85,7 +83,6 @@ export const NavigationShortcuts = () => {
             title: t('shortcuts.volume1'),
             items: [
                 { id: '01', title: t('home'), href: '/#hero' },
-                { id: '02', title: t('resume'), href: portfolioData.personal.resumeUrl, external: true }, // Using existing key for Resume or adding new?
                 { id: '03', title: t('contact'), href: '/contact' },
             ]
         },
@@ -240,7 +237,6 @@ export const NavigationShortcuts = () => {
                                             <Link
                                                 key={item.id}
                                                 href={item.href || '#'}
-                                                target={item.external ? "_blank" : undefined}
                                                 className="group block relative"
                                                 onClick={() => setIsOpen(false)}
                                                 onMouseEnter={() => setHoveredImage(itemImageMap[item.id])}

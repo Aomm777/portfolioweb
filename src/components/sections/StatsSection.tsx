@@ -64,7 +64,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
                             viewport={{ once: true }}
                             className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight text-foreground leading-tight"
                         >
-                            Journal & Insights
+                            Behind the Build
                         </motion.h2>
                         <motion.p
                             initial={{ opacity: 0 }}
@@ -73,7 +73,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
                             transition={{ delay: 0.2 }}
                             className="text-muted-foreground/80 text-lg md:text-xl font-medium max-w-2xl mx-auto"
                         >
-                            A curated collection of technical articles, engineering blueprints, and reflections on building intelligent systems.
+                            Screenshots, camps, and moments from making games with Roblox Studio and Lua.
                         </motion.p>
                     </div>
 
@@ -93,7 +93,7 @@ export default function StatsSection({ scrollYProgress, showOnly }: { scrollYPro
             )}
 
             {/* Book Showcase Integration */}
-            {(showOnly === 'bottom' || !showOnly) && (
+            {(showOnly === 'bottom' || !showOnly) && blogs.length > 0 && (
                 <div className="w-full max-w-[1600px] mx-auto px-6 md:px-12 pt-16 pb-32 space-y-16 relative">
                     <div className="flex items-center justify-between border-b border-border/50 pb-8">
                         <div className="space-y-1">

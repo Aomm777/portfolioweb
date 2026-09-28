@@ -21,8 +21,7 @@ import {
     X,
     Gamepad2,
     Music,
-    Bot,
-    Focus
+    Bot
 } from 'lucide-react';
 import { cn } from '@/lib/utils';
 import { useIsMobile } from '@/hooks/useIsMobile';
@@ -105,10 +104,10 @@ export function Footer() {
                 hour: 'numeric',
                 minute: '2-digit',
                 hour12: true,
-                timeZone: 'Asia/Jakarta'
+                timeZone: 'Asia/Bangkok'
             };
             const timeString = new Intl.DateTimeFormat('en-US', options).format(now);
-            // Jakarta is UTC+7
+            // Bangkok is UTC+7
             setLocalTime(`${timeString} UTC+7`);
         };
 
@@ -216,22 +215,21 @@ export function Footer() {
                             {/* Right Side - Socials & More Button */}
                             <div className="flex items-center justify-end gap-4 md:gap-8 z-10 ml-auto">
                                 <div className="flex items-center gap-1.5 sm:gap-2">
+                                    <motion.button
+                                        type="button"
+                                        onClick={() => window.dispatchEvent(new CustomEvent('portfolio:toggle-chatbot', {
+                                            detail: { x: window.innerWidth / 2, y: window.innerHeight / 2 }
+                                        }))}
+                                        className="p-1.5 rounded-full hover:bg-foreground/5 transition-all text-muted-foreground hover:text-foreground hover:scale-110 active:scale-95"
+                                        aria-label="Chat with AI assistant"
+                                    >
+                                        <Bot className="w-4 h-4" />
+                                    </motion.button>
                                     {/* Social Icons */}
                                     {previewSocials.map((social: SocialLink) => {
                                         const Icon = socialIcons[social.icon];
                                         return (
                                             <Fragment key={social.platform}>
-                                                {social.platform === 'Twitter' && (
-                                                    <motion.a
-                                                        href="https://Paphangkornworkspace.vercel.app/"
-                                                        target="_blank"
-                                                        rel="noopener noreferrer"
-                                                        className="p-1.5 rounded-full hover:bg-foreground/5 transition-all text-muted-foreground hover:text-foreground hover:scale-110 active:scale-95"
-                                                        aria-label="Workspace"
-                                                    >
-                                                        <Focus className="w-4 h-4" />
-                                                    </motion.a>
-                                                )}
                                                 <motion.a
                                                     key={social.platform}
                                                     href={social.platform === 'Twitter' ? undefined : social.url}
@@ -386,12 +384,12 @@ export function Footer() {
                                                 {localTime}
                                             </p>
                                             <a
-                                                href="https://www.google.com/maps/place/Jakarta,+Indonesia"
+                                                href="https://www.google.com/maps/place/Thailand"
                                                 target="_blank"
                                                 rel="noopener noreferrer"
                                                 className="text-zinc-900 dark:text-white text-[1.2vw] min-text-[14px] font-medium tracking-tight hover:text-zinc-500 dark:hover:text-zinc-400 transition-colors inline-block"
                                             >
-                                                Jakarta, Indonesia
+                                                Thailand
                                             </a>
                                         </FooterColumn>
 

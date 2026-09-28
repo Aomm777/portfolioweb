@@ -49,6 +49,6 @@ export default getRequestConfig(async () => {
     return {
         locale,
         messages,
-        timeZone: 'Asia/Jakarta'
+        timeZone: 'Asia/Bangkok'
     };
 });

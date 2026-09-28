@@ -9,7 +9,6 @@
         "blog": "Blog",
         "gallery": "Gallery",
         "contact": "Contact",
-        "resume": "Resume",
         "tools": "Tools",
         "menu": {
             "achievements": "Achievements",
@@ -391,7 +390,6 @@
         "together": "Together",
         "subtitle": "Open to game development collaborations, team projects, and opportunities to build engaging Roblox experiences.",
         "start": "Hire Me",
-        "work": "View My Resume",
         "words": {
             "amazing": "Amazing",
             "innovative": "Innovative",
@@ -447,18 +445,6 @@
             "average": "Average",
             "less": "Less",
             "more": "More"
-        },
-        "wakatime": {
-            "title": "WakaTime Stats",
-            "description": "Coding activity over the last 7 days.",
-            "lastUpdate": "Last Updated",
-            "startDate": "Start Date",
-            "endDate": "End Date",
-            "dailyAverage": "Daily Average",
-            "totalWeek": "Total This Week",
-            "bestDay": "Best Day",
-            "totalSince": "Total Since Joined",
-            "topLanguages": "Top Languages"
         }
     },
     "blog": {

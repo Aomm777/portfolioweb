@@ -349,25 +349,32 @@ function ChatWindow({ onClose, origin }: { onClose: () => void, origin?: { x: nu
     }, []);
 
     const sendMessage = useCallback(
-        async (text: string) => {
+        async (text: string, isRetry = false) => {
             const trimmed = text.trim();
             if (!trimmed || isLoading) return;
 
             setLastUserMessage(trimmed);
             setInput("");
 
-            const userMsg: Message = {
-                id: generateId(),
-                role: "user",
-                content: trimmed,
-                timestamp: new Date(),
-            };
-
-            setMessages((prev) => [...prev, userMsg]);
+            let history: Message[];
+            if (isRetry) {
+                // The user's message is already in the list; only drop the error bubble.
+                history = messages.filter((m) => !m.error);
+                setMessages(history);
+            } else {
+                const userMsg: Message = {
+                    id: generateId(),
+                    role: "user",
+                    content: trimmed,
+                    timestamp: new Date(),
+                };
+                history = [...messages, userMsg];
+                setMessages((prev) => [...prev, userMsg]);
+            }
             setIsLoading(true);
 
             // Build messages array for API (exclude error messages)
-            const apiMessages = [...messages, userMsg]
+            const apiMessages = history
                 .filter((m) => !m.error)
                 .map(({ role, content }) => ({ role, content }));
 
@@ -436,13 +443,7 @@ function ChatWindow({ onClose, origin }: { onClose: () => void, origin?: { x: nu
 
     const handleRetry = useCallback(() => {
         if (!lastUserMessage) return;
-        // Remove last error message
-        setMessages((prev) => {
-            const last = prev[prev.length - 1];
-            if (last?.error) return prev.slice(0, -1);
-            return prev;
-        });
-        sendMessage(lastUserMessage);
+        sendMessage(lastUserMessage, true);
     }, [lastUserMessage, sendMessage]);
 
     const handleKeyDown = useCallback(
