@@ -35,6 +35,11 @@ export const portfolioData: PortfolioData = {
                 url: 'https://facebook.com/doc.kx',
                 icon: 'facebook',
                 username: 'Doc Kx',
+            },
+            {
+                platform: 'Discord',
+                url: 'https://discord.com/users/709636597779398687',
+                icon: 'discord',
             }
         ],
     },
