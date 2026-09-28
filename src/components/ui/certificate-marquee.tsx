@@ -5,19 +5,15 @@ import { useRef, useState, useEffect } from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { portfolioData } from "@/data/portfolio";
 
-const certificates = [
-  "/certificate/Data Analytics on Google Cloud.webp",
-  "/certificate/Deep Learning Beginner.webp",
-  "/certificate/Docker, Kubernetes dan DevOps.webp",
-  "/certificate/Fullstack Programming Untuk Pemula.webp",
-  "/certificate/Introduction to Generative AI.webp",
-  "/certificate/Machine Learning Foundations.webp",
-  "/certificate/Mastering Smart Contract.webp",
-  "/certificate/Started with Databases.webp",
-  "/certificate/Supervised Machine Learning Regression and Classification.webp",
-  "/certificate/elevAIte with Dicoding Program 2025.webp",
-];
+const certificates = portfolioData.achievements
+  .map((achievement) => achievement.image)
+  .filter((src): src is string => Boolean(src));
+
+// Each column needs 6 tiles to fill the scroll; cycle through the certificates starting at a different offset.
+const columnImages = (offset: number) =>
+  Array.from({ length: 6 }, (_, i) => certificates[(offset + i) % certificates.length]);
 
 function ScrambleButton({ href }: { href: string }) {
   const [displayText, setDisplayText] = useState("View All Achievements");
@@ -146,10 +142,10 @@ export function CertificateShowcase() {
                 Certifications & Achievements
               </h2>
               <h3 className="text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold leading-[1.1] tracking-tight max-w-none text-foreground">
-                Validating <span className="text-shiny">Excellence</span> through Global Standards.
+                Learning by <span className="text-shiny">Building</span>, One Certificate at a Time.
               </h3>
               <p className="text-lg text-muted-foreground max-w-none leading-relaxed lg:whitespace-nowrap">
-                A collection of my professional certifications in AI, Web Development, and Cloud Engineering from industry leaders.
+                Certificates from game camps, game jams, networking, and NSC.
               </p>
             </div>
           </div>
@@ -167,9 +163,9 @@ export function CertificateShowcase() {
           className="relative box-border flex h-[100vh] md:h-[130vh] gap-4 md:gap-6 overflow-hidden rounded-none"
         >
           {/* Fill each column with more images so they don't run out during the scroll */}
-          <Column images={[certificates[0], certificates[1], certificates[2], certificates[3], certificates[4], certificates[5]]} y={y} />
-          <Column images={[certificates[5], certificates[6], certificates[7], certificates[8], certificates[9], certificates[0]]} y={y2} />
-          <Column images={[certificates[9], certificates[8], certificates[7], certificates[6], certificates[5], certificates[4]]} y={y3} />
+          <Column images={columnImages(0)} y={y} />
+          <Column images={columnImages(1)} y={y2} />
+          <Column images={columnImages(2)} y={y3} />
         </div>
       </div>
       

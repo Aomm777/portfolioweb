@@ -218,7 +218,7 @@ export const IdentitySequence = ({ scrollYProgress, isVisible }: IdentitySequenc
                                 >
                                     <div className="absolute inset-0">
                                         <Image
-                                            src={portfolioData.personal.avatar}
+                                            src="/images/profile.png"
                                             alt="Profile"
                                             fill
                                             className="object-contain object-bottom grayscale-0"

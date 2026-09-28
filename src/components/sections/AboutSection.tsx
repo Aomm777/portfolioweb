@@ -28,26 +28,21 @@ import Bucket from "@/components/ui/bucket";
 import { ArgentLoopInfiniteSlider } from "@/components/ui/argent-loop-infinite-slider";
 import { HorizontalTimeline } from "@/components/ui/horizontal-timeline";
 import { CertificateShowcase } from "@/components/ui/certificate-marquee";
-import KaggleShowcase from "@/components/ui/kaggle-showcase";
-import { WakaTimeShowcase } from "@/components/ui/wakatime-showcase";
-import { ShowcaseStack } from "@/components/ui/showcase-stack";
 
 const GALLERY_IMAGES = [
-    "/gallery/Foto Utama.webp",
-    "/gallery/FotoSC1.webp",
-    "/gallery/FotoSC2.webp",
-    "/gallery/FotoSC3.webp",
-    "/gallery/FotoSC4.webp",
-    "/gallery/FotoSC5.webp",
-    "/gallery/academicaffairsdivision1.webp",
-    "/gallery/computernetworkpracticumassistant2.webp",
-    "/gallery/dataentryassistant1.webp",
-    "/gallery/delegateaiesecfutureleaders20241.webp",
-    "/gallery/environmentalhygieneteam1.webp",
-    "/gallery/environmentalhygieneteam2.webp",
-    "/gallery/logisticsoperatorcampusexpo20242.webp",
-    "/gallery/researchassistant1.webp",
-    "/gallery/researchassistant2.webp"
+    "/experience/bronopoly-exhibition.png",
+    "/experience/bronopoly-team-leadership.png",
+    "/experience/hamsterhub-showcase.png",
+    "/experience/ai-camp-gameplay.png",
+    "/experience/ai-camp-project-setup.png",
+    "/experience/gamepee-camp-1.png",
+    "/experience/gamepee-camp-2.png",
+    "/experience/gamepee-camp-detail-1.png",
+    "/project/bronopoly1.png",
+    "/project/bronopoly2.png",
+    "/project/animeroyale1.png",
+    "/project/escapelab1.png",
+    "/images/heat-thieves-gameplay.jpg"
 ];
 
 const AboutLeadInImageStack = () => {
@@ -630,33 +625,25 @@ export default function AboutSection() {
                             <CertificateShowcase />
                         </div>
 
-                        {/* Stacking Card Showcases */}
-                        <ShowcaseStack>
-                            <div className="w-full">
-                                <a
-                                    href={ROBLOX_PROFILE_URL}
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                    className="group flex min-h-[320px] w-full flex-col items-center justify-center gap-6 rounded-[3rem] border border-border/50 bg-card p-10 text-center transition-colors hover:border-primary/40 hover:bg-primary/[0.03]"
-                                >
-                                    <SiRoblox className="h-16 w-16 text-primary transition-transform group-hover:scale-110" />
-                                    <div className="space-y-2">
-                                        <h3 className="text-3xl font-black tracking-tight text-foreground">Find me on Roblox</h3>
-                                        <p className="max-w-md text-muted-foreground">Visit my Roblox profile to see my games and creations.</p>
-                                    </div>
-                                    <span className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground">
-                                        Open Roblox Profile
-                                        <ArrowUpRight className="h-4 w-4" />
-                                    </span>
-                                </a>
-                            </div>
-                            <div className="w-full">
-                                <KaggleShowcase />
-                            </div>
-                            <div className="w-full">
-                                <WakaTimeShowcase />
-                            </div>
-                        </ShowcaseStack>
+                        {/* Roblox Profile Card */}
+                        <div className="w-full">
+                            <a
+                                href={ROBLOX_PROFILE_URL}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="group flex min-h-[320px] w-full flex-col items-center justify-center gap-6 rounded-[3rem] border border-border/50 bg-card p-10 text-center transition-colors hover:border-primary/40 hover:bg-primary/[0.03]"
+                            >
+                                <SiRoblox className="h-16 w-16 text-primary transition-transform group-hover:scale-110" />
+                                <div className="space-y-2">
+                                    <h3 className="text-3xl font-black tracking-tight text-foreground">Find me on Roblox</h3>
+                                    <p className="max-w-md text-muted-foreground">Visit my Roblox profile to see my games and creations.</p>
+                                </div>
+                                <span className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-primary-foreground">
+                                    Open Roblox Profile
+                                    <ArrowUpRight className="h-4 w-4" />
+                                </span>
+                            </a>
+                        </div>
                     </div>
                     <AuditFunnel />
                 </div>

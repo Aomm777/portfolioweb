@@ -106,13 +106,16 @@ async function callGroq(messages: Message[], systemPrompt: string): Promise<stri
             Authorization: `Bearer ${apiKey}`,
         },
         body: JSON.stringify({
-            model: 'llama-3.1-8b-instant',
+            // Groq retires models regularly; override with GROQ_MODEL without a code change.
+            model: process.env.GROQ_MODEL || 'openai/gpt-oss-120b',
             messages: [
                 { role: 'system', content: systemPrompt },
                 ...messages,
             ],
             max_tokens: 1024,
             temperature: 0.7,
+            // gpt-oss models reason before answering; keep that short so replies stay fast.
+            reasoning_effort: 'low',
         }),
     });
 
@@ -139,7 +142,7 @@ async function callGemini(messages: Message[], systemPrompt: string): Promise<st
     }));
 
     const response = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-1.5-flash:generateContent?key=${apiKey}`,
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-flash-latest:generateContent?key=${apiKey}`,
         {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

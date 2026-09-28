@@ -971,23 +971,10 @@ export default function ProjectsPage() {
     const pathname = usePathname();
 
     const products = useMemo(() => {
-        const techImages = [
-            "/project/parallax/image1.webp",
-            "/project/parallax/image2.webp",
-            "/project/parallax/image3.webp",
-            "/project/parallax/image4.webp",
-            "/project/parallax/image5.webp",
-            "/project/parallax/image6.webp",
-            "/project/parallax/image7.webp",
-            "/project/parallax/image8.webp",
-            "/project/parallax/image9.webp",
-            "/project/parallax/image10.webp",
-        ];
-
-        const baseProducts = portfolioData.projects.map((p, i) => ({
+        const baseProducts = portfolioData.projects.map((p) => ({
             title: p.title,
             link: p.demoUrl && p.demoUrl !== '#' ? p.demoUrl : `/projects/${p.slug}`,
-            thumbnail: p.image || techImages[i % techImages.length]
+            thumbnail: p.image || p.galleryImages?.[0] || '/grid.svg'
         }));
         // Pad to 10 items with index suffix to avoid duplicate keys
         const padded: typeof baseProducts = [];

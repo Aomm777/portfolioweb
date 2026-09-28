@@ -12,7 +12,6 @@ export const portfolioData: PortfolioData = {
         location: 'Thailand',
         email: 'Wi.koo25561@gmail.com',
         phone: '0986627263',
-        resumeUrl: '/resume.pdf',
         website: ROBLOX_PROFILE_URL,
         languages: [
             { name: 'Thai', level: 'Native' },
@@ -194,7 +193,6 @@ export const portfolioData: PortfolioData = {
             location: 'Remote',
             type: 'freelance',
             timelineImage: '/experience/ai-camp-timeline.png',
-            logo: '/images/profile-microsoft.webp',
             galleryImages: [
                 '/experience/ai-camp-project-setup.png',
                 '/experience/ai-camp-gameplay.png',
@@ -330,12 +328,13 @@ export const portfolioData: PortfolioData = {
 
     blogs: [],
     gallery: [
-        { id: 'gal-1', title: 'Microsoft Visit', description: 'ถ่ายรูปที่ Microsoft Office', date: '2026-01-01', type: 'image', url: '/experience/Foto Utama.webp', category: 'experience' },
-        { id: 'gal-2', title: 'City View', description: 'วิวเมืองยามค่ำคืน', date: '2026-01-01', type: 'image', url: '/experience/FotoSC1.webp', category: 'experience' },
-        { id: 'gal-3', title: 'Event 2', description: 'รูปกิจกรรม', date: '2026-01-01', type: 'image', url: '/experience/FotoSC2.webp', category: 'experience' },
-        { id: 'gal-4', title: 'Event 3', description: 'รูปกิจกรรม', date: '2026-01-01', type: 'image', url: '/experience/FotoSC3.webp', category: 'experience' },
-        { id: 'gal-5', title: 'Event 4', description: 'รูปกิจกรรม', date: '2026-01-01', type: 'image', url: '/experience/FotoSC4.webp', category: 'experience' },
-        { id: 'gal-6', title: 'Event 5', description: 'รูปกิจกรรม', date: '2026-01-01', type: 'image', url: '/experience/FotoSC5.webp', category: 'experience' },
+        { id: 'gal-1', title: 'Bronopoly — Exhibition 1', description: 'จัดแสดงผลงาน Bronopoly', date: '2026-01-01', type: 'image', url: '/experience/bronopoly-exhibition.png', category: 'Bronopoly' },
+        { id: 'gal-2', title: 'Bronopoly — Exhibition 2', description: 'จัดแสดงผลงาน Bronopoly', date: '2026-01-01', type: 'image', url: '/experience/bronopoly-team-leadership.png', category: 'Bronopoly' },
+        { id: 'gal-3', title: 'GamePee Camp 1', description: 'บรรยากาศค่าย GamePee Camp', date: '2026-01-01', type: 'image', url: '/experience/gamepee-camp-1.png', category: 'GamePee Camp' },
+        { id: 'gal-4', title: 'GamePee Camp 2', description: 'บรรยากาศค่าย GamePee Camp', date: '2026-01-01', type: 'image', url: '/experience/gamepee-camp-2.png', category: 'GamePee Camp' },
+        { id: 'gal-5', title: 'GamePee Camp 3', description: 'บรรยากาศค่าย GamePee Camp', date: '2026-01-01', type: 'image', url: '/experience/gamepee-camp-3.png', category: 'GamePee Camp' },
+        { id: 'gal-6', title: 'Bronopoly — Exhibition 3', description: 'จัดแสดงผลงาน Bronopoly', date: '2026-01-01', type: 'image', url: '/experience/hamsterhub-showcase.png', category: 'Bronopoly' },
+        { id: 'gal-7', title: 'Portrait', description: 'รูปของผม', date: '2026-01-01', type: 'image', url: '/images/profile.png', category: 'Me' },
     ],
 };
 
@@ -474,12 +473,13 @@ const englishFaqs = [
 ];
 
 const englishGalleryDescriptions: Record<string, string> = {
-    'gal-1': 'Photo taken at the Microsoft office.',
-    'gal-2': 'A city view at night.',
-    'gal-3': 'Photos from an event.',
-    'gal-4': 'Photos from an event.',
-    'gal-5': 'Photos from an event.',
-    'gal-6': 'Photos from an event.'
+    'gal-1': 'Showing Bronopoly.',
+    'gal-2': 'Showing Bronopoly.',
+    'gal-3': 'At GamePee Camp.',
+    'gal-4': 'At GamePee Camp.',
+    'gal-5': 'At GamePee Camp.',
+    'gal-6': 'Showing Bronopoly.',
+    'gal-7': 'A photo of me.'
 };
 
 export function getPortfolioData(locale: string): PortfolioData {
@@ -530,7 +530,6 @@ export function getPortfolioData(locale: string): PortfolioData {
         faqs: englishFaqs,
         gallery: portfolioData.gallery.map((item) => ({
             ...item,
-            title: item.id === 'gal-1' ? 'Microsoft Visit' : item.id === 'gal-2' ? 'City View' : `Event ${Number(item.id.slice(-1)) - 1}`,
             description: englishGalleryDescriptions[item.id] ?? item.description
         }))
     };
