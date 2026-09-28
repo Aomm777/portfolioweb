@@ -21,6 +21,7 @@ const techLogos: Record<string, string> = {
     'Roblox Studio': 'https://cdn.simpleicons.org/roblox/000000',
     'Cursor AI': 'https://cdn.simpleicons.org/cursor/000000',
     'Blender': 'https://cdn.simpleicons.org/blender',
+    'VS Code': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
     'TypeScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg',
     'JavaScript': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg',
     'Python': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg',

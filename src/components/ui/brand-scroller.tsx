@@ -13,12 +13,16 @@ const iconSlugs: Record<string, string> = {
     Blender: 'blender',
     'Roblox Studio': 'roblox',
     'Cursor AI': 'cursor',
-    'VS Code': 'visualstudiocode',
+};
+
+// Simple Icons removed the VS Code logo, so it comes from Devicon instead.
+const iconUrls: Record<string, string> = {
+    'VS Code': 'https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vscode/vscode-original.svg',
 };
 
 const toScrollerItem = (name: string) => ({
     name,
-    icon: `https://cdn.simpleicons.org/${iconSlugs[name] ?? name.toLowerCase().replace(/[\s.]+/g, '')}`,
+    icon: iconUrls[name] ?? `https://cdn.simpleicons.org/${iconSlugs[name] ?? name.toLowerCase().replace(/[\s.]+/g, '')}`,
 });
 
 const techStackItems = portfolioData.techStack.map((item) => toScrollerItem(item.name));
