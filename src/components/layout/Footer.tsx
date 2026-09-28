@@ -374,7 +374,7 @@ export function Footer() {
                                                     )}
                                                 </AnimatePresence>
                                             </div>
-                                            <FooterLink href={portfolioData.personal.socialLinks.find(s => s.platform === 'LinkedIn')?.url || '#'} target="_blank">LinkedIn</FooterLink>
+                                            <FooterLink href={portfolioData.personal.socialLinks.find(s => s.platform === 'Facebook')?.url || '#'} target="_blank">Facebook</FooterLink>
                                             <FooterLink href={portfolioData.personal.socialLinks.find(s => s.platform === 'Instagram')?.url || '#'} target="_blank">Instagram</FooterLink>
                                             <FooterLink href={portfolioData.personal.socialLinks.find(s => s.platform === 'Roblox')?.url || '#'} target="_blank">Roblox</FooterLink>
                                         </FooterColumn>

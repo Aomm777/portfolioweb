@@ -3,8 +3,8 @@
 import { useState, useRef } from 'react';
 import { motion, AnimatePresence, useScroll, useTransform } from 'framer-motion';
 import { useTranslations } from 'next-intl';
-import { Send, CheckCircle, AlertCircle, Loader2, Disc, Music, ArrowUpRight, Sparkles, HelpCircle, MessageSquare, ExternalLink, Linkedin, Twitter, Instagram, ChevronDown } from 'lucide-react';
-import { SiRoblox } from 'react-icons/si';
+import { Send, CheckCircle, AlertCircle, Loader2, ArrowUpRight, Sparkles, HelpCircle, MessageSquare, ExternalLink, Instagram, Mail, ChevronDown } from 'lucide-react';
+import { SiRoblox, SiDiscord, SiFacebook } from 'react-icons/si';
 import { cn } from '@/lib/utils';
 import { portfolioData } from '@/data/portfolio';
 import dynamic from 'next/dynamic';
@@ -53,11 +53,10 @@ function SocialTicker({ items, direction = 'left', speed = 30, isLowPowerMode = 
 
 const socialIconsMap: Record<string, React.ElementType> = {
     roblox: SiRoblox,
-    linkedin: Linkedin,
-    twitter: Twitter,
     instagram: Instagram,
-    discord: Disc,
-    spotify: Music
+    facebook: SiFacebook,
+    discord: SiDiscord,
+    email: Mail
 };
 
 function SocialCard({ item }: { item: any }) {
@@ -65,7 +64,7 @@ function SocialCard({ item }: { item: any }) {
     return (
         <a
             href={item.url}
-            target="_blank"
+            target={item.url.startsWith('mailto:') ? undefined : "_blank"}
             rel="noopener noreferrer"
             className="group relative flex h-[140px] w-[280px] flex-col justify-between rounded-3xl border border-neutral-200 dark:border-white/5 bg-white dark:bg-white/[0.02] p-6 shadow-sm dark:shadow-2xl transition-all hover:bg-neutral-50 dark:hover:bg-white/5 hover:border-neutral-300 hover:scale-[1.02] hover:-translate-y-1 backdrop-blur-md overflow-hidden flex-shrink-0"
         >
@@ -79,7 +78,7 @@ function SocialCard({ item }: { item: any }) {
                 </div>
                 <div className="flex flex-col">
                     <span className="text-lg font-bold text-foreground group-hover:text-primary transition-colors tracking-tight">{item.name}</span>
-                    <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground/80">@{item.username}</span>
+                    <span className="text-xs font-medium text-muted-foreground group-hover:text-foreground/80">{item.handle}</span>
                 </div>
             </div>
 
@@ -290,11 +289,10 @@ function FAQSection() {
 
 const socialDescriptions: Record<string, string> = {
     Roblox: "Game Profile",
-    LinkedIn: "Professional",
-    Twitter: "Thoughts",
     Instagram: "Lifestyle",
+    Facebook: "Social",
     Discord: "Community",
-    Spotify: "Music"
+    Email: "Direct"
 };
 
 import { usePerformance } from '@/hooks/usePerformance';
@@ -304,18 +302,32 @@ export default function ContactPage() {
     const { isLowPowerMode } = usePerformance();
 
     const getSocialItem = (platform: string) => {
+        if (platform === 'email') {
+            const email = portfolioData.personal.email;
+            return {
+                name: 'Email',
+                handle: email,
+                body: socialDescriptions.Email,
+                image: socialIconsMap.email,
+                url: `mailto:${email}`
+            };
+        }
         const link = portfolioData.personal.socialLinks.find(l => l.platform.toLowerCase() === platform);
+        if (!link) return null;
         return {
-            name: (link?.platform || platform).charAt(0).toUpperCase() + (link?.platform || platform).slice(1),
-            username: link?.username || '@user',
-            body: socialDescriptions[link?.platform || platform] || "Connect",
-            image: socialIconsMap[platform.toLowerCase()] || ArrowUpRight,
-            url: link?.url || '#'
+            name: link.platform,
+            handle: link.username ? `@${link.username}` : 'View profile',
+            body: socialDescriptions[link.platform] || "Connect",
+            image: socialIconsMap[platform] || ArrowUpRight,
+            url: link.url
         };
     };
 
-    const row1Real = ['linkedin', 'roblox', 'instagram'].map(getSocialItem);
-    const row2Real = ['twitter', 'discord', 'spotify'].map(getSocialItem);
+    // Only platforms that exist in portfolio.ts are shown.
+    const toItems = (platforms: string[]) =>
+        platforms.map(getSocialItem).filter((item): item is NonNullable<typeof item> => item !== null);
+    const row1Real = toItems(['roblox', 'instagram', 'facebook']);
+    const row2Real = toItems(['discord', 'email']);
 
     const containerRef = useRef<HTMLDivElement>(null);
     const { scrollYProgress } = useScroll({
